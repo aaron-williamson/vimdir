@@ -27,6 +27,10 @@ vnoremap <Leader>- <Esc>:NERDTreeToggle<CR>
 nnoremap <Leader>- :NERDTreeToggle<CR>
 set modifiable
 
+" Start NERDTree on startup
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 " Basic sets
 set number
 set autoindent
