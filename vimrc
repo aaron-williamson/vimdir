@@ -18,6 +18,15 @@ Plugin 'valloric/youcompleteme' " youcompleteme Autocompletion Plugin
 call vundle#end()
 filetype plugin indent on
 
+" For youcompleteme
+set shortmess+=c
+
+" For NERDTree
+inoremap <Leader>- <Esc>:NERDTreeToggle<CR>
+vnoremap <Leader>- <Esc>:NERDTreeToggle<CR>
+nnoremap <Leader>- :NERDTreeToggle<CR>
+set modifiable
+
 " Basic sets
 set number
 set autoindent
@@ -30,6 +39,10 @@ set ts=2
 set sw=2
 set expandtab
 
+" Toggle highlight with <Leader>hs
+let hlstate=0
+nnoremap <Leader>hs :if (hlstate == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=1-hlstate<CR>
+
 " Bash-style tab from http://stackoverflow.com/questions/526858/how-do-i-make-vim-do-normal-bash-like-tab-completion-for-file-names
 set wildmode=longest,list,full
 set wildmenu
@@ -38,7 +51,7 @@ set wildmenu
 set laststatus=2
 
 " Custom escape from insert mode remap
-imap jk <Esc>
+inoremap jk <Esc>
 
 " For quick command-writing
 inoremap <Leader>; <Esc>:
@@ -63,6 +76,9 @@ au FileType java setl sw=4 ts=4 et " 4 Space for java
 " Shift-tab binding to unindent for insert mode
 inoremap <S-Tab> <C-D>
 
+" Insert enter without entering insert mode using <Leader>nl
+nnoremap <Leader>nl o<Esc>
+
 " Tab/shift+tab bindings for normal and visual mode
 nnoremap <Tab> >>_
 nnoremap <S-Tab> <<_
@@ -77,6 +93,7 @@ function! TogglePasteMode()
   else
     set paste
     normal o
+    startinsert
   end
 endfunction
 
