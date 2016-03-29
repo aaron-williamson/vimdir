@@ -39,9 +39,9 @@ set ts=2
 set sw=2
 set expandtab
 
-" Toggle highlight with <Leader>hs
+" Toggle highlight with <Leader>h
 let hlstate=0
-nnoremap <Leader>hs :if (hlstate == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=1-hlstate<CR>
+nnoremap <Leader>h :if (hlstate == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=1-hlstate<CR>
 
 " Bash-style tab from http://stackoverflow.com/questions/526858/how-do-i-make-vim-do-normal-bash-like-tab-completion-for-file-names
 set wildmode=longest,list,full
