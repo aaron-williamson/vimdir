@@ -1,3 +1,6 @@
+" Custom leader
+let mapleader=","
+
 " Vundle prereqs
 set nocompatible
 filetype off
@@ -13,6 +16,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdcommenter' " The NERD Commenter
 Plugin 'scrooloose/nerdtree' " The NERD Tree
 Plugin 'valloric/youcompleteme' " youcompleteme Autocompletion Plugin
+Plugin 'terryma/vim-multiple-cursors' " Sublime-text style multiple cursors
 
 " Vindle Post reqs
 call vundle#end()
@@ -26,10 +30,7 @@ inoremap <Leader>- <Esc>:NERDTreeToggle<CR>
 vnoremap <Leader>- <Esc>:NERDTreeToggle<CR>
 nnoremap <Leader>- :NERDTreeToggle<CR>
 set modifiable
-
-" Start NERDTree on startup
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let NERDTreeQuitOnOpen = 1
 
 " Basic sets
 set number
@@ -69,9 +70,6 @@ set backspace=indent,eol,start
 nnoremap <Leader>w :w<CR>
 inoremap <Leader>w <Esc>:w<CR>
 vnoremap <Leader>w <Esc>:w<CR>
-
-" Custom leader
-let mapleader=","
 
 " Syntax specific indentation
 au FileType python setl sw=4 ts=4 et " 4 Space for python
@@ -121,3 +119,7 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Start NERDTree on startup
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
