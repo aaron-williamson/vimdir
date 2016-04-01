@@ -17,6 +17,7 @@ Plugin 'scrooloose/nerdcommenter' " The NERD Commenter
 Plugin 'scrooloose/nerdtree' " The NERD Tree
 Plugin 'valloric/youcompleteme' " youcompleteme Autocompletion Plugin
 Plugin 'terryma/vim-multiple-cursors' " Sublime-text style multiple cursors
+Plugin 'altercation/vim-colors-solarized' " Solarized color scheme
 
 " Vindle Post reqs
 call vundle#end()
@@ -30,7 +31,7 @@ inoremap <Leader>- <Esc>:NERDTreeToggle<CR>
 vnoremap <Leader>- <Esc>:NERDTreeToggle<CR>
 nnoremap <Leader>- :NERDTreeToggle<CR>
 set modifiable
-let NERDTreeQuitOnOpen = 1
+let NERDTreeQuitOnOpen=1
 
 " Basic sets
 set number
@@ -38,6 +39,12 @@ set autoindent
 set hlsearch
 set incsearch
 syntax enable
+
+" Solarized color scheme
+set background=dark
+colorscheme solarized
+hi Normal ctermbg=none
+hi NoText ctermbg=None
 
 " Set tab to 2 spaces
 set ts=2
@@ -119,7 +126,3 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-" Start NERDTree on startup
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
