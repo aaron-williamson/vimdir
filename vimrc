@@ -19,7 +19,7 @@ Plugin 'valloric/youcompleteme' " youcompleteme Autocompletion Plugin
 Plugin 'terryma/vim-multiple-cursors' " Sublime-text style multiple cursors
 Plugin 'altercation/vim-colors-solarized' " Solarized color scheme
 
-" Vindle Post reqs
+" Vundle Post reqs
 call vundle#end()
 filetype plugin indent on
 
@@ -60,7 +60,7 @@ let hlstate=0
 nnoremap <Leader>h :if (hlstate == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=1-hlstate<CR>
 
 " Bash-style tab from http://stackoverflow.com/questions/526858/how-do-i-make-vim-do-normal-bash-like-tab-completion-for-file-names
-set wildmode=longest,list,full
+set wildmode=list:longest,full
 set wildmenu
 
 " Always show the status line
@@ -87,7 +87,7 @@ au FileType python setl sw=4 ts=4 et " 4 Space for python
 au FileType java setl sw=4 ts=4 et " 4 Space for java
 
 " Shift-tab binding to unindent for insert mode
-inoremap <S-Tab> <C-D>
+inoremap <S-Tab> <C-d>
 
 " Insert enter without entering insert mode using <Leader>nl
 nnoremap <Leader>nl o<Esc>
