@@ -51,6 +51,10 @@ set ts=2
 set sw=2
 set expandtab
 
+" Set folds to indents and open all folds
+set foldmethod=indent
+set foldlevelstart=20
+
 " Toggle highlight with <Leader>h
 let hlstate=0
 nnoremap <Leader>h :if (hlstate == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=1-hlstate<CR>
