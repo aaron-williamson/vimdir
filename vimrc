@@ -86,11 +86,8 @@ vnoremap <Leader>w <Esc>:w<CR>
 au FileType python setl sw=4 ts=4 et " 4 Space for python
 au FileType java setl sw=4 ts=4 et " 4 Space for java
 
-" Shift-tab binding to unindent for insert mode
-inoremap <S-Tab> <C-d>
-
 " Insert enter without entering insert mode using <Leader>nl
-nnoremap <Leader>nl o<Esc>
+nnoremap <Leader>nm o<Esc>
 
 " Tab/shift+tab bindings for normal and visual mode
 nnoremap <Tab> >>_
