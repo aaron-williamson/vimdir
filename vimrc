@@ -17,7 +17,7 @@ Plugin 'scrooloose/nerdcommenter' " The NERD Commenter
 Plugin 'scrooloose/nerdtree' " The NERD Tree
 Plugin 'valloric/youcompleteme' " youcompleteme Autocompletion Plugin
 Plugin 'terryma/vim-multiple-cursors' " Sublime-text style multiple cursors
-Plugin 'altercation/vim-colors-solarized' " Solarized color scheme
+"Plugin 'altercation/vim-colors-solarized' " Solarized color scheme
 
 " Vundle Post reqs
 call vundle#end()
@@ -38,18 +38,20 @@ set number
 set autoindent
 set hlsearch
 set incsearch
+set ruler
 syntax enable
 
 " Solarized color scheme
-set background=dark
-colorscheme solarized
-hi Normal ctermbg=none
-hi NoText ctermbg=None
+"set background=dark
+"colorscheme solarized
+"hi Normal ctermbg=none
+"hi NoText ctermbg=None
 
 " Set tab to 2 spaces
 set ts=2
 set sw=2
-set expandtab
+set et
+set sts=2
 
 " Set folds to indents and open all folds
 set foldmethod=indent
@@ -83,13 +85,14 @@ inoremap <Leader>w <Esc>:w<CR>
 vnoremap <Leader>w <Esc>:w<CR>
 
 " Syntax specific indentation
-au FileType python setl sw=4 ts=4 et " 4 Space for python
-au FileType java setl sw=4 ts=4 et " 4 Space for java
+au FileType python setl sw=4 ts=4 et sts=4 " 4 Space for python
+au FileType java setl sw=4 ts=4 et sts=4 " 4 Space for java
 
-" Insert enter without entering insert mode using <Leader>nl
+" Insert enter without entering insert mode using <Leader>nm
 nnoremap <Leader>nm o<Esc>
 
 " Tab/shift+tab bindings for normal and visual mode
+" For some reason these only work sometimes?
 nnoremap <Tab> >>_
 nnoremap <S-Tab> <<_
 vnoremap <Tab> >gv
@@ -102,7 +105,6 @@ function! TogglePasteMode()
     echo "Disabled paste mode"
   else
     set paste
-    normal o
     startinsert
   end
 endfunction
