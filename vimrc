@@ -17,14 +17,11 @@ Plugin 'scrooloose/nerdcommenter' " The NERD Commenter
 Plugin 'scrooloose/nerdtree' " The NERD Tree
 Plugin 'valloric/youcompleteme' " youcompleteme Autocompletion Plugin
 Plugin 'terryma/vim-multiple-cursors' " Sublime-text style multiple cursors
-"Plugin 'altercation/vim-colors-solarized' " Solarized color scheme
+Plugin 'altercation/vim-colors-solarized' " Solarized color scheme
 
 " Vundle Post reqs
 call vundle#end()
 filetype plugin indent on
-
-" For youcompleteme
-set shortmess+=c
 
 " For NERDTree
 inoremap <Leader>- <Esc>:NERDTreeToggle<CR>
@@ -42,10 +39,10 @@ set ruler
 syntax enable
 
 " Solarized color scheme
-"set background=dark
-"colorscheme solarized
-"hi Normal ctermbg=none
-"hi NoText ctermbg=None
+set background=dark
+colorscheme solarized
+hi Normal ctermbg=none
+hi NoText ctermbg=None
 
 " Set tab to 2 spaces
 set ts=2
