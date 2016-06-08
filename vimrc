@@ -33,6 +33,7 @@ vnoremap <Leader>- <Esc>:NERDTreeToggle<CR>
 nnoremap <Leader>- :NERDTreeToggle<CR>
 set modifiable
 let NERDTreeQuitOnOpen=1
+let NERDTreeShowLineNumbers=1
 
 " Airline config
 let g:airline_theme='solarized'
