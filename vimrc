@@ -47,6 +47,8 @@ set hlsearch
 set incsearch
 set ruler
 set relativenumber
+set ignorecase
+set smartcase
 syntax enable
 
 " Solarized color scheme
