@@ -62,6 +62,7 @@ set ruler
 set relativenumber
 set ignorecase
 set smartcase
+set scrolloff=5
 syntax enable
 
 " Solarized color scheme
