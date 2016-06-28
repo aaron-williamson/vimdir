@@ -66,8 +66,8 @@ set scrolloff=5
 syntax enable
 
 " Solarized color scheme
-set background=dark
 colorscheme solarized
+set background=dark
 hi Normal ctermbg=none
 hi NoText ctermbg=None
 
@@ -100,6 +100,9 @@ inoremap <Leader>; <Esc>:
 vnoremap <Leader>; <Esc>:
 nnoremap <Leader>; :
 
+" For quick replace
+nnoremap <Leader>r :%s/
+
 " Backspace fixes
 set backspace=indent,eol,start
 
@@ -116,13 +119,12 @@ au FileType java setl sw=4 ts=4 et sts=4 " 4 Space for java
 nnoremap <Leader>nm o<Esc>
 
 " Tab/shift+tab bindings for normal and visual mode
-" For some reason these only work sometimes?
 nnoremap <Tab> >>_
 nnoremap <S-Tab> <<_
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
-" Toggle paste function 
+" Toggle paste function
 function! TogglePasteMode()
   if &paste
     set nopaste
@@ -137,7 +139,7 @@ endfunction
 nnoremap <Leader>p :call TogglePasteMode() <CR>
 
 " Mapping for temporarily disabling line numbers for copy/paste
-nnoremap <Leader>nn :set nu!<CR>
+nnoremap <Leader>nn :set nu! <bar> set rnu!<CR>
 
 " Tab/split stuff:
 " Natural split appearance
