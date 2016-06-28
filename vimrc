@@ -66,6 +66,7 @@ set scrolloff=5
 syntax enable
 
 " Solarized color scheme
+set t_Co=256
 colorscheme solarized
 set background=dark
 hi Normal ctermbg=none
@@ -146,12 +147,12 @@ nnoremap <Leader>nn :set nu! <bar> set rnu!<CR>
 set splitbelow
 set splitright
 " Better tab navigation, ctrl + left/right for change tab, ctrl + up/down for moving tabs
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
-nnoremap <silent> <C-Down> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <silent> <C-Up> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
-" Better split navigation, ctrl + normal navigation keys for navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <C-H> :tabprevious<CR>
+nnoremap <C-L> :tabnext<CR>
+nnoremap <silent> <C-J> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+nnoremap <silent> <C-K> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
+" Better split navigation, alt + normal navigation keys for navigation
+nnoremap ∆ <C-W><C-J>
+nnoremap ˚ <C-W><C-K>
+nnoremap ¬ <C-W><C-L>
+nnoremap ˙ <C-W><C-H>
