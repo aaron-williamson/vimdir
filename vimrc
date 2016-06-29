@@ -96,6 +96,9 @@ set laststatus=2
 " Custom escape from insert mode remap
 inoremap jk <Esc>
 
+" Mapping for going to the last window
+nnoremap <Leader>L <C-^>
+
 " For quick command-writing
 inoremap <Leader>; <Esc>:
 vnoremap <Leader>; <Esc>:
