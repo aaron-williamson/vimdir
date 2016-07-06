@@ -60,6 +60,11 @@ set hlsearch
 set incsearch
 set ruler
 set relativenumber
+set cursorline
+set cmdheight=1
+set hidden
+set autoread
+set nojoinspaces
 set ignorecase
 set smartcase
 set scrolloff=5
@@ -81,6 +86,12 @@ set sts=2
 " Set folds to indents and open all folds
 set foldmethod=indent
 set foldlevelstart=20
+
+" Cool directory of current file from Gary Bernhardt
+cnoremap <expr> %% expand('%:h').'/'
+
+" Open nerdtree in current directory
+map <Leader>e :NERDTreeToggle %%<CR>
 
 " Toggle highlight with <Leader>h
 let hlstate=0
