@@ -42,16 +42,8 @@ let g:airline_right_sep='«'
 
 " Fugitive binds
 nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gc :Gcommit<CR>
-nnoremap <Leader>gm :Gmerge<CR>
-nnoremap <Leader>gpl :Gpull<CR>
-nnoremap <Leader>gph :Gpush<CR>
-nnoremap <Leader>gf :Gfetch<CR>
-nnoremap <Leader>gl :Glog --graph --oneline<CR>
-nnoremap <Leader>gw :Gwrite<CR>
-inoremap <Leader>gw <Esc>:Gwrite<CR>
-nnoremap <Leader>gd :Gdiff<CR>
-nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gl :Git! log --graph --oneline<CR>
+nnoremap <Leader>gd :Git! diff<CR>
 
 " Basic sets
 set number
