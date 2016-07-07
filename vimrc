@@ -45,6 +45,11 @@ nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gl :Git! log --graph --oneline<CR>
 nnoremap <Leader>gd :Git! diff<CR>
 
+" Multiple cursors configuration
+map <Leader>mf :MultipleCursorsFind<Space>
+let g:multi_cursor_exit_from_visual_mode=0
+let g:multi_cursor_exit_from_insert_mode=0
+
 " Basic sets
 set number
 set autoindent
@@ -61,6 +66,13 @@ set ignorecase
 set smartcase
 set scrolloff=5
 syntax enable
+
+" Backup to different directories
+set backup
+set writebackup
+set backupdir=~/.vim-tmp//,~/.tmp//,~/tmp//,/var/tmp//,/tmp//
+set backupskip=/tmp/*//,/private/tmp/*//
+set directory=~/.vim-tmp//,~/.tmp//,~/tmp//,/var/tmp//,/tmp//
 
 " Solarized color scheme
 set t_Co=256
@@ -112,6 +124,10 @@ nnoremap <Leader>r :%s/
 
 " Backspace fixes
 set backspace=indent,eol,start
+
+" Toggle showing whitespace with <Leader>sw, <Leader>ss to show spaces, too
+nnoremap <Leader>sw :set list! <bar> set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<<CR>
+nnoremap <Leader>ss :set list! <bar> set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<,space:%<CR>
 
 " Fast write
 nnoremap <Leader>w :w<CR>
