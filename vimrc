@@ -43,13 +43,14 @@ let g:airline_right_sep='«'
 
 " Fugitive binds
 nnoremap <Leader>gst :Gstatus<CR>
-nnoremap <Leader>glg :Git! log --graph --oneline<CR>
-nnoremap <Leader>glp :Git! log --graph --oneline -p<CR>
-nnoremap <Leader>gdi :Git! diff<CR>
-nnoremap <Leader>gdc :Git! diff --cached<CR>
+nnoremap <Leader>glg :Gvsplit! log --graph --oneline<CR>
+nnoremap <Leader>glp :Gvsplit! log --graph --oneline -p<CR>
+nnoremap <Leader>gdi :Gvsplit! diff<CR>
+nnoremap <Leader>gdc :Gvsplit! diff --cached<CR>
+nnoremap <Leader>gdt :Gvdiff<CR>
 nnoremap <Leader>gci :Gcommit<CR>
-nnoremap <Leader>gaa :Git! add --all<CR>
-nnoremap <Leader>gfa :Git! fetch --all<CR>
+nnoremap <Leader>gaa :Gpedit! add --all<CR>
+nnoremap <Leader>gfa :Gpedit! fetch --all<CR>
 
 
 " Multiple cursors configuration
