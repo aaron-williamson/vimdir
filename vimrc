@@ -19,6 +19,8 @@ Plugin 'terryma/vim-multiple-cursors'     " Sublime-text style multiple cursors
 Plugin 'altercation/vim-colors-solarized' " Solarized color scheme
 Plugin 'ctrlpvim/ctrlp.vim'               " CtrlP for fuzzy find/open
 Plugin 'tpope/vim-fugitive'               " Fugitive for git integration
+Plugin 'rust-lang/rust.vim'               " Syntax highlighting for rust
+Plugin 'tpope/vim-rails'                  " Extra functions for rails
 Plugin 'vim-airline/vim-airline'          " Airline for better statusbar
 Plugin 'vim-airline/vim-airline-themes'   " Themes for Airline
 
