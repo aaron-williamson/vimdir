@@ -42,9 +42,15 @@ let g:airline_left_sep='»'
 let g:airline_right_sep='«'
 
 " Fugitive binds
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gl :Git! log --graph --oneline<CR>
-nnoremap <Leader>gd :Git! diff<CR>
+nnoremap <Leader>gst :Gstatus<CR>
+nnoremap <Leader>glg :Git! log --graph --oneline<CR>
+nnoremap <Leader>glp :Git! log --graph --oneline -p<CR>
+nnoremap <Leader>gdi :Git! diff<CR>
+nnoremap <Leader>gdc :Git! diff --cached<CR>
+nnoremap <Leader>gci :Gcommit<CR>
+nnoremap <Leader>gaa :Git! add --all<CR>
+nnoremap <Leader>gfa :Git! fetch --all<CR>
+
 
 " Multiple cursors configuration
 map <Leader>mf :MultipleCursorsFind<Space>
