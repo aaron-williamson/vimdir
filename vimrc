@@ -13,15 +13,16 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Plugins go here
-Plugin 'scrooloose/nerdcommenter' " The NERD Commenter
-Plugin 'scrooloose/nerdtree' " The NERD Tree
-Plugin 'valloric/youcompleteme' " youcompleteme Autocompletion Plugin
-Plugin 'terryma/vim-multiple-cursors' " Sublime-text style multiple cursors
+Plugin 'scrooloose/nerdcommenter'         " The NERD Commenter
+Plugin 'scrooloose/nerdtree'              " The NERD Tree
+Plugin 'valloric/youcompleteme'           " youcompleteme Autocompletion Plugin
+Plugin 'rust-lang/rust.vim'               " Rust detection and highlighting
+Plugin 'terryma/vim-multiple-cursors'     " Sublime-text style multiple cursors
 Plugin 'altercation/vim-colors-solarized' " Solarized color scheme
-Plugin 'ctrlpvim/ctrlp.vim' " CtrlP for fuzzy find/open
-Plugin 'tpope/vim-fugitive' " Fugitive for git integration
-Plugin 'vim-airline/vim-airline' " Airline for better statusbar
-Plugin 'vim-airline/vim-airline-themes' " Themes for Airline
+Plugin 'ctrlpvim/ctrlp.vim'               " CtrlP for fuzzy find/open
+Plugin 'tpope/vim-fugitive'               " Fugitive for git integration
+Plugin 'vim-airline/vim-airline'          " Airline for better statusbar
+Plugin 'vim-airline/vim-airline-themes'   " Themes for Airline
 
 " Vundle Post reqs
 call vundle#end()
