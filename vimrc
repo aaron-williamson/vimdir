@@ -51,6 +51,8 @@ nnoremap <Leader>gdt :Gvdiff<CR>
 nnoremap <Leader>gci :Gcommit<CR>
 nnoremap <Leader>gaa :Gpedit! add --all<CR>
 nnoremap <Leader>gfa :Gpedit! fetch --all<CR>
+nnoremap <Leader>gpu :Gpush<Space>
+nnoremap <Leader>gpd :Gpull --ff-only<CR>
 
 
 " Multiple cursors configuration
