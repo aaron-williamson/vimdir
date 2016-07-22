@@ -54,11 +54,13 @@ nnoremap <Leader>gfa :Gpedit! fetch --all<CR>
 nnoremap <Leader>gpu :Gpush<Space>
 nnoremap <Leader>gpd :Gpull --ff-only<CR>
 
-
 " Multiple cursors configuration
 map <Leader>mf :MultipleCursorsFind<Space>
 let g:multi_cursor_exit_from_visual_mode=0
 let g:multi_cursor_exit_from_insert_mode=0
+
+" CtrlP configuration
+let g:ctrlp_open_new_file = 't'
 
 " Basic sets
 set number
@@ -111,6 +113,9 @@ map <Leader>e :NERDTreeToggle %%<CR>
 let hlstate=0
 nnoremap <Leader>h :if (hlstate == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=1-hlstate<CR>
 
+" Quick <Leader>t remapping
+nnoremap <Leader>t :noremap <Leader>t :
+
 " Bash-style tab from http://stackoverflow.com/questions/526858/how-do-i-make-vim-do-normal-bash-like-tab-completion-for-file-names
 set wildmode=list:longest,full
 set wildmenu
@@ -118,8 +123,9 @@ set wildmenu
 " Always show the status line
 set laststatus=2
 
-" Custom escape from insert mode remap
-inoremap jk <Esc>
+" Leave insert mode quickly
+noremap! jk <Esc>
+noremap! <Leader>a <Esc>
 
 " Mapping for going to the last window
 nnoremap <Leader>L <C-^>
