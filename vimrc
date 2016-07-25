@@ -58,9 +58,6 @@ map <Leader>mf :MultipleCursorsFind<Space>
 let g:multi_cursor_exit_from_visual_mode=0
 let g:multi_cursor_exit_from_insert_mode=0
 
-" CtrlP configuration
-let g:ctrlp_open_new_file = 't'
-
 " Basic sets
 set number
 set autoindent
