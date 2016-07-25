@@ -5,25 +5,32 @@ let mapleader=","
 set nocompatible
 filetype off
 
-" ~~~~~~~~ Vundle plugin and plugin configuration starts here ~~~~~~~~
+" ~~~~~~~~ Vundle plugin and plugins begin ~~~~~~~~
+
 " Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Let Vundle manage Vundle, required
+" Enable vundle
 Plugin 'VundleVim/Vundle.vim'
 
-" Plugins go here
-Plugin 'terryma/vim-multiple-cursors'     " Sublime-text style multiple cursors
-Plugin 'altercation/vim-colors-solarized' " Solarized color scheme
-Plugin 'ctrlpvim/ctrlp.vim'               " CtrlP for fuzzy find/open
-Plugin 'tpope/vim-fugitive'               " Fugitive for git integration
-Plugin 'rust-lang/rust.vim'               " Syntax highlighting for rust
-Plugin 'tpope/vim-rails'                  " Extra functions for rails
-Plugin 'vim-airline/vim-airline'          " Airline for better statusbar
-Plugin 'vim-airline/vim-airline-themes'   " Themes for Airline
+" Plugins -- Benchmarks not too accurate yet
+Plugin 'terryma/vim-multiple-cursors'     " Sublime-text style multiple cursors -- ~0ms
+Plugin 'altercation/vim-colors-solarized' " Solarized color scheme              -- ~20ms
+Plugin 'ctrlpvim/ctrlp.vim'               " CtrlP for fuzzy find/open           -- ~1ms
+Plugin 'tpope/vim-fugitive'               " Fugitive for git integration        -- ~5ms
+Plugin 'rust-lang/rust.vim'               " Syntax highlighting for rust        -- ~1ms
+Plugin 'tpope/vim-rails'                  " Extra functions for rails           -- ~3ms
+Plugin 'vim-airline/vim-airline'          " Airline for better statusbar        -- ~40ms
+Plugin 'vim-airline/vim-airline-themes'   " Themes for Airline                  -- ?
 
-" Vundle Post reqs
+" New plugins to try/benchmark:
+"Plugin 'tpope/vim-surround'              " Surround for quoting/brackets/html
+"Plugin 'mileszs/ack.vim'                 " Ack plugin for vim
+"Plugin 'pangloss/vim-javascript'         " Improved javascript highlighting/indentation
+"Plugin 'majutsushi/tagbar'               " Class outline viewer, seems neat
+
+" Run vundle on plugins
 call vundle#end()
 filetype plugin indent on
 
@@ -32,7 +39,7 @@ let g:airline_theme='solarized'
 let g:airline_left_sep='»'
 let g:airline_right_sep='«'
 
-" Fugitive binds
+" Fugitive mappings (matches my git aliases)
 nnoremap <Leader>gst :Gstatus<CR>
 nnoremap <Leader>glg :Gvsplit! log --graph --oneline<CR>
 nnoremap <Leader>glp :Gvsplit! log --graph --oneline -p<CR>
@@ -50,30 +57,53 @@ map <Leader>mf :MultipleCursorsFind<Space>
 let g:multi_cursor_exit_from_visual_mode=0
 let g:multi_cursor_exit_from_insert_mode=0
 
-" Solarized  scheme
+" Solarized color scheme
 colorscheme solarized
 set background=dark
 
-" ~~~~~~~~ Vundle and plugin stuff ends here ~~~~~~~~
+" ~~~~~~~~ Vundle and plugins end ~~~~~~~~
 
-" Basic sets
-set number
+" Automatically indent
 set autoindent
+
+" Highlight searches, and highlight while you type
 set hlsearch
 set incsearch
+
+" Show the current line and column numbers on the statusline
 set ruler
+
+" Use relative line numbers for all but current line
+set number
 set relativenumber
+
+" Highlight the line with the cursor
 set cursorline
+
+" Only use 1 height for the command-line, helps to avoid hit-enter prompts
 set cmdheight=1
+
+" Don't prompt for closing a file when you're opening a new file in the
+" current buffer
 set hidden
+
+" Auto reload file when it's been changed outside of vim without prompting
 set autoread
+
+" Only add one space when joining lines ending with '.', '!', or '?'
 set nojoinspaces
+
+" Enable smartcase searches (foo matches foo FOO fOo etc, Foo matches only Foo)
 set ignorecase
 set smartcase
+
+" Try to have at least 5 lines of room before the cursor
 set scrolloff=5
+
+" Enable syntax highlighting
 syntax enable
 
-" Backup to different directories
+" Backup to temp directories instead of cwd
 set backup
 set writebackup
 set backupdir=~/.vim-tmp//,~/.tmp//,~/tmp//,/var/tmp//,/tmp//
@@ -90,7 +120,7 @@ set sts=2
 set foldmethod=indent
 set foldlevelstart=20
 
-" Cool directory of current file from Gary Bernhardt
+" Expands to directory of current file from Gary Bernhardt
 cnoremap <expr> %% expand('%:h').'/'
 
 " Toggle highlight with <Leader>h
@@ -104,7 +134,7 @@ nnoremap <Leader>t :noremap <Leader>t :
 set wildmode=list:longest,full
 set wildmenu
 
-" Wait less time between key presses
+" Wait less time between key presses (specifically nice for multiple cursors)
 set ttimeout
 set timeoutlen=1000
 set ttimeoutlen=0
@@ -133,7 +163,7 @@ let g:netrw_liststyle=3
 " Explore current directory
 map <Leader>e :e %%<CR>
 
-" Backspace fixes
+" Backspace can delete indents and newlines
 set backspace=indent,eol,start
 
 " Toggle showing whitespace with <Leader>sw, <Leader>ss to show spaces, too
@@ -149,14 +179,16 @@ vnoremap <Leader>w <Esc>:w<CR>
 au FileType python setl sw=4 ts=4 et sts=4 " 4 Space for python
 au FileType java setl sw=4 ts=4 et sts=4 " 4 Space for java
 
-" Insert enter without entering insert mode using <Leader>nm
+" Insert newline without entering insert mode using <Leader>nm
 nnoremap <Leader>nm o<Esc>
 
 " Tab/shift+tab bindings for normal and visual mode
-nnoremap <Tab> >>_
-nnoremap <S-Tab> <<_
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
+vnoremap > >gv
+vnoremap < <gv
 
 " Toggle paste function
 function! TogglePasteMode()
@@ -172,19 +204,32 @@ endfunction
 " Use <Leader>p to toggle paste mode
 nnoremap <Leader>p :call TogglePasteMode() <CR>
 
-" Mapping for temporarily disabling line numbers for copy/paste
+" Temporarily disable all line numbers with <Leader>nn
 nnoremap <Leader>nn :set nu! <bar> set rnu!<CR>
 
-" Tab/split stuff:
-" Natural split appearance
+" Natural split placement
 set splitbelow
 set splitright
-" Better tab navigation, ctrl + left/right for change tab, ctrl + up/down for moving tabs
+
+" Automatic split sizing
+set winheight=30
+set winwidth=85
+set winminheight=5
+
+" More sensible resizing amounts
+nnoremap <C-w>- :resize -10<CR>
+nnoremap <C-w>= :resize +10<CR>
+nnoremap <C-w>+ :winc =<CR>
+nnoremap <C-w>. :vertical resize +10<CR>
+nnoremap <C-w>, :vertical resize -10<CR>
+
+" Ctrl + left/right for changing tabs, ctrl + up/down for moving tabs
 nnoremap <C-H> :tabprevious<CR>
 nnoremap <C-L> :tabnext<CR>
 nnoremap <silent> <C-J> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <C-K> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
-" Better split navigation, alt + normal navigation keys for navigation
+
+" Alt + normal navigation keys to navigate splits
 nnoremap ∆ <C-W><C-J>
 nnoremap ˚ <C-W><C-K>
 nnoremap ¬ <C-W><C-L>
