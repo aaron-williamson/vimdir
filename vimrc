@@ -14,7 +14,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Plugins go here
 Plugin 'scrooloose/nerdtree'              " The NERD Tree
-Plugin 'valloric/youcompleteme'           " youcompleteme Autocompletion Plugin
 Plugin 'terryma/vim-multiple-cursors'     " Sublime-text style multiple cursors
 Plugin 'altercation/vim-colors-solarized' " Solarized color scheme
 Plugin 'ctrlpvim/ctrlp.vim'               " CtrlP for fuzzy find/open
