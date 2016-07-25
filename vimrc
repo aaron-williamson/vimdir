@@ -5,6 +5,7 @@ let mapleader=","
 set nocompatible
 filetype off
 
+" ~~~~~~~~ Vundle plugin and plugin configuration starts here ~~~~~~~~
 " Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -13,7 +14,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Plugins go here
-Plugin 'scrooloose/nerdtree'              " The NERD Tree
 Plugin 'terryma/vim-multiple-cursors'     " Sublime-text style multiple cursors
 Plugin 'altercation/vim-colors-solarized' " Solarized color scheme
 Plugin 'ctrlpvim/ctrlp.vim'               " CtrlP for fuzzy find/open
@@ -26,14 +26,6 @@ Plugin 'vim-airline/vim-airline-themes'   " Themes for Airline
 " Vundle Post reqs
 call vundle#end()
 filetype plugin indent on
-
-" For NERDTree
-inoremap <Leader>- <Esc>:NERDTreeToggle<CR>
-vnoremap <Leader>- <Esc>:NERDTreeToggle<CR>
-nnoremap <Leader>- :NERDTreeToggle<CR>
-set modifiable
-let NERDTreeQuitOnOpen=1
-let NERDTreeShowLineNumbers=1
 
 " Airline config
 let g:airline_theme='solarized'
@@ -57,6 +49,12 @@ nnoremap <Leader>gpd :Gpull --ff-only<CR>
 map <Leader>mf :MultipleCursorsFind<Space>
 let g:multi_cursor_exit_from_visual_mode=0
 let g:multi_cursor_exit_from_insert_mode=0
+
+" Solarized  scheme
+colorscheme solarized
+set background=dark
+
+" ~~~~~~~~ Vundle and plugin stuff ends here ~~~~~~~~
 
 " Basic sets
 set number
@@ -82,13 +80,6 @@ set backupdir=~/.vim-tmp//,~/.tmp//,~/tmp//,/var/tmp//,/tmp//
 set backupskip=/tmp/*//,/private/tmp/*//
 set directory=~/.vim-tmp//,~/.tmp//,~/tmp//,/var/tmp//,/tmp//
 
-" Solarized color scheme
-set t_Co=256
-colorscheme solarized
-set background=dark
-hi Normal ctermbg=none
-hi NoText ctermbg=None
-
 " Set tab to 2 spaces
 set ts=2
 set sw=2
@@ -102,9 +93,6 @@ set foldlevelstart=20
 " Cool directory of current file from Gary Bernhardt
 cnoremap <expr> %% expand('%:h').'/'
 
-" Open nerdtree in current directory
-map <Leader>e :NERDTreeToggle %%<CR>
-
 " Toggle highlight with <Leader>h
 let hlstate=0
 nnoremap <Leader>h :if (hlstate == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=1-hlstate<CR>
@@ -115,6 +103,11 @@ nnoremap <Leader>t :noremap <Leader>t :
 " Bash-style tab from http://stackoverflow.com/questions/526858/how-do-i-make-vim-do-normal-bash-like-tab-completion-for-file-names
 set wildmode=list:longest,full
 set wildmenu
+
+" Wait less time between key presses
+set ttimeout
+set timeoutlen=1000
+set ttimeoutlen=0
 
 " Always show the status line
 set laststatus=2
@@ -133,6 +126,12 @@ nnoremap <Leader>; :
 
 " For quick replace
 nnoremap <Leader>r :%s/
+
+" Explorer uses tree view
+let g:netrw_liststyle=3
+
+" Explore current directory
+map <Leader>e :e %%<CR>
 
 " Backspace fixes
 set backspace=indent,eol,start
