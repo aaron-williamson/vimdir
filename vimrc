@@ -215,6 +215,7 @@ set splitright
 set winheight=30
 set winwidth=85
 set winminheight=5
+set winminwidth=15
 
 " More sensible resizing amounts
 nnoremap <C-w>- :resize -10<CR>
