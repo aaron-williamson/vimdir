@@ -187,8 +187,6 @@ nnoremap <Tab> >>
 nnoremap <S-Tab> <<
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
-vnoremap > >gv
-vnoremap < <gv
 
 " Toggle paste function
 function! TogglePasteMode()
