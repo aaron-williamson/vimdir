@@ -1,2 +1,2 @@
 # My gvimrc
-set gfn=Inconsolata:h18
+set guifont=Bitstream\ Vera\ Sans\ Mono:h16

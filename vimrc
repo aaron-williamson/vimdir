@@ -8,7 +8,6 @@ source $HOME/.vim/plugins.vim
 " ~~~~~~~~ Plugin Config ~~~~~~~~
 
 " Airline config
-let g:airline_theme='base16_tomorrow'
 let g:airline_left_sep='»'
 let g:airline_right_sep='«'
 
@@ -30,13 +29,18 @@ map <Leader>mf :MultipleCursorsFind<Space>
 let g:multi_cursor_exit_from_visual_mode=0
 let g:multi_cursor_exit_from_insert_mode=0
 
-" Solarized color scheme
-"colorscheme solarized
-"set background=dark
+" Color Schemes, solarized in windows
+" base16-tomorrow elsewhere
+if hostname() == "OCTAVIAN"
+  colorscheme solarized
+  let g:airline_theme='solarized'
+else
+  let base16colorspace=256
+  colorscheme base16-tomorrow-night
+  let g:airline_theme='base16_tomorrow'
+endif
 
-" Base16
-let base16colorspace=256
-colorscheme base16-tomorrow
+" Dark background
 set background=dark
 
 " ~~~~~~~~ Plugin config ends ~~~~~~~~
