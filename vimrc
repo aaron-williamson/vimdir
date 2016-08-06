@@ -42,7 +42,7 @@ filetype plugin indent on
 " ~~~~~~~~ Plugin Config ~~~~~~~~
 
 " Airline config
-let g:airline_theme='base16_ocean'
+let g:airline_theme='base16_tomorrow'
 let g:airline_left_sep='»'
 let g:airline_right_sep='«'
 
@@ -70,7 +70,7 @@ let g:multi_cursor_exit_from_insert_mode=0
 
 " Base16
 let base16colorspace=256
-colorscheme base16-tomorrow
+colorscheme base16-tomorrow-night
 set background=dark
 
 " ~~~~~~~~ Vundle and plugins end ~~~~~~~~
