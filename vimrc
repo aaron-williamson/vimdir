@@ -40,6 +40,9 @@ else
   let g:airline_theme='base16_tomorrow'
 endif
 
+" CtrlP Config, nicer behaviour of jumping
+let g:ctrlp_switch_buffer = 't'
+
 " Dark background
 set background=dark
 
@@ -58,6 +61,7 @@ set ruler
 " Use relative line numbers for all but current line
 set number
 set relativenumber
+
 
 " Highlight the line with the cursor
 set cursorline
@@ -139,8 +143,11 @@ nnoremap <Leader>; :
 " For quick replace
 nnoremap <Leader>r :%s/
 
-" Explorer uses tree view
+" Netrw (file browser) config
+" use tree view
 let g:netrw_liststyle=3
+" show line numbers in netrw
+let g:netrw_bufsettings="nu rnu"
 
 " Explore current directory
 map <Leader>e :e %%<CR>
