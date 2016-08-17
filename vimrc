@@ -168,8 +168,8 @@ vnoremap <Leader>w <Esc>:w<CR>
 au FileType python setl sw=4 ts=4 et sts=4 " 4 Space for python
 au FileType java setl sw=4 ts=4 et sts=4 " 4 Space for java
 
-" Insert newline without entering insert mode using <Leader>nm
-nnoremap <Leader>nm o<Esc>
+" Insert newline without entering insert mode using return
+nnoremap <CR> o<Esc>
 
 " Tab/shift+tab bindings for normal and visual mode
 nnoremap <Tab> >>
