@@ -109,10 +109,6 @@ set foldlevelstart=20
 " Expands to directory of current file from Gary Bernhardt
 cnoremap <expr> %% expand('%:h').'/'
 
-" Toggle highlight with <Leader>h
-let hlstate=0
-nnoremap <Leader>h :if (hlstate == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=1-hlstate<CR>
-
 " Quick <Leader>t remapping
 nnoremap <Leader>t :noremap <Leader>t :
 
@@ -143,6 +139,14 @@ nnoremap <Leader>; :
 " For quick replace
 nnoremap <Leader>r :%s/
 
+" Quick copy/paste with system clipboard
+nnoremap <Leader>cC "+Y
+nnoremap <Leader>cc "+y
+vnoremap <Leader>cc "+y
+nnoremap <Leader>cp "+p
+nnoremap <Leader>cP "+P
+vnoremap <Leader>cp "+p
+
 " Netrw (file browser) config
 " use tree view
 let g:netrw_liststyle=3
@@ -158,6 +162,9 @@ set backspace=indent,eol,start
 " Toggle showing whitespace with <Leader>sw, <Leader>ss to show spaces, too
 nnoremap <Leader>sw :set list! <bar> set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<<CR>
 nnoremap <Leader>ss :set list! <bar> set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<,space:%<CR>
+
+" Temporarily disable all line numbers with <Leader>nn
+nnoremap <Leader>nn :set nu! <bar> set rnu!<CR>
 
 " Fast write
 nnoremap <Leader>w :w<CR>
@@ -191,8 +198,19 @@ endfunction
 " Use <Leader>p to toggle paste mode
 nnoremap <Leader>p :call TogglePasteMode() <CR>
 
-" Temporarily disable all line numbers with <Leader>nn
-nnoremap <Leader>nn :set nu! <bar> set rnu!<CR>
+" Toggle highlight function
+function! ToggleHighlightSearch()
+  if &hlsearch
+    set nohlsearch
+    echo "Disabled search highlighting"
+  else
+    set hlsearch
+    echo "Enabled search highlighting"
+  end
+endfunction
+
+" Toggle highlight with <Leader>h
+nnoremap <Leader>h :call ToggleHighlightSearch() <CR>
 
 " Natural split placement
 set splitbelow
