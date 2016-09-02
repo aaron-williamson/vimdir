@@ -29,6 +29,11 @@ map <Leader>mf :MultipleCursorsFind<Space>
 let g:multi_cursor_exit_from_visual_mode=0
 let g:multi_cursor_exit_from_insert_mode=0
 
+" Ack configuration
+let g:ack_autoclose = 1
+let g:ack_autofold_results = 1
+nnoremap <C-a> :LAck<Space>
+
 " Color Schemes, solarized in windows
 " base16-tomorrow elsewhere
 if hostname() == "OCTAVIAN"
@@ -185,18 +190,28 @@ vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
 " Toggle paste function
-function! TogglePasteMode()
+function! TogglePasteMode(after_mode)
   if &paste
     set nopaste
     echo "Disabled paste mode"
   else
     set paste
-    startinsert
+    if a:after_mode == "i"
+      startinsert
+    elseif a:after_mode == "o"
+      normal o
+    end
   end
 endfunction
 
-" Use <Leader>p to toggle paste mode
-nnoremap <Leader>p :call TogglePasteMode() <CR>
+" Use <Leader>p[letter] with a letter to toggle paste mode
+" the letter determines the mode after toggling paste:
+"   i: insert mode
+"   o: insert mode on newline
+"   p: no change
+nnoremap <Leader>pi :call TogglePasteMode("i")<CR>
+nnoremap <Leader>po :call TogglePasteMode("o")<CR>
+nnoremap <Leader>pp :call TogglePasteMode("")<CR>
 
 " Toggle highlight function
 function! ToggleHighlightSearch()
@@ -210,7 +225,7 @@ function! ToggleHighlightSearch()
 endfunction
 
 " Toggle highlight with <Leader>h
-nnoremap <Leader>h :call ToggleHighlightSearch() <CR>
+nnoremap <Leader>h :call ToggleHighlightSearch()<CR>
 
 " Natural split placement
 set splitbelow
