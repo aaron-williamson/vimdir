@@ -45,8 +45,9 @@ else
   let g:airline_theme='base16_tomorrow'
 endif
 
-" CtrlP Config, nicer behaviour of jumping
+" CtrlP configuriation
 let g:ctrlp_switch_buffer = 't'
+let g:ctrlp_open_multiple_files = 't'
 
 " Dark background
 set background=dark
