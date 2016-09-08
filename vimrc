@@ -32,7 +32,20 @@ let g:multi_cursor_exit_from_insert_mode=0
 " Ack configuration
 let g:ack_autoclose = 1
 let g:ack_autofold_results = 1
-nnoremap <C-a> :LAck<Space>
+nnoremap <Leader>a :LAck<Space>
+
+" CtrlP configuriation
+let g:ctrlp_switch_buffer = 't'
+let g:ctrlp_open_multiple_files = 't'
+
+" Netrw (file browser) config
+" use tree view
+let g:netrw_liststyle=3
+" show line numbers in netrw
+let g:netrw_bufsettings="nu rnu"
+
+" Dark background
+set background=dark
 
 " Color Schemes, solarized in windows
 " base16-tomorrow elsewhere
@@ -44,13 +57,6 @@ else
   colorscheme base16-tomorrow-night
   let g:airline_theme='base16_tomorrow'
 endif
-
-" CtrlP configuriation
-let g:ctrlp_switch_buffer = 't'
-let g:ctrlp_open_multiple_files = 't'
-
-" Dark background
-set background=dark
 
 " ~~~~~~~~ Plugin config ends ~~~~~~~~
 
@@ -67,7 +73,6 @@ set ruler
 " Use relative line numbers for all but current line
 set number
 set relativenumber
-
 
 " Highlight the line with the cursor
 set cursorline
@@ -112,12 +117,6 @@ set sts=2
 set foldmethod=indent
 set foldlevelstart=20
 
-" Expands to directory of current file from Gary Bernhardt
-cnoremap <expr> %% expand('%:h').'/'
-
-" Quick <Leader>t remapping
-nnoremap <Leader>t :noremap <Leader>t :
-
 " Bash-style tab from http://stackoverflow.com/questions/526858/how-do-i-make-vim-do-normal-bash-like-tab-completion-for-file-names
 set wildmode=list:longest,full
 set wildmenu
@@ -129,6 +128,29 @@ set ttimeoutlen=0
 
 " Always show the status line
 set laststatus=2
+
+" Backspace can delete indents and newlines
+set backspace=indent,eol,start
+
+" Natural split placement
+set splitbelow
+set splitright
+
+" Automatic split sizing
+set winheight=30
+set winwidth=85
+set winminheight=5
+set winminwidth=15
+
+" Syntax specific indentation
+au FileType python setl sw=4 ts=4 et sts=4 " 4 Space for python
+au FileType java setl sw=4 ts=4 et sts=4 " 4 Space for java
+
+" Expands to directory of current file from Gary Bernhardt
+cnoremap <expr> %% expand('%:h').'/'
+
+" Quick <Leader>t remapping
+nnoremap <Leader>t :noremap <Leader>t :
 
 " Leave insert mode quickly
 noremap! jk <Esc>
@@ -153,17 +175,8 @@ nnoremap <Leader>cp "+p
 nnoremap <Leader>cP "+P
 vnoremap <Leader>cp "+p
 
-" Netrw (file browser) config
-" use tree view
-let g:netrw_liststyle=3
-" show line numbers in netrw
-let g:netrw_bufsettings="nu rnu"
-
 " Explore current directory
 map <Leader>e :e %%<CR>
-
-" Backspace can delete indents and newlines
-set backspace=indent,eol,start
 
 " Toggle showing whitespace with <Leader>sw, <Leader>ss to show spaces, too
 nnoremap <Leader>sw :set list! <bar> set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<<CR>
@@ -177,12 +190,8 @@ nnoremap <Leader>w :w<CR>
 inoremap <Leader>w <Esc>:w<CR>
 vnoremap <Leader>w <Esc>:w<CR>
 
-" Syntax specific indentation
-au FileType python setl sw=4 ts=4 et sts=4 " 4 Space for python
-au FileType java setl sw=4 ts=4 et sts=4 " 4 Space for java
-
-" Insert newline without entering insert mode using return
-nnoremap <CR> o<Esc>
+" Insert newline without entering insert mode with <Leader>nm
+nnoremap <Leader>nm o<Esc>
 
 " Tab/shift+tab bindings for normal and visual mode
 nnoremap <Tab> >>
@@ -227,16 +236,6 @@ endfunction
 
 " Toggle highlight with <Leader>h
 nnoremap <Leader>h :call ToggleHighlightSearch()<CR>
-
-" Natural split placement
-set splitbelow
-set splitright
-
-" Automatic split sizing
-set winheight=30
-set winwidth=85
-set winminheight=5
-set winminwidth=15
 
 " More sensible resizing amounts
 nnoremap <C-w>- :resize -10<CR>
