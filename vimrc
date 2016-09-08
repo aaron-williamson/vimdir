@@ -154,7 +154,6 @@ nnoremap <Leader>t :noremap <Leader>t :
 
 " Leave insert mode quickly
 noremap! jk <Esc>
-noremap! <Leader>a <Esc>
 
 " Mapping for going to the last window
 nnoremap <Leader>L <C-^>
