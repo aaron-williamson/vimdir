@@ -100,6 +100,12 @@ set scrolloff=5
 " Enable syntax highlighting
 syntax enable
 
+" Set history to max
+set history=10000
+
+" Enable ttyfast
+set ttyfast
+
 " Backup to temp directories instead of cwd
 set backup
 set writebackup
