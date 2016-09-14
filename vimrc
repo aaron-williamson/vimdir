@@ -44,21 +44,17 @@ let g:netrw_liststyle=3
 " show line numbers in netrw
 let g:netrw_bufsettings="nu rnu"
 
+" ~~~~~~~~ Plugin config ends ~~~~~~~~
+
 " Dark background
 set background=dark
 
-" Color Schemes, solarized in windows
-" base16-tomorrow elsewhere
-if hostname() == "OCTAVIAN"
-  colorscheme solarized
-  let g:airline_theme='solarized'
-else
-  let base16colorspace=256
-  colorscheme base16-tomorrow-night
-  let g:airline_theme='base16_tomorrow'
-endif
+" Use True Color
+set termguicolors
 
-" ~~~~~~~~ Plugin config ends ~~~~~~~~
+" Color Scheme base16-tomorrow-night
+colorscheme base16-tomorrow-night
+let g:airline_theme='base16_tomorrow'
 
 " Automatically indent
 set autoindent
