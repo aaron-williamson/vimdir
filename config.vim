@@ -10,11 +10,14 @@ let g:netrw_liststyle=3
 " show line numbers in netrw
 let g:netrw_bufsettings="nu rnu"
 
+" Enable the built-in manual viewer
+runtime ftplugin/man.vim
+
 " Dark background
 set background=dark
 
 " Default colorscheme
-colorscheme darkblue
+colorscheme elflord
 
 " Use True Color
 if v:version > 704 || v:version == 704 && has("patch1799")
