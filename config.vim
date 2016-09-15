@@ -1,14 +1,17 @@
 " Configuration for standalone vim
 " This config file will work even if no plugins are loaded
 
+" Disable Vi compatibility
+set nocompatible
+
 " Custom leader
-let mapleader=","
+let mapleader = ","
 
 " Netrw (file browser) config
 " use tree view
-let g:netrw_liststyle=3
+let g:netrw_liststyle = 3
 " show line numbers in netrw
-let g:netrw_bufsettings="nu rnu"
+let g:netrw_bufsettings = "nu rnu"
 
 " Enable the built-in manual viewer
 runtime ftplugin/man.vim
@@ -19,7 +22,7 @@ set background=dark
 " Default colorscheme
 colorscheme elflord
 
-" Use True Color
+" Use True Color if it's available
 if v:version > 704 || v:version == 704 && has("patch1799")
   set termguicolors
 endif
@@ -41,9 +44,6 @@ set relativenumber
 " Highlight the line with the cursor
 set cursorline
 
-" Only use 1 height for the command-line, helps to avoid hit-enter prompts
-set cmdheight=1
-
 " Don't prompt for closing a file when you're opening a new file in the
 " current buffer
 set hidden
@@ -58,7 +58,7 @@ set nojoinspaces
 set ignorecase
 set smartcase
 
-" Try to have at least 5 lines of room before the cursor
+" Try to have at least 5 lines of vertical room surrounding the cursor
 set scrolloff=5
 
 " Enable syntax highlighting
@@ -124,11 +124,6 @@ nnoremap <Leader>t :noremap <Leader>t :
 
 " Mapping for going to the last window
 nnoremap <Leader>L <C-^>
-
-" For quick command-writing
-inoremap <Leader>; <Esc>:
-vnoremap <Leader>; <Esc>:
-nnoremap <Leader>; :
 
 " For quick replace
 nnoremap <Leader>r :%s/
@@ -210,14 +205,23 @@ nnoremap <C-w>+ :winc =<CR>
 nnoremap <C-w>. :vertical resize +10<CR>
 nnoremap <C-w>, :vertical resize -10<CR>
 
-" Ctrl + left/right for changing tabs, ctrl + up/down for moving tabs
-nnoremap <C-H> :tabprevious<CR>
-nnoremap <C-L> :tabnext<CR>
-nnoremap <silent> <C-J> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <silent> <C-K> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
+" Ctrl + h/l for changing tabs, ctrl + k/j for moving tabs
+nnoremap <C-h> :tabprevious<CR>
+nnoremap <C-l> :tabnext<CR>
+nnoremap <silent> <C-j> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+nnoremap <silent> <C-k> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 
 " Alt + normal navigation keys to navigate splits
-nnoremap ∆ <C-W><C-J>
-nnoremap ˚ <C-W><C-K>
-nnoremap ¬ <C-W><C-L>
-nnoremap ˙ <C-W><C-H>
+" For OS X use the special symbols alt + navigation keys creates
+" Elsewhere just use the alt key
+if has("unix") && system("uname -s") == "Darwin\n"
+  nnoremap ∆ <C-w><C-j>
+  nnoremap ˚ <C-w><C-k>
+  nnoremap ¬ <C-w><C-l>
+  nnoremap ˙ <C-w><C-h>
+else
+  nnoremap <A-j> <C-w><C-j>
+  nnoremap <A-k> <C-w><C-k>
+  nnoremap <A-l> <C-w><C-l>
+  nnoremap <A-h> <C-w><C-h>
+endif

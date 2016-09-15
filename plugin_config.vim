@@ -1,9 +1,10 @@
 " Configuration for my vim plugins
 
 " Airline config
-let g:airline_left_sep='»'
-let g:airline_right_sep='«'
-let g:airline_theme='base16_tomorrow'
+" Requires unicode support for separators
+let g:airline_left_sep = '»'
+let g:airline_right_sep = '«'
+let g:airline_theme = 'base16_tomorrow'
 
 " Fugitive mappings (matches my git aliases)
 nnoremap <Leader>gst :Gstatus<CR>
@@ -20,8 +21,8 @@ nnoremap <Leader>gpd :Gpull --ff-only<CR>
 
 " Multiple cursors configuration
 map <Leader>mf :MultipleCursorsFind<Space>
-let g:multi_cursor_exit_from_visual_mode=0
-let g:multi_cursor_exit_from_insert_mode=0
+let g:multi_cursor_exit_from_visual_mode = 0
+let g:multi_cursor_exit_from_insert_mode = 0
 
 " Ack configuration
 let g:ack_autoclose = 1
