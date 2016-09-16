@@ -33,5 +33,7 @@ nnoremap <Leader>a :LAck<Space>
 let g:ctrlp_switch_buffer = 't'
 let g:ctrlp_open_multiple_files = 't'
 
-" Color scheme
-silent! colorscheme base16-tomorrow-night
+" Color scheme but only if we have true color
+if has("termguicolors")
+  silent! colorscheme base16-tomorrow-night
+endif

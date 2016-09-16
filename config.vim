@@ -7,6 +7,9 @@ set nocompatible
 " Custom leader
 let mapleader = ","
 
+" Preserve comma behaviour with ,,
+noremap <Leader><Leader> ,
+
 " Netrw (file browser) config
 " use tree view
 let g:netrw_liststyle = 3
@@ -23,8 +26,13 @@ set background=dark
 colorscheme elflord
 
 " Use True Color if it's available
-if v:version > 704 || v:version == 704 && has("patch1799")
+if has("termguicolors")
   set termguicolors
+endif
+
+" Enable breakindent if it's available
+if has("linebreak")
+  set breakindent
 endif
 
 " Automatically indent
@@ -63,6 +71,9 @@ set scrolloff=5
 
 " Enable syntax highlighting
 syntax enable
+
+" Show the currently executing command
+set showcmd
 
 " Set history to max
 set history=10000
