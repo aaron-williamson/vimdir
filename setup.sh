@@ -12,4 +12,4 @@ fi
 
 # Install plugins, may run into problems if the vundle.vim folder
 # was created but vundle wasn't installed
-vim -u $current_dir/plugins.vim +PluginInstall +qall
+vim -u $current_dir/config/10_plugins.vim +PluginInstall +qall

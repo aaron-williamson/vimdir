@@ -4,6 +4,7 @@
 " Requires unicode support for separators
 let g:airline_left_sep = '»'
 let g:airline_right_sep = '«'
+let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'base16_tomorrow'
 
 " Fugitive mappings (matches my git aliases)
@@ -37,3 +38,6 @@ let g:ctrlp_open_multiple_files = 't'
 if has("termguicolors")
   silent! colorscheme base16-tomorrow-night
 endif
+
+" Toggle tagbar
+nnoremap <Leader>c :TagbarToggle<CR>
