@@ -22,16 +22,6 @@ set background=dark
 " Default colorscheme
 colorscheme elflord
 
-" Use True Color if it's available
-if has("termguicolors")
-  set termguicolors
-endif
-
-" Enable breakindent if it's available
-if has("linebreak")
-  set breakindent
-endif
-
 " Automatically indent
 set autoindent
 
@@ -78,13 +68,6 @@ set history=10000
 " Enable ttyfast
 set ttyfast
 
-" Use system clipboard for yanks
-if has('unnamedplus')
-  set clipboard=unnamedplus
-else
-  set clipboard=unnamed
-endif
-
 " Backup to temp directories instead of cwd
 set backup
 set writebackup
@@ -130,3 +113,22 @@ set winminwidth=15
 " Syntax specific indentation
 au FileType python setl sw=4 ts=4 et sts=4 " 4 Space for python
 au FileType java setl sw=4 ts=4 et sts=4 " 4 Space for java
+
+" ~~~ Conditional Settings ~~~
+
+" Use system clipboard for yanks
+if has('unnamedplus')
+  set clipboard=unnamedplus
+else
+  set clipboard=unnamed
+endif
+
+" Use True Color if it's available
+if has("termguicolors")
+  set termguicolors
+endif
+
+" Enable breakindent if it's available
+if has("linebreak")
+  set breakindent
+endif
