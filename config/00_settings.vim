@@ -93,10 +93,10 @@ set backupskip=/tmp/*//,/private/tmp/*//
 set directory=~/.vim-tmp//,~/.tmp//,~/tmp//,/var/tmp//,/tmp//
 
 " Set tab to 2 spaces
-set ts=2
-set sw=2
-set et
-set sts=2
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set softtabstop=2
 
 " Set folds to indents and open all folds
 set foldmethod=indent
