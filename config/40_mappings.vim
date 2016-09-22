@@ -59,8 +59,8 @@ nnoremap <C-w>. :vertical resize +10<CR>
 nnoremap <C-w>, :vertical resize -10<CR>
 
 " Ctrl + h/l for changing tabs, ctrl + k/j for moving tabs
-nnoremap <C-H> :call TabOrBufferPrevious()<CR>
-nnoremap <C-L> :call TabOrBufferNext()<CR>
+nnoremap <C-h> :call TabOrBufferPrevious()<CR>
+nnoremap <C-l> :call TabOrBufferNext()<CR>
 nnoremap <silent> <C-j> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <C-k> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 

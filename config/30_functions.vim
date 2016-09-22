@@ -35,7 +35,7 @@ function! TabOrBufferNext()
   end
 endfunction
 
-function! TabOrBufferPrev()
+function! TabOrBufferPrevious()
   if tabpagenr('$') == 1
     bprevious
   else
