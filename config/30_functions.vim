@@ -25,3 +25,20 @@ function! ToggleHighlightSearch()
     echo "Enabled search highlighting"
   end
 endfunction
+
+" Tab functions
+function! TabOrBufferNext()
+  if tabpagenr('$') == 1
+    bnext
+  else
+    tabnext
+  end
+endfunction
+
+function! TabOrBufferPrev()
+  if tabpagenr('$') == 1
+    bprevious
+  else
+    tabprevious
+  end
+endfunction
