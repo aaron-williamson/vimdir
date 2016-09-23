@@ -57,18 +57,3 @@ nnoremap <C-h> :call TabOrBufferPrevious()<CR>
 nnoremap <C-l> :call TabOrBufferNext()<CR>
 nnoremap <silent> <C-j> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <C-k> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
-
-" Alt + normal navigation keys to navigate splits
-" For OS X use the special symbols alt + navigation keys creates
-" Elsewhere just use the alt key
-if has("unix") && system("uname -s") == "Darwin\n"
-  nnoremap ∆ <C-w><C-j>
-  nnoremap ˚ <C-w><C-k>
-  nnoremap ¬ <C-w><C-l>
-  nnoremap ˙ <C-w><C-h>
-else
-  nnoremap <A-j> <C-w><C-j>
-  nnoremap <A-k> <C-w><C-k>
-  nnoremap <A-l> <C-w><C-l>
-  nnoremap <A-h> <C-w><C-h>
-endif

@@ -41,3 +41,17 @@ endif
 
 " Toggle tagbar
 nnoremap <Leader>c :TagbarToggle<CR>
+
+" Vim-tmux-navigator mappings
+let g:tmux_navigator_no_mappings = 1
+if has("unix") && system("uname -s") == "Darwin\n"
+  nnoremap <silent> ˙ :TmuxNavigateLeft<CR>
+  nnoremap <silent> ∆ :TmuxNavigateDown<CR>
+  nnoremap <silent> ˚ :TmuxNavigateUp<CR>
+  nnoremap <silent> ¬ :TmuxNavigateRight<CR>
+else
+  nnoremap <silent> <A-h> :TmuxNavigateLeft<CR>
+  nnoremap <silent> <A-j> :TmuxNavigateDown<CR>
+  nnoremap <silent> <A-k> :TmuxNavigateUp<CR>
+  nnoremap <silent> <A-l> :TmuxNavigateRight<CR>
+endif

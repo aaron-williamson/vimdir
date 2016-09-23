@@ -1,5 +1,6 @@
 " My plugins
 " The text after -- are benchmarks regarding vim config
+" Benchmarks probably need to be re-done now that I'm using Neovim
 
 " Turn filetype off for vundle
 filetype off
@@ -28,6 +29,9 @@ Plugin 'tpope/vim-surround'               " Surround for quoting/brackets/html  
 Plugin 'mileszs/ack.vim'                  " Ack plugin for vim                  -- 150ms (+1ms)
 Plugin 'pangloss/vim-javascript'          " Improved javascript support         -- 150ms (+0ms)
 Plugin 'majutsushi/tagbar'                " Class outline viewer, seems neat    -- 152ms (+2ms)
+
+" No benchmarks for these
+Plugin 'christoomey/vim-tmux-navigator'   " Allow seamless movement between vim and tmux
 
 " End vundle
 call vundle#end()
