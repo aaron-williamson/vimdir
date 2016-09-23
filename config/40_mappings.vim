@@ -33,12 +33,6 @@ vnoremap <Leader>w <Esc>:w<CR>
 " Insert newline without entering insert mode with <Leader>nm
 nnoremap <Leader>nm o<Esc>
 
-" Tab/shift+tab bindings for normal and visual mode
-nnoremap <Tab> >>
-nnoremap <S-Tab> <<
-vnoremap <Tab> >gv
-vnoremap <S-Tab> <gv
-
 " Use <Leader>p[letter] with a letter to toggle paste mode
 " the letter determines the mode after toggling paste:
 "   i: insert mode
