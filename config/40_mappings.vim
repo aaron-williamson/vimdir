@@ -10,10 +10,10 @@ cnoremap <expr> %% expand('%:h').'/'
 nnoremap <Leader>t :noremap <Leader>t :
 
 " Mapping for going to the last window
-nnoremap <Leader>L <C-^>
+nnoremap <Leader>l <C-^>
 
 " For quick replace
-nnoremap <Leader>r :%s/
+nnoremap <Leader>R :%s/
 
 " Explore current directory
 map <Leader>e :e %%<CR>
@@ -24,6 +24,9 @@ nnoremap <Leader>ss :set list! <bar> set listchars=tab:>-,eol:$,trail:~,extends:
 
 " Temporarily disable all line numbers with <Leader>nn
 nnoremap <Leader>nn :set nu! <bar> set rnu!<CR>
+
+" Close quickfix and location list
+nnoremap <Leader>c :ccl <bar> lcl<CR>
 
 " Fast write
 nnoremap <Leader>w :w<CR>

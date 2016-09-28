@@ -25,6 +25,14 @@ map <Leader>mf :MultipleCursorsFind<Space>
 let g:multi_cursor_exit_from_visual_mode = 0
 let g:multi_cursor_exit_from_insert_mode = 0
 
+" Rails mappings
+nnoremap <Leader>rm :Emodel<CR>
+nnoremap <Leader>rc :Econtroller<CR>
+nnoremap <Leader>rv :Eview<Space>
+nnoremap <Leader>rh :Ehelper<CR>
+nnoremap <Leader>ra :A<CR>
+nnoremap <Leader>rr :R<CR>
+
 " Ack configuration
 let g:ack_autoclose = 1
 let g:ack_autofold_results = 1
@@ -38,9 +46,6 @@ let g:ctrlp_open_multiple_files = 't'
 if has("termguicolors")
   silent! colorscheme base16-tomorrow-night
 endif
-
-" Toggle tagbar
-nnoremap <Leader>c :TagbarToggle<CR>
 
 " Vim-tmux-navigator mappings
 let g:tmux_navigator_no_mappings = 1
