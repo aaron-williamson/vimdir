@@ -2,10 +2,10 @@
 
 " Airline config
 " Requires unicode support for separators
-let g:airline_left_sep = '»'
-let g:airline_right_sep = '«'
+let g:airline_left_sep                   = '»'
+let g:airline_right_sep                  = '«'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'base16_tomorrow'
+let g:airline_theme                      = 'base16_tomorrow'
 
 " Fugitive mappings (matches my git aliases)
 nnoremap <Leader>gst :Gstatus<CR>
@@ -34,12 +34,13 @@ nnoremap <Leader>ra :A<CR>
 nnoremap <Leader>rr :R<CR>
 
 " Ack configuration
-let g:ack_autoclose = 1
+let g:ack_autoclose        = 1
 let g:ack_autofold_results = 1
+let g:ackpreview           = 1
 nnoremap <Leader>a :LAck<Space>
 
 " CtrlP configuriation
-let g:ctrlp_switch_buffer = 't'
+let g:ctrlp_switch_buffer       = 't'
 let g:ctrlp_open_multiple_files = 't'
 
 " Color scheme but only if we have true color

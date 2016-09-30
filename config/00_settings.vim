@@ -8,9 +8,8 @@ set nocompatible
 let mapleader = ","
 
 " Netrw (file browser) config
-" use tree view
-let g:netrw_liststyle = 3
-" show line numbers in netrw
+" use tree view and show line numbers in netrw
+let g:netrw_liststyle   = 3
 let g:netrw_bufsettings = "nu rnu"
 
 " Enable the built-in manual viewer
