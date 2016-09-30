@@ -55,6 +55,19 @@ nnoremap <C-w>+ :winc =<CR>
 nnoremap <C-w>. :vertical resize +10<CR>
 nnoremap <C-w>, :vertical resize -10<CR>
 
+" Split navigation
+if (has("unix") && system("uname -s") == "Darwin\n") || $SSH_FROM_MAC
+  nnoremap <silent> ˙ <C-w>h
+  nnoremap <silent> ∆ <C-w>j
+  nnoremap <silent> ˚ <C-w>k
+  nnoremap <silent> ¬ <C-w>l
+else
+  nnoremap <silent> <A-h> <C-w>h
+  nnoremap <silent> <A-j> <C-w>j
+  nnoremap <silent> <A-k> <C-w>k
+  nnoremap <silent> <A-l> <C-w>l
+endif
+
 " Ctrl + h/l for changing tabs, ctrl + k/j for moving tabs
 nnoremap <C-h> :call TabOrBufferPrevious()<CR>
 nnoremap <C-l> :call TabOrBufferNext()<CR>
