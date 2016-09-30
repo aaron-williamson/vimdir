@@ -31,7 +31,7 @@ nnoremap <Leader>rc :Econtroller<CR>
 nnoremap <Leader>rv :Eview<Space>
 nnoremap <Leader>rh :Ehelper<CR>
 nnoremap <Leader>ra :A<CR>
-nnoremap <Leader>rr :R<CR>
+nnoremap <Leader>rr :Einitializer<CR>
 
 " Ack configuration
 let g:ack_autoclose        = 1
