@@ -1,7 +1,7 @@
 " Configuration for my vim plugins
 
-" Only configure plugins if we have them
-if g:plugins_loaded
+" Don't configure plugins if we don't want plugins
+if !$NO_VIM_PLUGINS
 
   " Airline config
   " Requires unicode support for separators

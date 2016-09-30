@@ -15,11 +15,14 @@ let g:netrw_bufsettings = "nu rnu"
 " Enable the built-in manual viewer
 runtime ftplugin/man.vim
 
+" Enable filetype detection and auto-indentation
+filetype plugin indent on
+
 " Dark background
 set background=dark
 
-" Default colorscheme
-colorscheme elflord
+" Default to desert colorscheme
+colorscheme desert
 
 " Automatically indent
 set autoindent
@@ -127,7 +130,8 @@ if has("termguicolors")
   set termguicolors
 endif
 
-" Enable breakindent if it's available
+" Enable breakindent and linebreak if they're available
 if has("linebreak")
   set breakindent
+  set linebreak
 endif

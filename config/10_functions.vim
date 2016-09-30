@@ -42,3 +42,12 @@ function! TabOrBufferPrevious()
     tabprevious
   end
 endfunction
+
+" Function to toggle writing mode
+function! ToggleSpelling()
+  if &spell
+    set nospell
+  else
+    setlocal spell spelllang=en_us
+  endif
+endfunction
