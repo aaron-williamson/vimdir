@@ -15,7 +15,6 @@ if !$NO_VIM_PLUGINS
 
   Plugin 'terryma/vim-multiple-cursors'     " Sublime-text style multiple cursors
   Plugin 'chriskempson/base16-vim'          " Base 16 color schemes
-  Plugin 'altercation/vim-colors-solarized' " Solarized color scheme
   Plugin 'ctrlpvim/ctrlp.vim'               " CtrlP for fuzzy find/open
   Plugin 'tpope/vim-fugitive'               " Fugitive for git integration
   Plugin 'rust-lang/rust.vim'               " Syntax highlighting for rust
@@ -25,7 +24,7 @@ if !$NO_VIM_PLUGINS
   Plugin 'tpope/vim-surround'               " Surround for quoting/brackets/html
   Plugin 'mileszs/ack.vim'                  " Ack plugin for vim
   Plugin 'pangloss/vim-javascript'          " Improved javascript support
-  Plugin 'majutsushi/tagbar'                " Class outline viewer, seems neat
+  Plugin 'majutsushi/tagbar'                " Class outline viewer
   Plugin 'christoomey/vim-tmux-navigator'   " Allow seamless movement between vim and tmux
 
   " End vundle

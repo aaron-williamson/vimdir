@@ -8,7 +8,6 @@ if !$NO_VIM_PLUGINS
   let g:airline_left_sep                   = '»'
   let g:airline_right_sep                  = '«'
   let g:airline#extensions#tabline#enabled = 1
-  let g:airline_theme                      = 'base16_tomorrow'
 
   " Fugitive mappings (matches my git aliases)
   nnoremap <Leader>gst :Gstatus<CR>
@@ -48,12 +47,13 @@ if !$NO_VIM_PLUGINS
 
   " Color scheme but only if we have true color
   if has("termguicolors")
-    silent! colorscheme base16-tomorrow-night
+    silent! colorscheme base16-monokai
+    let g:airline_theme = 'base16_monokai'
   endif
 
   " Vim-tmux-navigator mappings
   let g:tmux_navigator_no_mappings = 1
-  if has("unix") && system("uname -s") == "Darwin\n"
+  if (has("unix") && system("uname -s") == "Darwin\n") || $SSH_FROM_MAC
     nnoremap <silent> ˙ :TmuxNavigateLeft<CR>
     nnoremap <silent> ∆ :TmuxNavigateDown<CR>
     nnoremap <silent> ˚ :TmuxNavigateUp<CR>
