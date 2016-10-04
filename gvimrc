@@ -1,2 +1,2 @@
 # My gvimrc
-set guifont=Bitstream\ Vera\ Sans\ Mono:h18
+set guifont=Hack:h18
