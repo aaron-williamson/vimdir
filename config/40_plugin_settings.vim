@@ -5,9 +5,23 @@ if !$NO_VIM_PLUGINS
 
   " Airline config
   " Requires unicode support for separators
-  let g:airline_left_sep                   = '»'
-  let g:airline_right_sep                  = '«'
-  let g:airline#extensions#tabline#enabled = 1
+  let g:airline_left_sep                                   = '»'
+  let g:airline_right_sep                                  = '«'
+  let g:airline#extensions#tabline#enabled                 = 1
+  let g:airline#extensions#tabline#tab_nr_type             = 1
+  let g:airline#extensions#tabline#buffer_idx_mode         = 1
+  let g:airline#extensions#tabline#show_close_button       = 0
+
+  " Airline tab selection keys
+  nmap <Leader>1 <Plug>AirlineSelectTab1
+  nmap <Leader>2 <Plug>AirlineSelectTab2
+  nmap <Leader>3 <Plug>AirlineSelectTab3
+  nmap <Leader>4 <Plug>AirlineSelectTab4
+  nmap <Leader>5 <Plug>AirlineSelectTab5
+  nmap <Leader>6 <Plug>AirlineSelectTab6
+  nmap <Leader>7 <Plug>AirlineSelectTab7
+  nmap <Leader>8 <Plug>AirlineSelectTab8
+  nmap <Leader>9 <Plug>AirlineSelectTab9
 
   " Fugitive mappings (matches my git aliases)
   nnoremap <Leader>gst :Gstatus<CR>
