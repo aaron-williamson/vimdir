@@ -135,3 +135,8 @@ if has("linebreak")
   set breakindent
   set linebreak
 endif
+
+" For some reason vim doesn't like screen-256color
+if !has('nvim') && &term == 'screen-256color'
+  set term=xterm-256color
+endif
