@@ -10,23 +10,23 @@ cnoremap <expr> %% expand('%:h').'/'
 nnoremap <Leader>t :noremap <Leader>t :
 
 " Mapping for going to the last window
-nnoremap <Leader>l <C-^>
+noremap <Leader>l <C-^>
 
 " For quick replace
-nnoremap <Leader>R :%s/
+noremap <Leader>R :%s/
 
 " Explore current directory
-map <Leader>e :e %%<CR>
+noremap <Leader>e :e %%<CR>
 
 " Toggle showing whitespace with <Leader>sw, <Leader>ss to show spaces, too
-nnoremap <Leader>sw :set list! <bar> set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<<CR>
-nnoremap <Leader>ss :set list! <bar> set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<,space:%<CR>
+noremap <Leader>sw :set list! <bar> set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<<CR>
+noremap <Leader>ss :set list! <bar> set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<,space:%<CR>
 
 " Temporarily disable all line numbers with <Leader>nn
-nnoremap <Leader>nn :set nu! <bar> set rnu!<CR>
+noremap <Leader>nn :set nu! <bar> set rnu!<CR>
 
 " Close quickfix and location list
-nnoremap <Leader>c :ccl <bar> lcl<CR>
+noremap <Leader>c :ccl <bar> lcl<CR>
 
 " Fast write
 nnoremap <Leader>w :w<CR>
@@ -46,26 +46,31 @@ nnoremap <Leader>po :call TogglePasteMode("o")<CR>
 nnoremap <Leader>pp :call TogglePasteMode("")<CR>
 
 " Toggle highlight with <Leader>h
-nnoremap <Leader>h :call ToggleHighlightSearch()<CR>
+noremap <Leader>h :call ToggleHighlightSearch()<CR>
 
 " More sensible resizing amounts
-nnoremap <C-w>- :resize -10<CR>
-nnoremap <C-w>= :resize +10<CR>
-nnoremap <C-w>+ :winc =<CR>
-nnoremap <C-w>. :vertical resize +10<CR>
-nnoremap <C-w>, :vertical resize -10<CR>
+noremap <C-w>- :resize -10<CR>
+noremap <C-w>= :resize +10<CR>
+noremap <C-w>+ :winc =<CR>
+noremap <C-w>. :vertical resize +10<CR>
+noremap <C-w>, :vertical resize -10<CR>
+
+" Create a window with <C-w>c and close a window with <C-w>x
+" This lines up nicer with tmux binds
+noremap <C-w>c :tabnew<CR>
+noremap <C-w>x :close<CR>
 
 " Split navigation
 if (has("unix") && system("uname -s") == "Darwin\n") || $SSH_FROM_MAC
-  nnoremap <silent> ˙ <C-w>h
-  nnoremap <silent> ∆ <C-w>j
-  nnoremap <silent> ˚ <C-w>k
-  nnoremap <silent> ¬ <C-w>l
+  noremap <silent> ˙ <C-w>h
+  noremap <silent> ∆ <C-w>j
+  noremap <silent> ˚ <C-w>k
+  noremap <silent> ¬ <C-w>l
 else
-  nnoremap <silent> <A-h> <C-w>h
-  nnoremap <silent> <A-j> <C-w>j
-  nnoremap <silent> <A-k> <C-w>k
-  nnoremap <silent> <A-l> <C-w>l
+  noremap <silent> <A-h> <C-w>h
+  noremap <silent> <A-j> <C-w>j
+  noremap <silent> <A-k> <C-w>k
+  noremap <silent> <A-l> <C-w>l
 endif
 
 " Ctrl + h/l for changing tabs, ctrl + k/j for moving tabs

@@ -13,41 +13,41 @@ if !$NO_VIM_PLUGINS
   let g:airline#extensions#tabline#show_close_button       = 0
 
   " Airline tab selection keys
-  nmap <Leader>1 <Plug>AirlineSelectTab1
-  nmap <Leader>2 <Plug>AirlineSelectTab2
-  nmap <Leader>3 <Plug>AirlineSelectTab3
-  nmap <Leader>4 <Plug>AirlineSelectTab4
-  nmap <Leader>5 <Plug>AirlineSelectTab5
-  nmap <Leader>6 <Plug>AirlineSelectTab6
-  nmap <Leader>7 <Plug>AirlineSelectTab7
-  nmap <Leader>8 <Plug>AirlineSelectTab8
-  nmap <Leader>9 <Plug>AirlineSelectTab9
+  noremap <Leader>1 <Plug>AirlineSelectTab1
+  noremap <Leader>2 <Plug>AirlineSelectTab2
+  noremap <Leader>3 <Plug>AirlineSelectTab3
+  noremap <Leader>4 <Plug>AirlineSelectTab4
+  noremap <Leader>5 <Plug>AirlineSelectTab5
+  noremap <Leader>6 <Plug>AirlineSelectTab6
+  noremap <Leader>7 <Plug>AirlineSelectTab7
+  noremap <Leader>8 <Plug>AirlineSelectTab8
+  noremap <Leader>9 <Plug>AirlineSelectTab9
 
   " Fugitive mappings (matches my git aliases)
-  nnoremap <Leader>gst :Gstatus<CR>
-  nnoremap <Leader>glg :Gvsplit! log --graph --oneline<CR>
-  nnoremap <Leader>glp :Gvsplit! log --graph --oneline -p<CR>
-  nnoremap <Leader>gdi :Gvsplit! diff<CR>
-  nnoremap <Leader>gdc :Gvsplit! diff --cached<CR>
-  nnoremap <Leader>gdt :Gvdiff<CR>
-  nnoremap <Leader>gci :Gcommit<CR>
-  nnoremap <Leader>gaa :Gpedit! add --all<CR>
-  nnoremap <Leader>gfa :Gpedit! fetch --all<CR>
-  nnoremap <Leader>gpu :Gpush<Space>
-  nnoremap <Leader>gpd :Gpull --ff-only<CR>
+  noremap <Leader>gst :Gstatus<CR>
+  noremap <Leader>glg :Gvsplit! log --graph --oneline<CR>
+  noremap <Leader>glp :Gvsplit! log --graph --oneline -p<CR>
+  noremap <Leader>gdi :Gvsplit! diff<CR>
+  noremap <Leader>gdc :Gvsplit! diff --cached<CR>
+  noremap <Leader>gdt :Gvdiff<CR>
+  noremap <Leader>gci :Gcommit<CR>
+  noremap <Leader>gaa :Gpedit! add --all<CR>
+  noremap <Leader>gfa :Gpedit! fetch --all<CR>
+  noremap <Leader>gpu :Gpush<Space>
+  noremap <Leader>gpd :Gpull --ff-only<CR>
 
   " Multiple cursors configuration
-  map <Leader>mf :MultipleCursorsFind<Space>
+  noremap <Leader>mf :MultipleCursorsFind<Space>
   let g:multi_cursor_exit_from_visual_mode = 0
   let g:multi_cursor_exit_from_insert_mode = 0
 
   " Rails mappings
-  nnoremap <Leader>rm :Emodel<CR>
-  nnoremap <Leader>rc :Econtroller<CR>
-  nnoremap <Leader>rv :Eview<Space>
-  nnoremap <Leader>rh :Ehelper<CR>
-  nnoremap <Leader>ra :A<CR>
-  nnoremap <Leader>rr :Einitializer<CR>
+  noremap <Leader>rm :Emodel<CR>
+  noremap <Leader>rc :Econtroller<CR>
+  noremap <Leader>rv :Eview<Space>
+  noremap <Leader>rh :Ehelper<CR>
+  noremap <Leader>ra :A<CR>
+  noremap <Leader>rr :Einitializer<CR>
 
   " Ack configuration
   let g:ack_autoclose        = 1
@@ -68,15 +68,15 @@ if !$NO_VIM_PLUGINS
   " Vim-tmux-navigator mappings
   let g:tmux_navigator_no_mappings = 1
   if (has("unix") && system("uname -s") == "Darwin\n") || $SSH_FROM_MAC
-    nnoremap <silent> ˙ :TmuxNavigateLeft<CR>
-    nnoremap <silent> ∆ :TmuxNavigateDown<CR>
-    nnoremap <silent> ˚ :TmuxNavigateUp<CR>
-    nnoremap <silent> ¬ :TmuxNavigateRight<CR>
+    noremap <silent> ˙ :TmuxNavigateLeft<CR>
+    noremap <silent> ∆ :TmuxNavigateDown<CR>
+    noremap <silent> ˚ :TmuxNavigateUp<CR>
+    noremap <silent> ¬ :TmuxNavigateRight<CR>
   else
-    nnoremap <silent> <A-h> :TmuxNavigateLeft<CR>
-    nnoremap <silent> <A-j> :TmuxNavigateDown<CR>
-    nnoremap <silent> <A-k> :TmuxNavigateUp<CR>
-    nnoremap <silent> <A-l> :TmuxNavigateRight<CR>
+    noremap <silent> <A-h> :TmuxNavigateLeft<CR>
+    noremap <silent> <A-j> :TmuxNavigateDown<CR>
+    noremap <silent> <A-k> :TmuxNavigateUp<CR>
+    noremap <silent> <A-l> :TmuxNavigateRight<CR>
   endif
 
 endif " End plugin config if
