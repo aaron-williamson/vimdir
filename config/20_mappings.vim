@@ -61,7 +61,7 @@ noremap <C-w>c :tabnew<CR>
 noremap <C-w>x :close<CR>
 
 " Split navigation
-if (has("unix") && system("uname -s") == "Darwin\n") || $SSH_FROM_MAC
+if g:on_macos || $SSH_FROM_MAC
   noremap <silent> ˙ <C-w>h
   noremap <silent> ∆ <C-w>j
   noremap <silent> ˚ <C-w>k

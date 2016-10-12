@@ -12,6 +12,9 @@ let mapleader = ","
 let g:netrw_liststyle   = 3
 let g:netrw_bufsettings = "nu rnu"
 
+" Whether or not we're on macos
+let g:on_macos = ((has("unix") && system("uname -s") == "Darwin\n"))
+
 " Enable the built-in manual viewer
 runtime ftplugin/man.vim
 
@@ -47,6 +50,9 @@ set hidden
 
 " Auto reload file when it's been changed outside of vim without prompting
 set autoread
+
+" Show as much of a line as we can instead of @ symbols
+set display=lastline
 
 " Only add one space when joining lines ending with '.', '!', or '?'
 set nojoinspaces
@@ -119,10 +125,13 @@ au FileType java setl sw=4 ts=4 et sts=4 " 4 Space for java
 " ~~~ Conditional Settings ~~~
 
 " Use system clipboard for yanks
-if has('unnamedplus')
-  set clipboard=unnamedplus
-else
-  set clipboard=unnamed
+" But not if we're root on macos
+if has('clipboard') && !($USER == 'root' && g:on_macos)
+  if has('unnamedplus')
+    set clipboard=unnamedplus
+  else
+    set clipboard=unnamed
+  endif
 endif
 
 " Use True Color if it's available

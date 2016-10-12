@@ -67,7 +67,7 @@ if !$NO_VIM_PLUGINS
 
   " Vim-tmux-navigator mappings
   let g:tmux_navigator_no_mappings = 1
-  if (has("unix") && system("uname -s") == "Darwin\n") || $SSH_FROM_MAC
+  if g:on_macos || $SSH_FROM_MAC
     noremap <silent> ˙ :TmuxNavigateLeft<CR>
     noremap <silent> ∆ :TmuxNavigateDown<CR>
     noremap <silent> ˚ :TmuxNavigateUp<CR>
