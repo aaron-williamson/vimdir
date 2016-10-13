@@ -127,7 +127,11 @@ au FileType java setl sw=4 ts=4 et sts=4 " 4 Space for java
 " Use system clipboard for yanks
 " But not if we're root on macos
 if has('clipboard') && !($USER == 'root' && g:on_macos)
-  set clipboard=unnamedplus
+  if g:on_macos
+    set clipboard=unnamed
+  else
+    set clipboard=unnamedplus
+  end
 endif
 
 " Use True Color if it's available
