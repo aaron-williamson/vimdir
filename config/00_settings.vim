@@ -93,9 +93,9 @@ set softtabstop=2
 set foldmethod=indent
 set foldlevelstart=20
 
-" Bash-style tab from http://stackoverflow.com/questions/526858/how-do-i-make-vim-do-normal-bash-like-tab-completion-for-file-names
-set wildmode=list:longest,full
+" Zsh style command tab completion
 set wildmenu
+set wildmode=list:full,full
 
 " Wait less time between key presses (specifically nice for multiple cursors)
 set ttimeout
