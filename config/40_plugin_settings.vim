@@ -55,6 +55,15 @@ if !$NO_VIM_PLUGINS
   let g:ackpreview           = 1
   nnoremap <Leader>a :LAck<Space>
 
+  " Specific configuration if we have the silver searcher installed
+  if executable('ag')
+    " Use ag for ack
+    let g:ackprg = 'ag --vimgrep'
+
+    " Use ag for ctrlp
+    let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+  endif
+
   " CtrlP configuriation
   let g:ctrlp_switch_buffer       = 't'
   let g:ctrlp_open_multiple_files = 't'
