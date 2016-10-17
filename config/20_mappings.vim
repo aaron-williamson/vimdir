@@ -16,7 +16,7 @@ noremap <Leader>l <C-^>
 noremap <Leader>R :%s/
 
 " Explore current directory
-noremap <Leader>e :e %%<CR>
+map <Leader>e :e %%<CR>
 
 " Toggle showing whitespace with <Leader>sw, <Leader>ss to show spaces, too
 noremap <Leader>sw :set list! <bar> set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<<CR>
