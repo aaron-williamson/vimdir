@@ -22,6 +22,7 @@ if !$NO_VIM_PLUGINS
   Plugin 'vim-airline/vim-airline'          " Airline for better statusbar
   Plugin 'vim-airline/vim-airline-themes'   " Themes for Airline
   Plugin 'tpope/vim-surround'               " Surround for quoting/brackets/html
+  Plugin 'michaeljsmith/vim-indent-object'  " Adds a indent-based text object
   Plugin 'mileszs/ack.vim'                  " Ack plugin for vim
   Plugin 'pangloss/vim-javascript'          " Improved javascript support
   Plugin 'majutsushi/tagbar'                " Class outline viewer
