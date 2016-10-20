@@ -13,15 +13,15 @@ if !$NO_VIM_PLUGINS
   let g:airline#extensions#tabline#show_close_button       = 0
 
   " Airline tab selection keys
-  noremap <Leader>1 <Plug>AirlineSelectTab1
-  noremap <Leader>2 <Plug>AirlineSelectTab2
-  noremap <Leader>3 <Plug>AirlineSelectTab3
-  noremap <Leader>4 <Plug>AirlineSelectTab4
-  noremap <Leader>5 <Plug>AirlineSelectTab5
-  noremap <Leader>6 <Plug>AirlineSelectTab6
-  noremap <Leader>7 <Plug>AirlineSelectTab7
-  noremap <Leader>8 <Plug>AirlineSelectTab8
-  noremap <Leader>9 <Plug>AirlineSelectTab9
+  map <Leader>1 <Plug>AirlineSelectTab1
+  map <Leader>2 <Plug>AirlineSelectTab2
+  map <Leader>3 <Plug>AirlineSelectTab3
+  map <Leader>4 <Plug>AirlineSelectTab4
+  map <Leader>5 <Plug>AirlineSelectTab5
+  map <Leader>6 <Plug>AirlineSelectTab6
+  map <Leader>7 <Plug>AirlineSelectTab7
+  map <Leader>8 <Plug>AirlineSelectTab8
+  map <Leader>9 <Plug>AirlineSelectTab9
 
   " Fugitive mappings (matches my git aliases)
   noremap <Leader>gst :Gstatus<CR>

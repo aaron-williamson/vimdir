@@ -13,25 +13,25 @@ nnoremap <Leader>t :noremap <Leader>t :
 noremap <Leader>l <C-^>
 
 " For quick replace
-noremap <Leader>R :%s/
+noremap <Leader>R :%substitute/
 
 " Explore current directory
-map <Leader>e :e %%<CR>
+map <Leader>e :edit %%<CR>
 
 " Toggle showing whitespace with <Leader>sw, <Leader>ss to show spaces, too
 noremap <Leader>sw :set list! <bar> set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<<CR>
 noremap <Leader>ss :set list! <bar> set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<,space:%<CR>
 
 " Temporarily disable all line numbers with <Leader>nn
-noremap <Leader>nn :set nu! <bar> set rnu!<CR>
+noremap <Leader>nn :set number! <bar> set relativenumber!<CR>
 
-" Close quickfix and location list
-noremap <Leader>c :ccl <bar> lcl<CR>
+" Close quickfix, preview, and location list
+noremap <Leader>c :cclose <bar> pclose <bar> lclose<CR>
 
 " Fast write
-nnoremap <Leader>w :w<CR>
-inoremap <Leader>w <Esc>:w<CR>
-vnoremap <Leader>w <Esc>:w<CR>
+nnoremap <Leader>w :write<CR>
+inoremap <Leader>w <Esc>:write<CR>
+vnoremap <Leader>w <Esc>:write<CR>
 
 " Insert newline without entering insert mode with <Leader>nm
 nnoremap <Leader>nm o<Esc>
@@ -51,7 +51,7 @@ noremap <Leader>h :call ToggleHighlightSearch()<CR>
 " More sensible resizing amounts
 noremap <C-w>- :resize -10<CR>
 noremap <C-w>= :resize +10<CR>
-noremap <C-w>+ :winc =<CR>
+noremap <C-w>+ :wincmd =<CR>
 noremap <C-w>. :vertical resize +10<CR>
 noremap <C-w>, :vertical resize -10<CR>
 

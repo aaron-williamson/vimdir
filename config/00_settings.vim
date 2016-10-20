@@ -119,8 +119,8 @@ silent! set winminheight=5
 set winminwidth=15
 
 " Syntax specific indentation
-au FileType python setl sw=4 ts=4 et sts=4 " 4 Space for python
-au FileType java setl sw=4 ts=4 et sts=4 " 4 Space for java
+au FileType python setl shiftwidth=4 tabstop=4 expandtab softtabstop=4 " 4 Space for python
+au FileType java setl shiftwidth=4 tabstop=4 expandtab softtabstop=4 " 4 Space for java
 
 " ~~~ Conditional Settings ~~~
 
