@@ -14,7 +14,7 @@ if !$NO_VIM_PLUGINS
   Plugin 'VundleVim/Vundle.vim'
 
   Plugin 'terryma/vim-multiple-cursors'     " Sublime-text style multiple cursors
-  Plugin 'chriskempson/base16-vim'          " Base 16 color schemes
+  Plugin 'aaron-williamson/base16-vim'      " Base 16 color schemes
   Plugin 'ctrlpvim/ctrlp.vim'               " CtrlP for fuzzy find/open
   Plugin 'tpope/vim-fugitive'               " Fugitive for git integration
   Plugin 'rust-lang/rust.vim'               " Syntax highlighting for rust

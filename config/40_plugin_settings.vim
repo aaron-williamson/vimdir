@@ -71,7 +71,6 @@ if !$NO_VIM_PLUGINS
   " Color scheme but only if we have true color
   if has("termguicolors")
     silent! colorscheme base16-monokai
-    let g:airline_theme = 'base16_monokai'
   endif
 
   " Vim-tmux-navigator mappings
