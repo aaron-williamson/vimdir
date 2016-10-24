@@ -10,7 +10,7 @@ let mapleader = ","
 " Netrw (file browser) config
 " use tree view and show line numbers in netrw
 let g:netrw_liststyle   = 3
-let g:netrw_bufsettings = "nu rnu"
+let g:netrw_bufsettings = "number relativenumber nobuflisted"
 
 " Whether or not we're on macos
 let g:on_macos = ((has("unix") && system("uname -s") == "Darwin\n"))

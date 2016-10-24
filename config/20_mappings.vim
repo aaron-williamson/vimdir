@@ -41,12 +41,13 @@ nnoremap <Leader>nm o<Esc>
 "   i: insert mode
 "   o: insert mode on newline
 "   p: no change
-nnoremap <Leader>pi :call TogglePasteMode("i")<CR>
-nnoremap <Leader>po :call TogglePasteMode("o")<CR>
-nnoremap <Leader>pp :call TogglePasteMode("")<CR>
+nnoremap <Leader>p :set paste!<CR>
 
 " Toggle highlight with <Leader>h
-noremap <Leader>h :call ToggleHighlightSearch()<CR>
+noremap <Leader>h :set hlsearch!<CR>
+
+" Toggle column highlight with <Leader>C
+noremap <Leader>C :set cursorcolumn!<CR>
 
 " More sensible resizing amounts
 noremap <C-w>- :resize -10<CR>
@@ -55,10 +56,9 @@ noremap <C-w>+ :wincmd =<CR>
 noremap <C-w>. :vertical resize +10<CR>
 noremap <C-w>, :vertical resize -10<CR>
 
-" Create a window with <C-w>c and close a window with <C-w>x
-" This lines up nicer with tmux binds
-noremap <C-w>c :tabnew<CR>
-noremap <C-w>x :close<CR>
+" Add a binding for new tab
+noremap <C-w>t :tabnew<CR>
+noremap <C-w>T :tab split<CR>
 
 " Split navigation
 if g:on_macos || $SSH_FROM_MAC
