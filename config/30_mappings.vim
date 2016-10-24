@@ -58,7 +58,7 @@ noremap <C-w>, :vertical resize -10<CR>
 
 " Add a binding for new tab
 noremap <C-w>t :tabnew<CR>
-noremap <C-w>T :tab split<CR>
+noremap <C-w>T :PullToNewTab<CR>
 
 " Split navigation
 if g:on_macos || $SSH_FROM_MAC
@@ -74,7 +74,7 @@ else
 endif
 
 " Ctrl + h/l for changing tabs, ctrl + k/j for moving tabs
-nnoremap <C-h> :call TabOrBufferPrevious()<CR>
-nnoremap <C-l> :call TabOrBufferNext()<CR>
+nnoremap <C-h> :TabOrBufferPrevious<CR>
+nnoremap <C-l> :TabOrBufferNext<CR>
 nnoremap <silent> <C-j> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <C-k> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
