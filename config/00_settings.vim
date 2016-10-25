@@ -131,7 +131,7 @@ if has('clipboard') && !($USER == 'root' && g:on_macos)
     set clipboard=unnamed
   else
     set clipboard=unnamedplus
-  end
+  endif
 endif
 
 " Use True Color if it's available
