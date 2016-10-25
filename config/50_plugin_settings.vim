@@ -64,9 +64,10 @@ if !$NO_VIM_PLUGINS
     let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
   endif
 
-  " CtrlP configuriation
+  " CtrlP configuration
   let g:ctrlp_switch_buffer       = 't'
   let g:ctrlp_open_multiple_files = 't'
+  let g:ctrlp_match_window        = 'max:25,results:50'
 
   " Color scheme but only if we have true color
   if has("termguicolors")
