@@ -4,7 +4,11 @@ function! TabOrBufferNext(count)
   if tabpagenr('$') == 1
     execute a:count "bnext"
   else
-    execute a:count "tabnext"
+    if a:count == 0
+      tabnext
+    else
+      execute a:count "tabnext"
+    end
   endif
 endfunction
 
