@@ -27,6 +27,7 @@ if !$NO_VIM_PLUGINS
   Plugin 'pangloss/vim-javascript'          " Improved javascript support
   Plugin 'majutsushi/tagbar'                " Class outline viewer
   Plugin 'christoomey/vim-tmux-navigator'   " Allow seamless movement between vim and tmux
+  Plugin 'plasticboy/vim-markdown'          " Better highlighting for markdown
 
   " End vundle
   call vundle#end()
