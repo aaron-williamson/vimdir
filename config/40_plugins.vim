@@ -28,6 +28,7 @@ if !$NO_VIM_PLUGINS
   Plugin 'majutsushi/tagbar'                " Class outline viewer
   Plugin 'christoomey/vim-tmux-navigator'   " Allow seamless movement between vim and tmux
   Plugin 'plasticboy/vim-markdown'          " Better highlighting for markdown
+  Plugin 'skywind3000/asyncrun.vim'         " Easy asynchronous command running
 
   " End vundle
   call vundle#end()
