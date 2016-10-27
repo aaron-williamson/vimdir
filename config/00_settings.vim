@@ -89,9 +89,9 @@ set shiftwidth=2
 set expandtab
 set softtabstop=2
 
-" Set folds to indents and open all folds
-set foldmethod=indent
-set foldlevelstart=20
+" Set fold mode to manual and have all folds open by default
+set foldmethod=manual
+set foldlevel=20
 
 " Zsh style command tab completion
 set wildmenu

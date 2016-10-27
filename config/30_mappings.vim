@@ -15,8 +15,9 @@ noremap <Leader>l <C-^>
 " For quick replace
 noremap <Leader>R :%substitute/
 
-" Explore current directory
+" Explore current directory with <Leader>e or -
 map <Leader>e :edit %%<CR>
+map - :edit %%<CR>
 
 " Toggle showing whitespace with <Leader>sw, <Leader>ss to show spaces, too
 noremap <Leader>sw :set list! <bar> set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<<CR>

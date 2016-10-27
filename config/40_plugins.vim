@@ -13,22 +13,22 @@ if !$NO_VIM_PLUGINS
   " Enable vundle
   Plugin 'VundleVim/Vundle.vim'
 
-  Plugin 'terryma/vim-multiple-cursors'     " Sublime-text style multiple cursors
   Plugin 'chriskempson/base16-vim'          " Base 16 color schemes
-  Plugin 'ctrlpvim/ctrlp.vim'               " CtrlP for fuzzy find/open
-  Plugin 'tpope/vim-fugitive'               " Fugitive for git integration
   Plugin 'rust-lang/rust.vim'               " Syntax highlighting for rust
   Plugin 'tpope/vim-rails'                  " Extra functions for rails
-  Plugin 'vim-airline/vim-airline'          " Airline for better statusbar
-  Plugin 'vim-airline/vim-airline-themes'   " Themes for Airline
-  Plugin 'tpope/vim-surround'               " Surround for quoting/brackets/html
+  Plugin 'pangloss/vim-javascript'          " Improved javascript support
+  Plugin 'tpope/vim-fugitive'               " Fugitive for git integration
   Plugin 'michaeljsmith/vim-indent-object'  " Adds a indent-based text object
   Plugin 'mileszs/ack.vim'                  " Ack plugin for vim
-  Plugin 'pangloss/vim-javascript'          " Improved javascript support
-  Plugin 'majutsushi/tagbar'                " Class outline viewer
-  Plugin 'christoomey/vim-tmux-navigator'   " Allow seamless movement between vim and tmux
-  Plugin 'plasticboy/vim-markdown'          " Better highlighting for markdown
+  Plugin 'ctrlpvim/ctrlp.vim'               " CtrlP for fuzzy find/open
   Plugin 'skywind3000/asyncrun.vim'         " Easy asynchronous command running
+  Plugin 'vim-airline/vim-airline'          " Airline for better statusbar
+  Plugin 'vim-airline/vim-airline-themes'   " Themes for Airline
+  Plugin 'plasticboy/vim-markdown'          " Better highlighting for markdown
+  Plugin 'terryma/vim-multiple-cursors'     " Sublime-text style multiple cursors
+  Plugin 'tpope/vim-surround'               " Surround for quoting/brackets/html
+  Plugin 'tpope/vim-unimpaired'             " Some handy bracket mappings
+  Plugin 'christoomey/vim-tmux-navigator'   " Allow seamless movement between vim and tmux
 
   " End vundle
   call vundle#end()
