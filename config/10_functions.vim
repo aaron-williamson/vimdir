@@ -52,3 +52,14 @@ function! ToggleSpelling()
     setlocal spell spelllang=en_us
   endif
 endfunction
+
+function! ToggleFoldMethod()
+  if &foldmethod == "manual"
+    set foldlevel=0
+    set foldmethod=indent
+    set foldlevel=20
+  else
+    set foldmethod=manual
+    normal zE
+  endif
+endfunction

@@ -50,6 +50,9 @@ noremap <Leader>h :set hlsearch!<CR>
 " Toggle column highlight with <Leader>C
 noremap <Leader>C :set cursorcolumn!<CR>
 
+" Toggle fold method between manual and indent with <Leader>z
+noremap <Leader>z :call ToggleFoldMethod()<CR>
+
 " More sensible resizing amounts
 noremap <C-w>- :resize -10<CR>
 noremap <C-w>= :resize +10<CR>
