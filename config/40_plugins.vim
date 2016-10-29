@@ -7,7 +7,7 @@ if !$NO_VIM_PLUGINS
   filetype off
 
   " Set the runtime path to include Vundle and initialize
-  set rtp+=~/.vim/bundle/Vundle.vim
+  execute "set runtimepath+=".g:vim_dir."/bundle/Vundle.vim"
   call vundle#begin()
 
   " Enable vundle

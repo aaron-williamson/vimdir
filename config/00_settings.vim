@@ -12,9 +12,6 @@ let mapleader = ","
 let g:netrw_liststyle   = 3
 let g:netrw_bufsettings = "number relativenumber nobuflisted"
 
-" Whether or not we're on macos
-let g:on_macos = ((has("unix") && system("uname -s") == "Darwin\n"))
-
 " Enable the built-in manual viewer
 runtime ftplugin/man.vim
 
@@ -125,9 +122,9 @@ au FileType java setl shiftwidth=4 tabstop=4 expandtab softtabstop=4 " 4 Space f
 " ~~~ Conditional Settings ~~~
 
 " Use system clipboard for yanks
-" But not if we're root on macos
+" But not if we're root on macos or windows
 if has('clipboard') && !($USER == 'root' && g:on_macos)
-  if g:on_macos
+  if g:on_macos || g:on_windows
     set clipboard=unnamed
   else
     set clipboard=unnamedplus

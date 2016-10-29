@@ -5,8 +5,13 @@ if !$NO_VIM_PLUGINS
 
   " Airline config
   " Requires unicode support for separators
-  let g:airline_left_sep                                   = '»'
-  let g:airline_right_sep                                  = '«'
+  if g:on_windows
+    let g:airline_left_sep                                 = '�'
+    let g:airline_right_sep                                = '�'
+  else
+    let g:airline_left_sep                                 = '»'
+    let g:airline_right_sep                                = '«'
+  endif
   let g:airline#extensions#tabline#enabled                 = 1
   let g:airline#extensions#tabline#tab_nr_type             = 1
   let g:airline#extensions#tabline#buffer_idx_mode         = 1

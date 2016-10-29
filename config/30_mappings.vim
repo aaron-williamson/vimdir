@@ -47,6 +47,9 @@ nnoremap <Leader>p :set paste!<CR>
 " Toggle highlight with <Leader>h
 noremap <Leader>h :set hlsearch!<CR>
 
+" Quick escape (For when we can't use caps)
+imap jk <Esc>
+
 " Toggle column highlight with <Leader>C
 noremap <Leader>C :set cursorcolumn!<CR>
 
