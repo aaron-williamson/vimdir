@@ -146,3 +146,8 @@ endif
 if !has('nvim') && &term == 'screen-256color'
   set term=xterm-256color
 endif
+
+" Neovim specific settings
+if has('nvim')
+  let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
+endif
