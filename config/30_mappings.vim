@@ -78,6 +78,10 @@ else
   noremap <silent> <A-j> <C-w>j
   noremap <silent> <A-k> <C-w>k
   noremap <silent> <A-l> <C-w>l
+  tmap <A-h> <C-\><C-n><A-h>
+  tmap <A-j> <C-\><C-n><A-j>
+  tmap <A-k> <C-\><C-n><A-k>
+  tmap <A-l> <C-\><C-n><A-l>
 endif
 
 " Ctrl + h/l for changing tabs, ctrl + k/j for moving tabs
@@ -85,3 +89,25 @@ nnoremap <C-h> :TabOrBufferPrevious<CR>
 nnoremap <C-l> :TabOrBufferNext<CR>
 nnoremap <silent> <C-j> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <C-k> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
+
+" Neovim specific mappings
+if has('nvim')
+  " Enter terminal emulator quickly
+  noremap <Leader>T :terminal<CR>
+
+  " Leave terminal emulator insert mode easily
+  tnoremap <C-f> <C-\><C-n>
+
+  " Navigate out of spit terminal emulator easily
+  if g:on_macos || $SSH_FROM_MAC
+    tmap ˙ <C-\><C-n>˙
+    tmap ∆ <C-\><C-n>∆
+    tmap ˚ <C-\><C-n>˚
+    tmap ¬ <C-\><C-n>¬
+  else
+    tmap <A-h> <C-\><C-n><A-h>
+    tmap <A-j> <C-\><C-n><A-j>
+    tmap <A-k> <C-\><C-n><A-k>
+    tmap <A-l> <C-\><C-n><A-l>
+  endif
+endif

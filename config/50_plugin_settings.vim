@@ -6,16 +6,16 @@ if !$NO_VIM_PLUGINS
   " Airline config
   " Requires unicode support for separators
   if g:on_windows
-    let g:airline_left_sep                                 = '»'
-    let g:airline_right_sep                                = '«'
+    let g:airline_left_sep  = '»'
+    let g:airline_right_sep = '«'
   else
-    let g:airline_left_sep                                 = 'Â»'
-    let g:airline_right_sep                                = 'Â«'
+    let g:airline_left_sep  = 'Â»'
+    let g:airline_right_sep = 'Â«'
   endif
-  let g:airline#extensions#tabline#enabled                 = 1
-  let g:airline#extensions#tabline#tab_nr_type             = 1
-  let g:airline#extensions#tabline#buffer_idx_mode         = 1
-  let g:airline#extensions#tabline#show_close_button       = 0
+  let g:airline#extensions#tabline#enabled           = 1
+  let g:airline#extensions#tabline#tab_nr_type       = 1
+  let g:airline#extensions#tabline#buffer_idx_mode   = 1
+  let g:airline#extensions#tabline#show_close_button = 0
 
   " Airline tab selection keys
   map <Leader>1 <Plug>AirlineSelectTab1
@@ -93,5 +93,8 @@ if !$NO_VIM_PLUGINS
     noremap <silent> <A-k> :TmuxNavigateUp<CR>
     noremap <silent> <A-l> :TmuxNavigateRight<CR>
   endif
+
+  " Quicker tabularize command writing
+  cabbrev Tab Tabularize
 
 endif " End plugin config if
