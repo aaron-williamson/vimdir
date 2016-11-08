@@ -78,10 +78,6 @@ else
   noremap <silent> <A-j> <C-w>j
   noremap <silent> <A-k> <C-w>k
   noremap <silent> <A-l> <C-w>l
-  tmap <A-h> <C-\><C-n><A-h>
-  tmap <A-j> <C-\><C-n><A-j>
-  tmap <A-k> <C-\><C-n><A-k>
-  tmap <A-l> <C-\><C-n><A-l>
 endif
 
 " Ctrl + h/l for changing tabs, ctrl + k/j for moving tabs
