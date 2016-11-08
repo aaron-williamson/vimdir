@@ -138,8 +138,11 @@ endif
 
 " Enable breakindent and linebreak if they're available
 if has("linebreak")
-  set breakindent
   set linebreak
+  " breakindent not introduced until patch 338
+  if has('patch338')
+    set breakindent
+  endif
 endif
 
 " For some reason vim doesn't like screen-256color

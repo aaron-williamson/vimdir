@@ -77,6 +77,7 @@ if !$NO_VIM_PLUGINS
   " Color scheme but only if we have true color
   if has("termguicolors")
     silent! colorscheme base16-summerfruit-dark
+    let g:airline_theme = 'base16_summerfruit'
   endif
 
   " Vim-tmux-navigator mappings

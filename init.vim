@@ -15,6 +15,7 @@ else
   let g:vim_dir = '$HOME/.vim'
 endif
 
+" --- EXCLUDE FROM COMBINED ---
 " Process all vim config files in order -- From Aaron Bieber
 for filename in sort(split(glob(g:vim_dir.'/config/*.vim'), '\n'))
   execute 'source '.filename
