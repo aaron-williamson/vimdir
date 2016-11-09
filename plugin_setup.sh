@@ -15,13 +15,11 @@ fi
 
 # Install plugins, may run into problems if the vundle.vim folder
 # was created but vundle wasn't installed ?
-if [[ ! $NO_VIM_PLUGINS || $NO_VIM_PLUGINS -eq 0 ]]; then
-  echo Installing plugins...
-  if hash nvim 2>/dev/null; then
-    nvim +PluginInstall +qall
-  else
-    vim +PluginInstall +qall
-  fi
+echo Installing plugins...
+if hash nvim 2>/dev/null; then
+  nvim +PluginInstall +qall
+else
+  vim +PluginInstall +qall
 fi
 
-echo Vim setup complete
+echo Vim plugin setup complete
