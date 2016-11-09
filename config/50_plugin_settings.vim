@@ -77,7 +77,7 @@ if !$NO_VIM_PLUGINS
   " Color scheme but only if we have true color
   if has("termguicolors")
     set termguicolors
-    silent! colorscheme base16-summerfruit-dark
+    silent! colorscheme base16-default-dark
   endif
 
   " Vim-tmux-navigator mappings

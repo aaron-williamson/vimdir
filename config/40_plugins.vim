@@ -42,6 +42,8 @@ if !$NO_VIM_PLUGINS
   Plugin 'chriskempson/base16-vim'        " Base 16 color schemes
   Plugin 'vim-airline/vim-airline'        " Airline for better statusbar
   Plugin 'vim-airline/vim-airline-themes' " Themes for Airline
+  "Plugin 'xolox/vim-colorscheme-switcher' " Colorscheme switcher, useful for testing out new colorschemes
+  "Plugin 'xolox/vim-misc'                 " required for colorscheme switcher
 
   " End vundle
   call vundle#end()
