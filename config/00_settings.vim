@@ -18,11 +18,9 @@ runtime ftplugin/man.vim
 " Enable filetype detection and auto-indentation
 filetype plugin indent on
 
-" Dark background
-set background=dark
-
-" Default to desert colorscheme
-colorscheme desert
+" Set background to light by default for better
+" compatibility with base16 terminal themes
+set background=light
 
 " Automatically indent
 set autoindent
@@ -131,11 +129,6 @@ if has('clipboard') && !($USER == 'root' && g:on_macos)
   endif
 endif
 
-" Use True Color if it's available
-if has("termguicolors")
-  set termguicolors
-endif
-
 " Enable breakindent and linebreak if they're available
 if has("linebreak")
   set linebreak
@@ -146,7 +139,7 @@ if has("linebreak")
 endif
 
 " For some reason vim doesn't like screen-256color
-if !has('nvim') && &term == 'screen-256color'
+if !has('nvim') && &term == 'screen' && $TMUX != ""
   set term=xterm-256color
 endif
 
