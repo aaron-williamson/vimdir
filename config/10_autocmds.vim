@@ -10,9 +10,6 @@ augroup myAutoCmds
   autocmd FileType python setl shiftwidth=4 tabstop=4 expandtab softtabstop=4 " 4 Space for python
   autocmd FileType java setl shiftwidth=4 tabstop=4 expandtab softtabstop=4   " 4 Space for java
 
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-
   " Jump to last known cursor position unless it's invalid or inside an event
   " handler
   autocmd BufReadPost *
