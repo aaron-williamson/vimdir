@@ -74,11 +74,8 @@ if !$NO_VIM_PLUGINS
   let g:ctrlp_open_multiple_files = 't'
   let g:ctrlp_match_window        = 'max:25,results:50'
 
-  " Color scheme but only if we have true color
-  if has("termguicolors")
-    set termguicolors
-    silent! colorscheme base16-default-dark
-  endif
+  " Color scheme
+  silent! colorscheme base16-default-dark
 
   " Vim-tmux-navigator mappings
   let g:tmux_navigator_no_mappings = 1

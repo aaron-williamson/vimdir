@@ -125,6 +125,11 @@ if has('clipboard') && !($USER == 'root' && g:on_macos)
   endif
 endif
 
+" Enable termguicolors if we have it
+if has("termguicolors")
+  set termguicolors
+endif
+
 " Enable breakindent and linebreak if they're available
 if has("linebreak")
   set linebreak
@@ -134,8 +139,8 @@ if has("linebreak")
   endif
 endif
 
-" For some reason vim doesn't like screen-256color
-if !has('nvim') && &term == 'screen' && $TMUX != ""
+" For some reason vim doesn't like screen and colors
+if !has('nvim') && &term == 'screen'
   set term=xterm-256color
 endif
 
