@@ -116,8 +116,9 @@ set winminwidth=15
 " ~~~ Conditional Settings ~~~
 
 " Use system clipboard for yanks
-" But not if we're root on macos or windows
-if has('clipboard') && !($USER == 'root' && g:on_macos)
+" But not if we're root on macos or windows or if we don't
+" have a clipboard handler available
+if (executable('xclip') || executable('xsel') || executable ('pbcopy')) && has('clipboard') && !($USER == 'root' && g:on_macos)
   if g:on_macos || g:on_windows
     set clipboard=unnamed
   else
