@@ -75,7 +75,7 @@ if !$NO_VIM_PLUGINS
   let g:ctrlp_match_window        = 'max:25,results:50'
 
   " Color scheme
-  silent! colorscheme base16-default-dark
+  silent! colorscheme base16-summerfruit-dark
 
   " Vim-tmux-navigator mappings
   let g:tmux_navigator_no_mappings = 1

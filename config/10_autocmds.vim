@@ -7,8 +7,12 @@ augroup myAutoCmds
   autocmd!
 
   " Syntax specific indentation
-  autocmd FileType python setl shiftwidth=4 tabstop=4 expandtab softtabstop=4 " 4 Space for python
-  autocmd FileType java setl shiftwidth=4 tabstop=4 expandtab softtabstop=4   " 4 Space for java
+  " Use 4 space tabs for python
+  autocmd FileType python setlocal shiftwidth=4 tabstop=4 expandtab softtabstop=4
+  " Use 4 space tabs for java
+  autocmd FileType java setlocal shiftwidth=4 tabstop=4 expandtab softtabstop=4
+  " Use 78 text width for markdown files
+  autocmd FileType markdown setlocal textwidth=78
 
   " Jump to last known cursor position unless it's invalid or inside an event
   " handler
