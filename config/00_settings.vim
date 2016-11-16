@@ -90,7 +90,7 @@ set foldlevel=20
 
 " Zsh style command tab completion
 set wildmenu
-set wildmode=list:full,full
+set wildmode=list:longest,full
 
 " Wait less time between key presses (specifically nice for multiple cursors)
 set ttimeout
