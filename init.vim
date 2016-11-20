@@ -10,8 +10,17 @@ let g:on_windows = has('win32') || has('win32unix') || has('win64')
 
 " Make sure we're reading the right config files
 if g:on_windows
+  " Vimfiles on windows
   let g:vim_dir = '$HOME/vimfiles'
+elseif has('nvim')
+  " Some neovim detection
+  if $XDG_CONFIG_HOME != ""
+    let g:vim_dir = '$XDG_CONFIG_HOME/nvim'
+  else
+    let g:vim_dir = '$HOME/.config/nvim'
+  endif
 else
+  " Normal vim dir otherwise
   let g:vim_dir = '$HOME/.vim'
 endif
 
