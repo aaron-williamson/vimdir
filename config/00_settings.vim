@@ -141,7 +141,7 @@ if has("linebreak")
 endif
 
 " For some reason vim doesn't like screen and colors
-if !has('nvim') && &term == 'screen'
+if !has('nvim') && (&term == 'screen' || &term == 'screen-256color')
   set term=xterm-256color
 endif
 
