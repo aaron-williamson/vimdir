@@ -34,7 +34,6 @@ if !$NO_VIM_PLUGINS
   Plugin 'tpope/vim-repeat'                " Allow repeating supported plugins
 
   " Tmux integration plugins
-  Plugin 'tmux-plugins/vim-tmux-focus-events' " Focus events for clipboard integration (Not necessary for neovim)
   Plugin 'christoomey/vim-tmux-navigator'     " Allow seamless movement between vim and tmux
   Plugin 'roxma/vim-tmux-clipboard'           " Tmux clipboard integration
 
@@ -44,6 +43,11 @@ if !$NO_VIM_PLUGINS
   Plugin 'vim-airline/vim-airline-themes' " Themes for Airline
   "Plugin 'xolox/vim-colorscheme-switcher' " Colorscheme switcher, useful for testing out new colorschemes
   "Plugin 'xolox/vim-misc'                 " required for colorscheme switcher
+
+  " Conditional plugins
+  if !has('nvim')
+    Plugin 'aaron-williamson/vim-tmux-focus-events' " Focus events for clipboard integration
+  endif
 
   " End vundle
   call vundle#end()
