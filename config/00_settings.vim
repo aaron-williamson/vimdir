@@ -18,10 +18,6 @@ runtime ftplugin/man.vim
 " Enable filetype detection and auto-indentation
 filetype plugin indent on
 
-" Set background to light by default for better
-" compatibility with base16 terminal themes
-set background=light
-
 " Automatically indent
 set autoindent
 
@@ -52,7 +48,7 @@ set display=lastline
 " Only add one space when joining lines ending with '.', '!', or '?'
 set nojoinspaces
 
-" Enable smartcase searches (foo matches foo FOO fOo etc, Foo matches only Foo)
+" Enable smartcase searches (ignore case unless upper case is typed)
 set ignorecase
 set smartcase
 
@@ -118,7 +114,8 @@ set winminwidth=15
 " Use system clipboard for yanks
 " But not if we're root on macos or windows or if we don't
 " have a clipboard handler available
-if (executable('xclip') || executable('xsel') || executable ('pbcopy')) && has('clipboard') && !($USER == 'root' && g:on_macos)
+if (executable('xclip') || executable('xsel') || executable ('pbcopy')) &&
+     \ has('clipboard') && !($USER == 'root' && g:on_macos)
   if g:on_macos || g:on_windows
     set clipboard=unnamed
   else
@@ -126,9 +123,13 @@ if (executable('xclip') || executable('xsel') || executable ('pbcopy')) && has('
   endif
 endif
 
-" Enable termguicolors if we have it
+" Enable termguicolors if we have it, otherwise set background to light, for
+" better base16 compatibility if we aren't using a theme
 if has("termguicolors")
   set termguicolors
+  set background=dark
+else
+  set background=light
 endif
 
 " Enable breakindent and linebreak if they're available
