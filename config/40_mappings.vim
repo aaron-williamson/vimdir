@@ -92,7 +92,7 @@ if has('nvim')
   noremap <Leader>T :terminal<CR>
 
   " Leave terminal emulator insert mode easily
-  tnoremap <C-f> <C-\><C-n>
+  tnoremap <C-g> <C-\><C-n>
 
   " Navigate out of spit terminal emulator easily
   if g:on_macos || $SSH_FROM_MAC
