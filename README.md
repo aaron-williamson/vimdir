@@ -4,6 +4,3 @@ Assumes vim version > 7.4 or neovim > 1.5
 ## TODO
 * Add a <C-w>x binding that behaves similar to Tmux prefix-x in both tab and
     buffer modes
-* Fix tab-or-buffer-next to ignore hidden buffers
-* Add a function or something to toggle writing mode (set textwidth, enable
-    spelling, and center text using an empty split to the left)
