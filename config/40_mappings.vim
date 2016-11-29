@@ -3,8 +3,8 @@
 " Also change the old leader to work as comma as well
 noremap \ ,
 
-" Expands to directory of current file from Gary Bernhardt
-cnoremap <expr> %% expand('%:h').'/'
+" Expands to current directory
+cnoremap <expr> %% expand('%:p:h') . '/'
 
 " Quick <Leader>t remapping
 nnoremap <Leader>t :noremap <Leader>t :
@@ -16,8 +16,8 @@ noremap <Leader>l <C-^>
 noremap <Leader>R :%substitute/
 
 " Explore current directory with <Leader>e or -
-map <Leader>e :edit %%<CR>
-map - :edit %%<CR>
+map <Leader>e :Explore %%<CR>
+map - :Explore %%<CR>
 
 " Toggle showing whitespace with <Leader>sw, <Leader>ss to show spaces, too
 noremap <Leader>sw :set list! <bar> set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<<CR>
