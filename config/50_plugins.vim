@@ -9,6 +9,7 @@ if !$NO_VIM_PLUGINS
   " Language plugins
   Plug 'rust-lang/rust.vim'      " Syntax highlighting for rust
   Plug 'tpope/vim-rails'         " Extra functions for rails
+  Plug 'tpope/vim-bundler'       " Some nice integration with ruby bundle
   Plug 'pangloss/vim-javascript' " Improved javascript support
   Plug 'plasticboy/vim-markdown' " Better highlighting for markdown
   Plug 'tmux-plugins/vim-tmux'   " Syntax and better manual usage for tmux conf
@@ -18,6 +19,7 @@ if !$NO_VIM_PLUGINS
   Plug 'michaeljsmith/vim-indent-object' " Adds a indent-based text object
   Plug 'mileszs/ack.vim'                 " Ack plugin for vim
   Plug 'ctrlpvim/ctrlp.vim'              " CtrlP for fuzzy find/open
+  Plug 'junegunn/fzf'                    " FZF for fuzzy find/open
   Plug 'skywind3000/asyncrun.vim'        " Easy asynchronous command running
   Plug 'terryma/vim-multiple-cursors'    " Sublime-text style multiple cursors
   Plug 'tpope/vim-surround'              " Surround for quoting/brackets/html

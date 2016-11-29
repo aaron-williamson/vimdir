@@ -1,7 +1,7 @@
 " This contains all of my mappings
 
-" Preserve comma behaviour with ,,
-noremap <Leader><Leader> ,
+" Also change the old leader to work as comma as well
+noremap \ ,
 
 " Expands to directory of current file from Gary Bernhardt
 cnoremap <expr> %% expand('%:h').'/'

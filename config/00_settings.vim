@@ -12,14 +12,14 @@ let mapleader = ","
 let g:netrw_liststyle   = 3
 let g:netrw_bufsettings = "number relativenumber nobuflisted"
 
-" Enable the built-in manual viewer
-runtime ftplugin/man.vim
-
 " Enable filetype detection and auto-indentation
 filetype plugin indent on
 
 " Automatically indent
 set autoindent
+
+" Don't show the splash screen
+set shortmess+=I
 
 " Highlight searches, and highlight while you type
 set hlsearch
@@ -111,21 +111,16 @@ set winminwidth=15
 
 " ~~~ Conditional Settings ~~~
 
-" Use system clipboard for yanks
-" But not if we're root on macos or windows or if we don't
-" have a clipboard handler available
+" Use system clipboard for yanks/deletes But not if we're root on macos or if
+" we don't have a clipboard handler available
 if (executable('xclip') || executable('xsel') || executable ('pbcopy')) &&
      \ has('clipboard') && !($USER == 'root' && g:on_macos)
-  if g:on_macos || g:on_windows
-    set clipboard=unnamed
-  else
-    set clipboard=unnamedplus
-  endif
+  set clipboard=unnamed
 endif
 
 " Enable termguicolors if we have it, otherwise set background to light, for
 " better base16 compatibility if we aren't using a theme
-if has("termguicolors")
+if has('termguicolors')
   set termguicolors
   set background=dark
 else
@@ -133,7 +128,7 @@ else
 endif
 
 " Enable breakindent and linebreak if they're available
-if has("linebreak")
+if has('linebreak')
   set linebreak
   " breakindent not introduced until patch 338
   if has('patch338')
@@ -141,9 +136,21 @@ if has("linebreak")
   endif
 endif
 
-" For some reason vim doesn't like screen and colors
-if !has('nvim') && (&term == 'screen' || &term == 'screen-256color')
-  set term=xterm-256color
+" Vim specific settings
+if !has('nvim')
+  " Enable the built in manual viewer
+  runtime ftplugin/man.vim
+
+  " For some reason vim doesn't like screen and colors
+  if &term == 'screen' || &term == 'screen-256color'
+    set term=xterm-256color
+  endif
+endif
+
+" Unix specific settings
+if has('unix')
+  " Need to manually reset path for compatibility with zsh
+  set path=".,/usr/include,,"
 endif
 
 " Neovim specific settings
