@@ -58,7 +58,7 @@ if !$NO_VIM_PLUGINS
   let g:ack_autoclose        = 1
   let g:ack_autofold_results = 1
   let g:ackpreview           = 1
-  nnoremap <Leader>a :LAck!<Space>
+  nnoremap <Leader>a :Ack<Space>
 
   " Specific configuration if we have the silver searcher installed
   if executable('ag')
