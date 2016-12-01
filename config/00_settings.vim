@@ -111,13 +111,6 @@ set winminwidth=15
 
 " ~~~ Conditional Settings ~~~
 
-" Use system clipboard for yanks/deletes But not if we're root on macos or if
-" we don't have a clipboard handler available
-if (executable('xclip') || executable('xsel') || executable ('pbcopy')) &&
-     \ has('clipboard') && !($USER == 'root' && g:on_macos)
-  set clipboard=unnamed
-endif
-
 " Enable termguicolors if we have it, otherwise set background to light, for
 " better base16 compatibility if we aren't using a theme
 if has('termguicolors')
