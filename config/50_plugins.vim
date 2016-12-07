@@ -59,8 +59,6 @@ if !$NO_VIM_PLUGINS
 
   " Customization
   Plug 'chriskempson/base16-vim'        " Base 16 color schemes
-  Plug 'vim-airline/vim-airline'        " Airline for better statusbar
-  Plug 'vim-airline/vim-airline-themes' " Themes for Airline
   "Plug 'xolox/vim-colorscheme-switcher' " Colorscheme switcher, useful for testing out new colorschemes
   "Plug 'xolox/vim-misc'                 " required for colorscheme switcher
 

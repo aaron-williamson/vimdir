@@ -3,31 +3,6 @@
 " Don't configure plugins if we don't want plugins
 if !$NO_VIM_PLUGINS
 
-  " Airline config
-  " Requires unicode support for separators
-  if g:on_windows
-    let g:airline_left_sep  = '»'
-    let g:airline_right_sep = '«'
-  else
-    let g:airline_left_sep  = 'Â»'
-    let g:airline_right_sep = 'Â«'
-  endif
-  let g:airline#extensions#tabline#enabled           = 1
-  let g:airline#extensions#tabline#tab_nr_type       = 1
-  let g:airline#extensions#tabline#buffer_idx_mode   = 1
-  let g:airline#extensions#tabline#show_close_button = 0
-
-  " Airline tab selection keys
-  map <Leader>1 <Plug>AirlineSelectTab1
-  map <Leader>2 <Plug>AirlineSelectTab2
-  map <Leader>3 <Plug>AirlineSelectTab3
-  map <Leader>4 <Plug>AirlineSelectTab4
-  map <Leader>5 <Plug>AirlineSelectTab5
-  map <Leader>6 <Plug>AirlineSelectTab6
-  map <Leader>7 <Plug>AirlineSelectTab7
-  map <Leader>8 <Plug>AirlineSelectTab8
-  map <Leader>9 <Plug>AirlineSelectTab9
-
   " Fugitive mappings (matches my git aliases)
   noremap <Leader>gst :Gstatus<CR>
   noremap <Leader>glg :Gvsplit! log --graph --oneline<CR>

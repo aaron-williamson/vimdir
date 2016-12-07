@@ -10,7 +10,8 @@ let mapleader = ","
 " Netrw (file browser) config
 " use tree view and show line numbers in netrw
 let g:netrw_liststyle   = 3
-let g:netrw_bufsettings = "number relativenumber nobuflisted"
+let g:netrw_banner      = 0
+let g:netrw_bufsettings = "nomodifiable nomodified nowrap readonly number relativenumber nobuflisted"
 
 " Enable filetype detection and auto-indentation
 filetype plugin indent on
@@ -95,6 +96,9 @@ set ttimeoutlen=0
 
 " Always show the status line
 set laststatus=2
+
+" Custom status line
+set statusline=%<[%n]\ %f\ %((%{fugitive#head()})\ %)%([%M%R]%)%h%w%q%=%-(%y\ \ %)%-14(%l/%L\ :\ %c%V%)%p%%
 
 " Backspace can delete indents and newlines
 set backspace=2
