@@ -8,6 +8,7 @@ if !$NO_VIM_PLUGINS
 
   " Language plugins
   Plug 'rust-lang/rust.vim'      " Syntax highlighting for rust
+  Plug 'cespare/vim-toml'        " Syntax for TOML
   Plug 'tpope/vim-rails'         " Extra functions for rails
   Plug 'tpope/vim-bundler'       " Some nice integration with ruby bundle
   Plug 'pangloss/vim-javascript' " Improved javascript support
