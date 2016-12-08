@@ -123,3 +123,8 @@ function! ToggleFoldMethod()
     normal zE
   endif
 endfunction
+
+" Custom mappings for netrw
+function! NetrwMappings()
+  noremap <buffer> <Esc> :Rex<CR>
+endfunction

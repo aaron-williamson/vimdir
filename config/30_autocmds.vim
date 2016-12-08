@@ -20,4 +20,7 @@ augroup myAutoCmds
     \ if line("'\"") >= 1 && line("'\"") <= line("$") |
     \   execute "normal! g`\"" |
     \ endif
+
+  " Custom mappings for netrw
+  autocmd FileType netrw call NetrwMappings()
 augroup END
