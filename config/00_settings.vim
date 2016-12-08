@@ -98,7 +98,7 @@ set ttimeoutlen=0
 set laststatus=2
 
 " Custom status line
-set statusline=%<[%n]\ %f\ %((%{fugitive#head()})\ %)%([%M%R]%)%h%w%q%=%-(%y\ \ %)%-14(%l/%L\ :\ %c%V%)%p%%
+set statusline=[%n]\ %<%f\ %((%{fugitive#head()})\ %)%([%M%R]%)%h%w%q%=%-(%y\ \ %)%(%l/%L\ :\ %c%V%)\ \ %p%%
 
 " Backspace can delete indents and newlines
 set backspace=2
