@@ -11,19 +11,18 @@ if !$NO_VIM_PLUGINS
   Plug 'rust-lang/rust.vim', { 'for': 'rust' }
   " TOML support
   Plug 'cespare/vim-toml', { 'for': 'toml' }
-  " Extra rails functionality, too hard to do on demand, but it might do on
-  " demand loading by itself
+  " Extra rails functionality
   Plug 'tpope/vim-rails'
-  " Extra bundler functionality, too hard to do on demand, but it might do on
-  " demand loading by itself
+  " Extra bundler functionality
   Plug 'tpope/vim-bundler'
-  " Improved javascript editing, does on demand loading itself I think,
-  " either way on demand with vim-plug didn't seem to work
-  Plug 'pangloss/vim-javascript'
-  " Better markdown support
-  Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+  " Improved javascript editing, problems with on-demand loading
+  Plug 'pangloss/vim-javascript' ", { 'for': 'javascript' }
+  " Better markdown support, problems with on-demand loading
+  Plug 'plasticboy/vim-markdown' ", { 'for': 'markdown' }
   " Better tmux configuration file support
   Plug 'tmux-plugins/vim-tmux', { 'for': 'tmux' }
+  " Scala support, problems with on-demand loading and sbt
+  Plug 'derekwyatt/vim-scala' ", { 'for': ['scala', 'sbt.scala'] }
 
   " -- Workflow/command plugins --
   " Fugitive for git integration
