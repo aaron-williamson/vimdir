@@ -23,6 +23,9 @@ map - :Explore %%<CR>
 noremap <Leader>sw :set list! <bar> set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<<CR>
 noremap <Leader>ss :set list! <bar> set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<,space:%<CR>
 
+" Search for trailing whitespace with <Leader>st
+noremap <Leader>st /\v\s+$<CR>
+
 " Temporarily disable all line numbers with <Leader>nn
 noremap <Leader>nn :set number! <bar> set relativenumber!<CR>
 

@@ -16,6 +16,9 @@ if !$NO_VIM_PLUGINS
   noremap <Leader>gpu :Gpush<Space>
   noremap <Leader>gpd :Gpull --ff-only<CR>
 
+  " Set the status line to include fugitive
+  set statusline=[%n]\ %<%f\ %((%{fugitive#head()})\ %)%([%M%R]%)%h%w%q%=%-(%y\ \ %)%(%l/%L\ :\ %c%V%)\ \ %p%%
+
   " Multiple cursors configuration
   noremap <Leader>mf :MultipleCursorsFind<Space>
   let g:multi_cursor_exit_from_visual_mode = 0

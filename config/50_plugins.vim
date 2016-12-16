@@ -47,6 +47,8 @@ if !$NO_VIM_PLUGINS
   Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
   " Allow repeating supported plugins
   Plug 'tpope/vim-repeat'
+  " Personal wiki for vim
+  "Plug 'vimwiki/vimwiki'
 
   " -- Tmux integration plugins --
   if $TMUX != ''
