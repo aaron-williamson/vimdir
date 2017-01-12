@@ -17,6 +17,9 @@ let g:netrw_bufsettings = "nomodifiable nomodified nowrap readonly number relati
 " Enable filetype detection and auto-indentation
 filetype plugin indent on
 
+" Disable the mouse
+set mouse=
+
 " Automatically indent
 set autoindent
 
