@@ -63,6 +63,9 @@ set scrolloff=5
 " Enable syntax highlighting
 syntax enable
 
+" Allow files to set some settings
+set modeline
+
 " Show the currently executing command
 set showcmd
 
