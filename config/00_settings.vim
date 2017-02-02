@@ -57,6 +57,12 @@ set nojoinspaces
 set ignorecase
 set smartcase
 
+" Set a dictionaries for word completion
+set dictionary+=/usr/share/dict/words
+
+" Infer case for autocompletion
+set infercase
+
 " Try to have at least 5 lines of vertical room surrounding the cursor
 set scrolloff=5
 

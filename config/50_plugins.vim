@@ -11,6 +11,8 @@ if !$NO_VIM_PLUGINS
   Plug 'rust-lang/rust.vim', { 'for': 'rust' }
   " TOML support
   Plug 'cespare/vim-toml', { 'for': 'toml' }
+  " Enhanced ruby support
+  Plug 'vim-ruby/vim-ruby', { 'for': ['ruby', 'eruby'] }
   " Extra rails functionality
   Plug 'tpope/vim-rails'
   " Extra bundler functionality
