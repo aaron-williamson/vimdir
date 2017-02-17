@@ -21,9 +21,17 @@ endfunction
 " Same as above, but backwards
 function! TabOrBufferPrevious(count)
   if tabpagenr('$') == 1
-    execute a:count "bprevious"
+    if a:count == 0
+      bprevious
+    else
+      execute a:count "bprevious"
+    endif
   else
-    execute a:count "tabprevious"
+    if a:count == 0
+      tabprevious
+    else
+      execute a:count "tabprevious"
+    endif
   endif
 endfunction
 
