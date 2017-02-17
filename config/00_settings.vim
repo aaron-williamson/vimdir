@@ -151,6 +151,9 @@ if !has('nvim')
   " Enable the built in manual viewer
   runtime ftplugin/man.vim
 
+  " Store larger things in registers
+  set viminfo=!,'100,<200,s50,h
+
   " For some reason vim doesn't like screen and colors
   if &term == 'screen' || &term == 'screen-256color'
     set term=xterm-256color
@@ -165,5 +168,8 @@ endif
 
 " Neovim specific settings
 if has('nvim')
+  " Store larger things in registers
+  set shada=!,'100,<200,s50,h
+
   let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
 endif
