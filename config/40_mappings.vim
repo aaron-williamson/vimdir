@@ -37,9 +37,6 @@ nnoremap <Leader>w :write<CR>
 inoremap <Leader>w <Esc>:write<CR>
 vnoremap <Leader>w <Esc>:write<CR>
 
-" Insert newline without entering insert mode with <Leader>nm
-nnoremap <Leader>nm o<Esc>
-
 " Use <Leader>p[letter] with a letter to toggle paste mode
 " the letter determines the mode after toggling paste:
 "   i: insert mode
