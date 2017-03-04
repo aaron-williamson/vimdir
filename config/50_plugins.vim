@@ -49,8 +49,8 @@ if !$NO_VIM_PLUGINS
   Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
   " Allow repeating supported plugins
   Plug 'tpope/vim-repeat'
-  " Personal wiki for vim
-  "Plug 'vimwiki/vimwiki'
+  " Allow * and # searching from visual mode
+  Plug 'bronson/vim-visual-star-search'
 
   " -- Tmux integration plugins --
   if $TMUX != ''
