@@ -71,5 +71,6 @@ if !$NO_VIM_PLUGINS
 
   " Quicker tabularize command writing
   cabbrev Tab Tabularize
+  vmap <Leader>= :Tabularize /=<CR>
 
 endif " End plugin config if
