@@ -47,6 +47,9 @@ if !$NO_VIM_PLUGINS
     let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
   endif
 
+  " Markdown plugin configuration
+  let g:vim_markdown_no_default_key_mappings = 1
+
   " CtrlP configuration
   let g:ctrlp_switch_buffer       = 't'
   let g:ctrlp_open_multiple_files = 't'
