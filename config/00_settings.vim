@@ -20,6 +20,9 @@ filetype plugin indent on
 " Disable the mouse
 set mouse=
 
+" Set GUI cursor preferences
+set guicursor=n-v-c:block,i-ci:ver5,r-cr:hor5,sm:block,a:blinkon0
+
 " Automatically indent
 set autoindent
 
@@ -170,6 +173,4 @@ endif
 if has('nvim')
   " Store larger things in registers
   set shada=!,'100,<200,s50,h
-
-  let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
 endif
