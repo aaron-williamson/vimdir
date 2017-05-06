@@ -136,3 +136,12 @@ endfunction
 function! NetrwMappings()
   noremap <buffer> <Esc> :Rex<CR>
 endfunction
+
+" Tag for paste mode
+function! StatusPasteMode()
+  if &paste
+    return "[Paste]"
+  else
+    return ""
+  end
+endfunction
