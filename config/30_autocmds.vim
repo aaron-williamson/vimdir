@@ -1,7 +1,5 @@
 " My autocommands live here
 
-" Group them all in an autocmd group so we don't end up with duplicates
-" I might change this later and make them into separate groups
 augroup myAutoCmds
   " First clear the group of any old autocmd's
   autocmd!
@@ -27,4 +25,10 @@ augroup myAutoCmds
   " Rusty-tags
   autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
   autocmd BufWrite *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&"
+augroup END
+
+" Autocommand to refresh my whitespace checker
+augroup whitespace
+  autocmd!
+  autocmd VimEnter,CursorHold,BufWritePost * call RefreshWhitespaceCheck()
 augroup END

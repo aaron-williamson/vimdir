@@ -145,3 +145,80 @@ function! StatusPasteMode()
     return ""
   end
 endfunction
+
+" Whitespace checks, next few functions heavily influenced by vim-airline
+" https://github.com/vim-airline/vim-airline
+function! CheckMixedIndentFile()
+  let c_like_langs = [ 'c', 'cpp', 'cuda', 'go', 'javascript', 'ld', 'php' ]
+  if index(c_like_langs, &ft) > -1
+    " for C-like languages: allow /** */ comment style with one space before the '*'
+    let head_spc = '\v(^ +\*@!)'
+  else
+    let head_spc = '\v(^ +)'
+  endif
+
+  let indent_tabs = search('\v(^\t+)', 'nw')
+  let indent_spc  = search(head_spc, 'nw')
+  if indent_tabs > 0 && indent_spc > 0
+    return printf("%d:%d", indent_tabs, indent_spc)
+  else
+    return ''
+  endif
+endfunction
+
+" Function to tie all whitespace checks together
+function! StatusWhitespaceChecks()
+  " Only run these checks on reasonably sized files that we can modify
+  if &readonly || !&modifiable || line('$') > 20000
+    return ''
+  endif
+
+  " Don't check too frequently
+  if !exists('b:whitespace_check')
+    let b:whitespace_check = ''
+    " Only run the checks we want to, this allows disabling or enabling checks
+    " on a per file-type basis using autocmd's
+    let checks = get(g:, 'whitespace_checks', ['mixed-indent', 'trailing', 'mixed-indent-file'])
+
+    let trailing = 0
+    if index(checks, 'trailing') > -1
+      let trailing = search('\s$', 'nw')
+    endif
+
+    let mixed = 0
+    if index(checks, 'mixed-indent') > -1
+      let mixed = search('\v(^\t+ +)|(^ +\t+)', 'nw')
+    endif
+
+    let mixed_file = ''
+    if index(checks, 'mixed-indent-file') > -1
+      let mixed_file = CheckMixedIndentFile()
+    endif
+
+    let long = 0
+    if index(checks, 'long') > -1 && &tw > 0
+      let long = search('\%>'.&tw.'v.\+', 'nw')
+    endif
+
+    if trailing != 0
+      let b:whitespace_check .= printf(' [%s]trailing', trailing)
+    endif
+    if mixed != 0
+      let b:whitespace_check .= printf(' [%s]mixed-indent', mixed)
+    endif
+    if long != 0
+      let b:whitespace_check .= printf(' [%s]long', long)
+    endif
+    if !empty(mixed_file)
+      let b:whitespace_check .= printf(' [%s]mixed-indent-file', mixed_file)
+    endif
+
+    let b:whitespace_check = substitute(b:whitespace_check, "^[ ]*", "", "")
+  endif
+
+  return b:whitespace_check
+endfunction
+
+function! RefreshWhitespaceCheck()
+  unlet! b:airline_whitespace_check
+endfunction

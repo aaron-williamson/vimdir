@@ -19,7 +19,12 @@ set statusline+=%q                         " Quickfix or location list
 
 set statusline+=%= " End first alignment group
 
+" Center
+set statusline+=%{StatusWhitespaceChecks()} " Whitespace checks
+
+set statusline+=%= " End second alignment group
+
 " Right
-set statusline+=%-(%y\ \ %)        " Left justified filetype
-set statusline+=%(%l/%L\ :\ %c%V%) " Line/TotalLines : Column
-set statusline+=\ \ %p%%           " Percent position in file
+set statusline+=%-(%y%)              " Left justified filetype
+set statusline+=%21(%l/%L\ :\ %c%V%) " Line/TotalLines : Column
+set statusline+=%6(\ \ %p%%%)        " Percent position in file
