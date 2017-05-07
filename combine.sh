@@ -27,7 +27,7 @@ EOF
 # unnecessary whitespace, it takes as argument the file to read
 # the original content from
 function minimize {
-  LC_ALL=C sed -n -E 's/^[[:space:]]+(.*)/\1/g;s/([^[:space:]]+)[[:space:]]+([^[:space:]])/\1 \2/g;s/(^[^"]+) "[^"]+$/\1/;/$[[:space:]]*^|^"/!p;/--- EXCLUDE FROM COMBINED ---/q' $1
+  LC_ALL=C sed -n -E 's/^[[:space:]]+(.*)/\1/g;s/([^[:space:]]+)[[:space:]]+([^[:space:]])/\1 \2/g;s/(^[^"]+) "[^"]+$/\1/;s/\\$/\\ /;/$[[:space:]]*^|^"/!p;/--- EXCLUDE FROM COMBINED ---/q' $1
 }
 
 # This function will remove everything from a file after the line
