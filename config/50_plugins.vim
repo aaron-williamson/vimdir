@@ -19,6 +19,8 @@ if !$NO_VIM_PLUGINS
   Plug 'tpope/vim-bundler'
   " Improved javascript editing, problems with on-demand loading
   Plug 'pangloss/vim-javascript' ", { 'for': 'javascript' }
+  " Improved JSX editing, problems with on-demand loading
+  Plug 'mxw/vim-jsx'
   " Coffee script syntax highlighting support + extras
   Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
   " Better markdown support, problems with on-demand loading
