@@ -16,23 +16,6 @@ if !$NO_VIM_PLUGINS
   noremap <Leader>gpu :Gpush<Space>
   noremap <Leader>gpd :Gpull --ff-only<CR>
 
-  " Set the status line to include fugitive see settings.vim for explanation
-  " of the individual components
-  set statusline=
-  set statusline+=\ [%n]
-  set statusline+=\ %<
-  set statusline+=\ %f
-  set statusline+=%(\ %{StatusPasteMode()}%)
-  set statusline+=%(\ (%{fugitive#head()})%) " Current git branch via fugitive
-  set statusline+=%([%R%M]%)
-  set statusline+=%h
-  set statusline+=%w
-  set statusline+=%q
-  set statusline+=%=
-  set statusline+=%-(%y\ \ %)
-  set statusline+=%(%l/%L\ :\ %c%V%)
-  set statusline+=\ \ %p%%\  " Dont detect this as trailing whitespace
-
   " Multiple cursors configuration
   noremap <Leader>mf :MultipleCursorsFind<Space>
   let g:multi_cursor_exit_from_visual_mode = 0

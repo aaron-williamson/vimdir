@@ -113,21 +113,6 @@ set ttimeoutlen=0
 " Always show the status line
 set laststatus=2
 
-" Custom status line
-set statusline=
-set statusline+=[%n]\                      " Buffer number
-set statusline+=%<                         " Truncate here
-set statusline+=%f\                        " Path to current file
-set statusline+=%(%{StatusPasteMode()}\ %) " Paste mode flag
-set statusline+=%([%R%M]%)                 " Modified and read only group
-set statusline+=%h                         " Help buffer flag
-set statusline+=%w                         " Preview flag
-set statusline+=%q                         " Quickfix or location list
-set statusline+=%=                         " End first alignment group
-set statusline+=%-(%y\ \ %)                " Left justified filetype
-set statusline+=%(%l/%L\ :\ %c%V%)         " Line/TotalLines : Column
-set statusline+=\ \ %p%%\                  " Percent position in file
-
 " Backspace can delete indents and newlines
 set backspace=2
 
