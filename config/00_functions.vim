@@ -81,7 +81,7 @@ function! WritingMode()
     echoerr "Cannot enable writing mode in a window with more than one split"
     return
   endif
-  
+
   " Make sure we have enough room before doing the split to center text
   " With nu and rnu it's 4 extra width and we need 78 for the text
   if winwidth('%') > 82
@@ -167,7 +167,7 @@ function! CheckMixedIndentFile()
 endfunction
 
 " Function to tie all whitespace checks together
-function! StatusWhitespaceChecks()
+function! StatusWhitespaceCheck()
   " Only run these checks on reasonably sized files that we can modify
   if &readonly || !&modifiable || line('$') > 20000
     return ''
@@ -217,8 +217,4 @@ function! StatusWhitespaceChecks()
   endif
 
   return b:whitespace_check
-endfunction
-
-function! RefreshWhitespaceCheck()
-  unlet! b:airline_whitespace_check
 endfunction

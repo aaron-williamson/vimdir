@@ -20,7 +20,7 @@ set statusline+=%q                         " Quickfix or location list
 set statusline+=%= " End first alignment group
 
 " Center
-set statusline+=%{StatusWhitespaceChecks()} " Whitespace checks
+set statusline+=%{StatusWhitespaceCheck()} " Whitespace checks
 
 set statusline+=%= " End second alignment group
 

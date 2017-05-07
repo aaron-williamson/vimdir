@@ -30,5 +30,5 @@ augroup END
 " Autocommand to refresh my whitespace checker
 augroup whitespace
   autocmd!
-  autocmd VimEnter,CursorHold,BufWritePost * call RefreshWhitespaceCheck()
+  autocmd VimEnter,CursorHold,BufWritePost * unlet! b:whitespace_check
 augroup END
