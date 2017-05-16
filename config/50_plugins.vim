@@ -55,6 +55,8 @@ if !$NO_VIM_PLUGINS
   Plug 'tpope/vim-repeat'
   " Allow * and # searching from visual mode
   Plug 'bronson/vim-visual-star-search'
+  " A secure modeline alternative
+  Plug 'ciaranm/securemodelines'
 
   " -- Tmux integration plugins --
   if $TMUX != ''
