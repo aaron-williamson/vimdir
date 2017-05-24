@@ -12,16 +12,19 @@ nnoremap <Leader>t :noremap <Leader>t :
 " Mapping for going to the last window
 noremap <Leader>l <C-^>
 
-" For quick replace
-noremap <Leader>R :%substitute/
+" For quick substitute
+noremap <Leader>S :%substitute/
 
 " Explore current directory with <Leader>e or -
 map <Leader>e :Explore %%<CR>
 map - :Explore %%<CR>
 
 " Toggle showing whitespace with <Leader>sw, <Leader>ss to show spaces, too
-noremap <Leader>sw :set list! <bar> set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<<CR>
-noremap <Leader>ss :set list! <bar> set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<,space:%<CR>
+noremap <Leader>sw :call ToggleShowWhitespace(v:false)<CR>
+noremap <Leader>ss :call ToggleShowWhitespace(v:true)<CR>
+
+" Refresh whitespace checker with <Leader>sc
+noremap <Leader>sc :unlet! b:whitespace_check<CR>
 
 " Search for trailing whitespace with <Leader>st
 noremap <Leader>st /\v\s+$<CR>
@@ -37,11 +40,7 @@ nnoremap <Leader>w :write<CR>
 inoremap <Leader>w <Esc>:write<CR>
 vnoremap <Leader>w <Esc>:write<CR>
 
-" Use <Leader>p[letter] with a letter to toggle paste mode
-" the letter determines the mode after toggling paste:
-"   i: insert mode
-"   o: insert mode on newline
-"   p: no change
+" Toggle paste mode with <Leader>p
 nnoremap <Leader>p :set paste!<CR>
 
 " Toggle highlight with <Leader>h
@@ -56,7 +55,7 @@ noremap <Leader>C :set cursorcolumn!<CR>
 " Toggle fold method between manual and indent with <Leader>z
 noremap <Leader>z :call ToggleFoldMethod()<CR>
 
-" More sensible resizing amounts
+" More sensible resizing amounts/binds
 noremap <C-w>- :resize -10<CR>
 noremap <C-w>= :resize +10<CR>
 noremap <C-w>+ :wincmd =<CR>
@@ -65,6 +64,8 @@ noremap <C-w>, :vertical resize -10<CR>
 
 " Add a binding for new tab
 noremap <C-w>t :tabnew<CR>
+
+" Use <C-w>T to pull to a new tab, even if it's the only window
 noremap <C-w>T :PullToNewTab<CR>
 
 " Split navigation

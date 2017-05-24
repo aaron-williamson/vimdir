@@ -73,42 +73,49 @@ function! ToggleSpelling()
   endif
 endfunction
 
-" This function will enable my preferred writing settings and center the
-" text nicely, though it requires there to be only one split.
-function! WritingMode()
-  " Can't do it if there's more than one split
+" This function will center the window, but only if there is only one split
+function! Center(min_width)
+  " Can't do it if there's more than one split, or if there isn't enough room
+  " on the screen
   if winnr('$') > 1
-    echoerr "Cannot enable writing mode in a window with more than one split"
+    echom "Cannot center in a tab page with more than one window"
+    return
+  elseif winwidth('%') < a:min_width + 1
+    echom "Cannot center window, not enough columns"
     return
   endif
 
-  " Make sure we have enough room before doing the split to center text
-  " With nu and rnu it's 4 extra width and we need 78 for the text
-  if winwidth('%') > 82
-    " Make sure we don't split right
-    let l:splitright = v:false
-    if &splitright
-      let l:splitright = v:true
-      set nosplitright
-    endif
-
-    " Now create and size the split
-    let l:availablewidth = winwidth('%') - 82
-    let l:splitwidth = l:availablewidth / 2
-    execute l:splitwidth . " vnew"
-
-    " Disable numbers
-    setlocal nonumber
-    setlocal norelativenumber
-
-    " Restore splitright setting
-    if l:splitright
-      set splitright
-    endif
-
-    " Switch back to buffer for editing
-    wincmd l
+  " Make sure we don't split right
+  let splitright = v:false
+  if &splitright
+    let splitright = v:true
+    set nosplitright
   endif
+
+  " Now create and size the split
+  let availablewidth = winwidth('%') - a:min_width + 1
+  let splitwidth = availablewidth / 2
+  execute splitwidth . " vnew"
+
+  " Restore splitright setting
+  if splitright
+    set splitright
+  endif
+
+  " Switch back to buffer for editing
+  wincmd l
+endfunction
+
+" This function will enable my preferred writing settings and center the text
+" nicely, though it requires there to be only one split.
+function! WritingMode()
+  " Make sure we have enough room before doing the split to center text with
+  " some buffer area
+  call Center(80)
+
+  " disable Numbers
+  setlocal nonumber
+  setlocal norelativenumber
 
   " Then enable spelling mode
   setlocal spell spelllang=en_us,en_ca
@@ -144,6 +151,31 @@ function! StatusPasteMode()
   else
     return ""
   end
+endfunction
+
+" Whitespace toggle function
+function! ToggleShowWhitespace(show_space)
+  " If we aren't already showing whitespace, just show whitespace in the
+  " desired manner (with or without spaces)
+  if !&list
+    set list
+    set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<
+
+    if a:show_space
+      set listchars+=space:%
+    endif
+  else
+    " If we are already showing whitespace, check to see if the desired spaces
+    " state has changed, and toggle it if it has, otherwise stop showing
+    " whitespace
+    if &listchars =~ "space:" && !a:show_space
+      set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<
+    elseif &listchars !~ "space:" && a:show_space
+      set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<,space:%
+    else
+      set nolist
+    endif
+  endif
 endfunction
 
 " Whitespace checks, next few functions heavily influenced by vim-airline

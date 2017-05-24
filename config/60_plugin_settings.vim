@@ -11,10 +11,6 @@ if !$NO_VIM_PLUGINS
   noremap <Leader>gdc :Gvsplit! diff --cached<CR>
   noremap <Leader>gdt :Gvdiff<CR>
   noremap <Leader>gci :Gcommit<CR>
-  noremap <Leader>gaa :Gpedit! add --all<CR>
-  noremap <Leader>gfa :Gpedit! fetch --all<CR>
-  noremap <Leader>gpu :Gpush<Space>
-  noremap <Leader>gpd :Gpull --ff-only<CR>
 
   " Multiple cursors configuration
   noremap <Leader>mf :MultipleCursorsFind<Space>
@@ -36,7 +32,13 @@ if !$NO_VIM_PLUGINS
   nnoremap <Leader>a :Ack<Space>
 
   " Specific configuration if we have the silver searcher installed
-  if executable('ag')
+  if executable('rg')
+    " Use rg for ack
+    let g:ackprg = 'rg --vimgrep'
+
+    " Use rg for ctrlp
+    let g:ctrlp_user_command = 'rg -l --color never --hidden "" %s'
+  elseif executable('ag')
     " Use ag for ack
     let g:ackprg = 'ag --vimgrep'
 
