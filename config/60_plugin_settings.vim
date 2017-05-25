@@ -11,6 +11,7 @@ if !$NO_VIM_PLUGINS
   noremap <Leader>gdc :Gvsplit! diff --cached<CR>
   noremap <Leader>gdt :Gvdiff<CR>
   noremap <Leader>gci :Gcommit<CR>
+  noremap <Leader>gbl :Gblame<CR>
 
   " Multiple cursors configuration
   noremap <Leader>mf :MultipleCursorsFind<Space>
