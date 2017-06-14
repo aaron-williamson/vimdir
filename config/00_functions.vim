@@ -109,22 +109,64 @@ endfunction
 " This function will enable my preferred writing settings and center the text
 " nicely, though it requires there to be only one split.
 function! WritingMode()
-  " Make sure we have enough room before doing the split to center text with
-  " some buffer area
-  call Center(80)
+  if !exists('b:writing_mode')
+    " Make sure we have enough room before doing the split to center text with
+    " some buffer area
+    call Center(80)
 
-  " disable Numbers
-  setlocal nonumber
-  setlocal norelativenumber
+    " disable Numbers
+    let b:writing_mode_old_number = &number
+    let b:writing_mode_old_relnumber = &relativenumber
+    setlocal nonumber
+    setlocal norelativenumber
 
-  " Then enable spelling mode
-  setlocal spell spelllang=en_us,en_ca
+    " Then enable spelling mode
+    let b:writing_mode_old_spelllang = &spelllang
+    let b:writing_mode_old_spell = &spell
+    setlocal spelllang=en_us,en_ca
+    setlocal spell
 
-  " Set text width
-  setlocal textwidth=78
+    " Set text width
+    let b:writing_mode_old_textwidth = &textwidth
+    setlocal textwidth=78
 
-  " And set color column
-  setlocal colorcolumn=79
+    " And set color column
+    let b:writing_mode_old_colorcolumn = &colorcolumn
+    setlocal colorcolumn=79
+    let b:writing_mode = 'on'
+  else
+    " Make this the only window
+    only
+
+    " Re-enable numbers
+    if b:writing_mode_old_number
+      setlocal number
+    endif
+    if b:writing_mode_old_relnumber
+      setlocal relativenumber
+    endif
+
+    " Restore spelling mode
+    if b:writing_mode_old_spell
+      setlocal nospell
+    endif
+    execute "setlocal spelllang=" . b:writing_mode_old_spelllang
+
+    " Restore text width
+    execute "setlocal textwidth=" . b:writing_mode_old_textwidth
+
+    " Restore color column
+    execute "setlocal colorcolumn=" . b:writing_mode_old_colorcolumn
+
+    " Unlet variables
+    unlet b:writing_mode_old_number
+    unlet b:writing_mode_old_relnumber
+    unlet b:writing_mode_old_spell
+    unlet b:writing_mode_old_spelllang
+    unlet b:writing_mode_old_textwidth
+    unlet b:writing_mode_old_colorcolumn
+    unlet b:writing_mode
+  endif
 endfunction
 
 function! ToggleFoldMethod()
