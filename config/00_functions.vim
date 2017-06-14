@@ -256,6 +256,11 @@ function! StatusWhitespaceCheck()
     return ''
   endif
 
+  " Make it easy to disable all checks
+  if exists('b:no_whitespace_check')
+    return ''
+  endif
+
   " Don't check too frequently
   if !exists('b:whitespace_check')
     let b:whitespace_check = ''
@@ -300,4 +305,13 @@ function! StatusWhitespaceCheck()
   endif
 
   return b:whitespace_check
+endfunction
+
+" Function to toggle the whitespace checker
+function! ToggleWhitespaceCheck()
+  if exists('b:no_whitespace_check')
+    unlet b:no_whitespace_check
+  else
+    let b:no_whitespace_check = 'true'
+  endif
 endfunction

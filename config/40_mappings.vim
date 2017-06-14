@@ -26,8 +26,16 @@ noremap <Leader>ss :call ToggleShowWhitespace(1)<CR>
 " Refresh whitespace checker with <Leader>sc
 noremap <Leader>sc :unlet! b:whitespace_check<CR>
 
+" Toggle whitespace checker with <Leader>sn
+noremap <Leader>sn :call ToggleWhitespaceCheck() <bar>
+      \ unlet! b:whitespace_check<CR>
+
 " Search for trailing whitespace with <Leader>st
 noremap <Leader>st /\v\s+$<CR>
+
+" Remove trailing whitespace with <Leader>sd
+noremap <Leader>sd :%substitute/\v\s+$//g <bar>
+      \ unlet! b:whitespace_check<CR>
 
 " Temporarily disable all line numbers with <Leader>nn
 noremap <Leader>nn :set number! <bar> set relativenumber!<CR>
