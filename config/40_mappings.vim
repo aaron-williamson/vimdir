@@ -20,8 +20,8 @@ map <Leader>e :Explore %%<CR>
 map - :Explore %%<CR>
 
 " Toggle showing whitespace with <Leader>sw, <Leader>ss to show spaces, too
-noremap <Leader>sw :call ToggleShowWhitespace(v:false)<CR>
-noremap <Leader>ss :call ToggleShowWhitespace(v:true)<CR>
+noremap <Leader>sw :call ToggleShowWhitespace(0)<CR>
+noremap <Leader>ss :call ToggleShowWhitespace(1)<CR>
 
 " Refresh whitespace checker with <Leader>sc
 noremap <Leader>sc :unlet! b:whitespace_check<CR>

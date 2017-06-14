@@ -86,9 +86,9 @@ function! Center(min_width)
   endif
 
   " Make sure we don't split right
-  let splitright = v:false
+  let splitright = 0
   if &splitright
-    let splitright = v:true
+    let splitright = 1
     set nosplitright
   endif
 
