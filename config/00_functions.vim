@@ -195,6 +195,15 @@ function! StatusPasteMode()
   end
 endfunction
 
+" Text width for status line
+function! StatusTextWidth()
+  if &textwidth
+    return "/" . &textwidth
+  else
+    return ""
+  endif
+endfunction
+
 " Whitespace toggle function
 function! ToggleShowWhitespace(show_space)
   " If we aren't already showing whitespace, just show whitespace in the

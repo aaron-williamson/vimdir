@@ -22,9 +22,14 @@ set statusline+=%= " End first alignment group
 " Center
 set statusline+=%{StatusWhitespaceCheck()} " Whitespace checks
 
-set statusline+=%= " End second alignment group
+" We can only have more than two alignment groups if we're using neovim
+if has('nvim')
+  set statusline+=%= " End second alignment group
+else
+  set statusline+=\  " If we're using normal vim, just use a space
+endif
 
 " Right
-set statusline+=%-(%y%)              " Left justified filetype
-set statusline+=%21(%l/%L\ :\ %c%V%) " Line/TotalLines : Column
-set statusline+=%6(\ \ %p%%%)        " Percent position in file
+set statusline+=%-(%y%)                                  " Left justified filetype
+set statusline+=%25(%l/%L\ :\ %c%V%{StatusTextWidth()}%) " Line/TotalLines : Column/TextWidth
+set statusline+=%6(\ \ %p%%%)                            " Percent position in file
