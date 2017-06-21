@@ -29,6 +29,8 @@ if !$NO_VIM_PLUGINS
   Plug 'tmux-plugins/vim-tmux', { 'for': 'tmux' }
   " Scala support, problems with on-demand loading and sbt
   Plug 'derekwyatt/vim-scala' ", { 'for': ['scala', 'sbt.scala'] }
+  " Go syntax highlighting support and friends
+  Plug 'fatih/vim-go', { 'for': 'go' }
 
   " -- Workflow/command plugins --
   " Fugitive for git integration
