@@ -1,5 +1,5 @@
 " My autocommands live here
-"
+
 augroup fileSpecifics
   autocmd!
 
