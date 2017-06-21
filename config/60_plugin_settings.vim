@@ -32,44 +32,38 @@ if !$NO_VIM_PLUGINS
   let g:ackpreview           = 1
   nnoremap <Leader>a :Ack<Space>
 
-  " Specific configuration if we have the silver searcher installed
+  " Specific configuration for ripgrep or the silver searcher
   if executable('rg')
     " Use rg for ack
     let g:ackprg = 'rg --vimgrep'
-
-    " Use rg for ctrlp
-    let g:ctrlp_user_command = 'rg -l --color never --hidden "" %s'
   elseif executable('ag')
     " Use ag for ack
     let g:ackprg = 'ag --vimgrep'
-
-    " Use ag for ctrlp
-    let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
   endif
 
   " Markdown plugin configuration
   let g:vim_markdown_no_default_key_mappings = 1
 
-  " CtrlP configuration
-  let g:ctrlp_switch_buffer       = 't'
-  let g:ctrlp_open_multiple_files = 't'
-  let g:ctrlp_match_window        = 'max:25,results:50'
+  " FZF configuration
+  map <C-p> :FZF<CR>
 
   " Color scheme
   silent! colorscheme base16-summerfruit-dark
 
   " Vim-tmux-navigator mappings
   let g:tmux_navigator_no_mappings = 1
-  if (g:on_macos || $SSH_FROM_MAC) && $TMUX != ''
-    noremap <silent> ˙ :TmuxNavigateLeft<CR>
-    noremap <silent> ∆ :TmuxNavigateDown<CR>
-    noremap <silent> ˚ :TmuxNavigateUp<CR>
-    noremap <silent> ¬ :TmuxNavigateRight<CR>
-  else
-    noremap <silent> <A-h> :TmuxNavigateLeft<CR>
-    noremap <silent> <A-j> :TmuxNavigateDown<CR>
-    noremap <silent> <A-k> :TmuxNavigateUp<CR>
-    noremap <silent> <A-l> :TmuxNavigateRight<CR>
+  if $TMUX != ''
+    if (g:on_macos || $SSH_FROM_MAC)
+      noremap <silent> ˙ :TmuxNavigateLeft<CR>
+      noremap <silent> ∆ :TmuxNavigateDown<CR>
+      noremap <silent> ˚ :TmuxNavigateUp<CR>
+      noremap <silent> ¬ :TmuxNavigateRight<CR>
+    else
+      noremap <silent> <A-h> :TmuxNavigateLeft<CR>
+      noremap <silent> <A-j> :TmuxNavigateDown<CR>
+      noremap <silent> <A-k> :TmuxNavigateUp<CR>
+      noremap <silent> <A-l> :TmuxNavigateRight<CR>
+    endif
   endif
 
   " Quicker tabularize command writing

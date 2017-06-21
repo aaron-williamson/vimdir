@@ -37,8 +37,6 @@ if !$NO_VIM_PLUGINS
   Plug 'michaeljsmith/vim-indent-object'
   " Ack plugin
   Plug 'mileszs/ack.vim', { 'on': 'Ack' }
-  " CtrlP for fuzzy find/open
-  Plug 'ctrlpvim/ctrlp.vim'
   " FZF for fuzzy find/open
   Plug 'junegunn/fzf', { 'on': 'FZF' }
   " Easy asynchronous execution

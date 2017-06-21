@@ -10,6 +10,8 @@ augroup fileSpecifics
   autocmd FileType java setlocal shiftwidth=4 tabstop=4 expandtab softtabstop=4
   " Use 78 text width for markdown files
   autocmd FileType markdown setlocal textwidth=78
+  " Use tabs with 4 width for shell scripts
+  autocmd FileType sh setlocal shiftwidth=4 tabstop=4 noexpandtab softtabstop=4
 augroup END
 
 augroup restoreBufferPosition
