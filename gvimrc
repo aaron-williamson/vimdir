@@ -1,3 +1,3 @@
 " My gvimrc
-set guifont=Hack:h18
+set guifont=Iosevka Term:h18
 set guioptions=
