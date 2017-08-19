@@ -1,5 +1,8 @@
 " Configuration for my vim plugins
 
+" Set scriptencoding for the special characters for MacOS
+scriptencoding UTF-8
+
 " Don't configure plugins if we don't want plugins
 if !$NO_VIM_PLUGINS
 
@@ -12,6 +15,7 @@ if !$NO_VIM_PLUGINS
   noremap <Leader>gdt :Gvdiff<CR>
   noremap <Leader>gci :Gcommit<CR>
   noremap <Leader>gbl :Gblame<CR>
+  noremap <Leader>glg :Glog<CR>
 
   " Multiple cursors configuration
   noremap <Leader>mf :MultipleCursorsFind<Space>
@@ -35,7 +39,7 @@ if !$NO_VIM_PLUGINS
   " Specific configuration for ripgrep or the silver searcher
   if executable('rg')
     " Use rg for ack
-    let g:ackprg = 'rg --vimgrep'
+    let g:ackprg = 'rg --smart-case --vimgrep'
   elseif executable('ag')
     " Use ag for ack
     let g:ackprg = 'ag --vimgrep'
@@ -44,8 +48,37 @@ if !$NO_VIM_PLUGINS
   " Markdown plugin configuration
   let g:vim_markdown_no_default_key_mappings = 1
 
+  " Livedown for markdown preview
+  let g:markdown_composer_autostart = 0
+  let g:markdown_composer_browser   = "FirefoxDeveloperEdition"
+  map <Leader>mp :ComposerStart<CR>
+
   " FZF configuration
-  map <C-p> :FZF<CR>
+  " A function for trying gitfiles first
+  function! FzfGFilesOrFiles()
+    if ! execute('silent! FzfGFiles')
+      FzfFiles
+    endif
+  endfunction
+
+  " Settings and keymaps
+  let g:fzf_command_prefix = 'Fzf'
+  let g:fzf_buffers_jump   = 1
+  map <C-p> :call FzfGFilesOrFiles()<CR>
+  map <Leader>fb :FzfBuffers<CR>
+  map <Leader>fc :FzfBCommits<CR>
+  map <Leader>fC :FzfCommits<CR>
+  map <Leader>fg :FzfGFiles?<CR>
+  map <Leader>fhc :FzfHistory:<CR>
+  map <Leader>fhf :FzfHistory<CR>
+  map <Leader>fhs :FzfHistory/<CR>
+  map <Leader>fl :FzfBLines<CR>
+  map <Leader>fL :FzfLines<CR>
+  map <Leader>fm :FzfCommands<CR>
+  map <Leader>fM :FzfMarks<CR>
+  map <Leader>ft :FzfBTags<CR>
+  map <Leader>fT :FzfTags<CR>
+  map <Leader>fw :FzfWindows<CR>
 
   " Color scheme
   silent! colorscheme base16-summerfruit-dark
@@ -69,5 +102,32 @@ if !$NO_VIM_PLUGINS
   " Quicker tabularize command writing
   cabbrev Tab Tabularize
   vmap <Leader>= :Tabularize /=<CR>
+
+  " Yankring mappings
+  map <Leader>p <Plug>(miniyank-startput)
+  map <Leader>PP <Plug>(miniyank-startPut)
+  map <Leader>PN <Plug>(miniyank-cycle)
+  map <Leader>PC <Plug>(miniyank-tochar)
+  map <Leader>PL <Plug>(miniyank-toline)
+  map <Leader>PB <Plug>(miniyank-toblock)
+
+  " Neomake makers
+  let g:neomake_vim_vint_maker = {
+        \ 'args': ['--enable-neovim'],
+        \ }
+  let g:neomake_vim_enabled_makers = ['vint']
+  let g:neomake_sh_shellcheck_maker = {
+        \ 'args': ['--format=gcc'],
+        \ }
+  let g:neomake_sh_enabled_makers = ['shellcheck']
+
+  augroup neomakeOnWrite
+    autocmd!
+
+    autocmd BufWritePost * Neomake
+  augroup END
+
+  " Neomake maps
+  map <Leader>nm :Neomake<CR>
 
 endif " End plugin config if

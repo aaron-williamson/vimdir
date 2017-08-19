@@ -1,18 +1,22 @@
-" My plugins
+" My plugins, I use vim-plug for plugin management
+" vim-plug: https://github.com/junegunn/vim-plug
 
 " Don't load plugins if we don't want to
 if !$NO_VIM_PLUGINS
 
-  " vim-plug: https://github.com/junegunn/vim-plug
-  call plug#begin(g:vim_dir . "/plugins")
+  " Auto install plug.vim if it's missing
+  if empty(glob(g:vim_dir . '/autoload/plug.vim'))
+    execute 'silent !curl -fLo' . g:vim_dir . '/autoload/plug.vim --create-dirs ' .
+          \ 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  endif
+
+  call plug#begin(g:vim_dir . '/plugins')
 
   " -- Language plugins --
   " Rust support
   Plug 'rust-lang/rust.vim', { 'for': 'rust' }
   " TOML support
   Plug 'cespare/vim-toml', { 'for': 'toml' }
-  " Enhanced ruby support
-  Plug 'vim-ruby/vim-ruby', { 'for': ['ruby', 'eruby'] }
   " Extra rails functionality
   Plug 'tpope/vim-rails'
   " Extra bundler functionality
@@ -40,9 +44,9 @@ if !$NO_VIM_PLUGINS
   " Ack plugin
   Plug 'mileszs/ack.vim', { 'on': 'Ack' }
   " FZF for fuzzy find/open
-  Plug 'junegunn/fzf', { 'on': 'FZF' }
-  " Easy asynchronous execution
-  Plug 'skywind3000/asyncrun.vim', { 'on': 'AsyncRun' }
+  Plug 'junegunn/fzf'
+  " Some nice default FZF wrappers
+  Plug 'junegunn/fzf.vim'
   " Sublime-text style multiple cursors
   Plug 'terryma/vim-multiple-cursors'
   " Surround for quoting/brackets/html
@@ -57,9 +61,43 @@ if !$NO_VIM_PLUGINS
   Plug 'bronson/vim-visual-star-search'
   " A secure modeline alternative
   Plug 'ciaranm/securemodelines'
+  " A Tag Viewer
+  Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+  " Auto add some matching ends
+  Plug 'tpope/vim-endwise'
+
+  " Plugins only for vim 8+ or neovim
+  if has('nvim') || v:version >= 800
+    " Live Markdown Preview
+    function! BuildComposer(info)
+      if a:info.status !=# 'unchanged' || a:info.force
+        if has('nvim')
+          !cargo build --release
+        else
+          !cargo build --release --no-default-features --features json-rpc
+        endif
+      endif
+    endfunction
+
+    Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer'),
+          \ 'on': ['ComposerStart', 'ComposerOpen', 'ComposerUpdate'],
+          \ 'for': 'markdown' }
+
+    " Easy asynchronous execution
+    Plug 'skywind3000/asyncrun.vim', { 'on': 'AsyncRun' }
+
+    " Asynchronous linting
+    Plug 'neomake/neomake'
+  endif
+
+  " -- Neovim specific plugins --
+  if has('nvim')
+    " A yankring to share yanks across neovim instances
+    Plug 'bfredl/nvim-miniyank'
+  endif
 
   " -- Tmux integration plugins --
-  if $TMUX != ''
+  if $TMUX !=# ''
     " Allow seamless movement between vim and tmux
     Plug 'christoomey/vim-tmux-navigator', { 'on':
           \ ['TmuxNavigateLeft', 'TmuxNavigateDown',

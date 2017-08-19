@@ -1,5 +1,8 @@
 " This contains all of my mappings
 
+" Set scriptencoding for the special characters for MacOS
+scriptencoding UTF-8
+
 " Also change the old leader to work as comma as well
 noremap \ ,
 
@@ -48,8 +51,8 @@ nnoremap <Leader>w :write<CR>
 inoremap <Leader>w <Esc>:write<CR>
 vnoremap <Leader>w <Esc>:write<CR>
 
-" Toggle paste mode with <Leader>p
-nnoremap <Leader>p :set paste!<CR>
+" Toggle paste mode with <Leader>PM
+nnoremap <Leader>PM :set paste!<CR>
 
 " Toggle highlight with <Leader>h
 noremap <Leader>h :set hlsearch!<CR>

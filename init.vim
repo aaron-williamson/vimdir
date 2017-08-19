@@ -3,7 +3,7 @@
 " information
 
 " Whether or not we're on macos
-let g:on_macos = ((has("unix") && system("uname -s") == "Darwin\n"))
+let g:on_macos = ((has('unix') && system('uname -s') ==# "Darwin\n"))
 
 " Whether or not we're on windows
 let g:on_windows = has('win32') || has('win32unix') || has('win64')
@@ -14,7 +14,7 @@ if g:on_windows
   let g:vim_dir = '$HOME/vimfiles'
 elseif has('nvim')
   " Some neovim detection
-  if $XDG_CONFIG_HOME != ""
+  if $XDG_CONFIG_HOME !=? ''
     let g:vim_dir = '$XDG_CONFIG_HOME/nvim'
   else
     let g:vim_dir = '$HOME/.config/nvim'

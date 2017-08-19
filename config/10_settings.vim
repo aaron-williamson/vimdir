@@ -1,18 +1,15 @@
 " Configuration for standalone vim
 " This config file will work even if no plugins are loaded
 
-" Disable Vi compatibility
-set nocompatible
-
 " Custom leader
-let mapleader = ","
+let mapleader = ','
 
 " Netrw (file browser) config
 " use tree view and show line numbers in netrw
 let g:netrw_liststyle   = 3
 let g:netrw_banner      = 0
 let g:netrw_altfile     = 1
-let g:netrw_bufsettings = "nomodifiable nomodified nowrap readonly number relativenumber nobuflisted"
+let g:netrw_bufsettings = 'nomodifiable nomodified nowrap readonly number relativenumber nobuflisted'
 
 " Enable filetype detection and auto-indentation
 filetype plugin indent on
@@ -155,7 +152,7 @@ if !has('nvim')
   set viminfo=!,'100,<200,s50,h
 
   " For some reason vim doesn't like screen and colors
-  if &term == 'screen' || &term == 'screen-256color'
+  if &term ==# 'screen' || &term ==# 'screen-256color'
     set term=xterm-256color
   endif
 endif

@@ -2,5 +2,4 @@
 Assumes vim version > 7.4 or neovim > 1.5
 
 ## TODO
-* Add a <C-w>x binding that behaves similar to Tmux prefix-x in both tab and
-    buffer modes
+* Add a <C-w>x binding that behaves similar to Tmux prefix-x in both tab and buffer modes
