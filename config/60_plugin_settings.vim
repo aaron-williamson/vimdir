@@ -50,13 +50,12 @@ if !$NO_VIM_PLUGINS
 
   " Livedown for markdown preview
   let g:markdown_composer_autostart = 0
-  let g:markdown_composer_browser   = "FirefoxDeveloperEdition"
   map <Leader>mp :ComposerStart<CR>
 
   " FZF configuration
   " A function for trying gitfiles first
   function! FzfGFilesOrFiles()
-    if ! execute('silent! FzfGFiles')
+    if ! execute('silent! FzfGFiles --recurse-submodules')
       FzfFiles
     endif
   endfunction
@@ -85,7 +84,7 @@ if !$NO_VIM_PLUGINS
 
   " Vim-tmux-navigator mappings
   let g:tmux_navigator_no_mappings = 1
-  if $TMUX != ''
+  if $TMUX !=# ''
     if (g:on_macos || $SSH_FROM_MAC)
       noremap <silent> ˙ :TmuxNavigateLeft<CR>
       noremap <silent> ∆ :TmuxNavigateDown<CR>
@@ -112,20 +111,9 @@ if !$NO_VIM_PLUGINS
   map <Leader>PB <Plug>(miniyank-toblock)
 
   " Neomake makers
-  let g:neomake_vim_vint_maker = {
-        \ 'args': ['--enable-neovim'],
-        \ }
   let g:neomake_vim_enabled_makers = ['vint']
-  let g:neomake_sh_shellcheck_maker = {
-        \ 'args': ['--format=gcc'],
-        \ }
   let g:neomake_sh_enabled_makers = ['shellcheck']
-
-  augroup neomakeOnWrite
-    autocmd!
-
-    autocmd BufWritePost * Neomake
-  augroup END
+  let g:neomake_ruby_enabled_makers = ['rubocop']
 
   " Neomake maps
   map <Leader>nm :Neomake<CR>

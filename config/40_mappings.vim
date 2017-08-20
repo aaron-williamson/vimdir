@@ -76,6 +76,17 @@ noremap <C-w>, :vertical resize -10<CR>
 " Add a binding for new tab
 noremap <C-w>t :tabnew<CR>
 
+" Quick tab navigation
+noremap <Leader>1 :tabnext 1<CR>
+noremap <Leader>2 :tabnext 2<CR>
+noremap <Leader>3 :tabnext 3<CR>
+noremap <Leader>4 :tabnext 4<CR>
+noremap <Leader>5 :tabnext 5<CR>
+noremap <Leader>6 :tabnext 6<CR>
+noremap <Leader>7 :tabnext 7<CR>
+noremap <Leader>8 :tabnext 8<CR>
+noremap <Leader>9 :tabnext 9<CR>
+
 " Use <C-w>T to pull to a new tab, even if it's the only window
 noremap <C-w>T :PullToNewTab<CR>
 
