@@ -16,6 +16,14 @@ augroup fileSpecifics
   autocmd FileType gitconfig setlocal shiftwidth=4 tabstop=4 noexpandtab softtabstop=4
 augroup END
 
+augroup gitconfigEruby
+  autocmd!
+
+  " Set the subtype correctly
+  autocmd BufRead,BufNewFile *gitconfig.erb let b:eruby_subtype = 'gitconfig' |
+        \ setlocal shiftwidth=4 tabstop=4 noexpandtab softtabstop=4
+augroup END
+
 augroup restoreBufferPosition
   autocmd!
 
