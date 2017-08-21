@@ -70,6 +70,10 @@ if !$NO_VIM_PLUGINS
   if has('nvim') || v:version >= 800
     " Live Markdown Preview
     function! BuildComposer(info)
+      if !executable('cargo')
+        echoerr "Could not find cargo executable"
+      endif
+
       if a:info.status !=# 'unchanged' || a:info.force
         if has('nvim')
           !cargo build --release
