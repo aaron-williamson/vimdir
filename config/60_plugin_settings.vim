@@ -52,25 +52,20 @@ if !$NO_VIM_PLUGINS
   let g:markdown_composer_autostart = 0
   map <Leader>mp :ComposerStart<CR>
 
-  " FZF configuration
-  " A function for trying gitfiles first
-  function! FzfGFilesOrFiles()
-    if ! execute('silent! FzfGFiles --recurse-submodules')
-      FzfFiles
-    endif
-  endfunction
-
-  " Settings and keymaps
+  " FZF
   let g:fzf_command_prefix = 'Fzf'
   let g:fzf_buffers_jump   = 1
-  map <C-p> :call FzfGFilesOrFiles()<CR>
+  map <C-p> :FzfFiles<CR>
   map <Leader>fb :FzfBuffers<CR>
   map <Leader>fc :FzfBCommits<CR>
   map <Leader>fC :FzfCommits<CR>
-  map <Leader>fg :FzfGFiles?<CR>
+  map <Leader>ff :FzfFiles<CR>
+  map <Leader>fg :FzfGFiles<CR>
+  map <Leader>fG :FzfGFiles?<CR>
   map <Leader>fhc :FzfHistory:<CR>
   map <Leader>fhf :FzfHistory<CR>
   map <Leader>fhs :FzfHistory/<CR>
+  map <Leader>fH :FzfHelptags<CR>
   map <Leader>fl :FzfBLines<CR>
   map <Leader>fL :FzfLines<CR>
   map <Leader>fm :FzfCommands<CR>
@@ -118,7 +113,8 @@ if !$NO_VIM_PLUGINS
   " Neomake maps
   map <Leader>nm :Neomake<CR>
 
-  " Nerd tree mappings
+  " NERDTree config
+  let NERDTreeQuitOnOpen = 1
   map - :NERDTreeToggle<CR>
 
 endif " End plugin config if
