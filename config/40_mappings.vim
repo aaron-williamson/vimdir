@@ -18,10 +18,6 @@ noremap <Leader>l <C-^>
 " For quick substitute
 noremap <Leader>S :%substitute/
 
-" Explore current directory with <Leader>e or -
-map <Leader>e :Explore %%<CR>
-map - :Explore %%<CR>
-
 " Toggle showing whitespace with <Leader>sw, <Leader>ss to show spaces, too
 noremap <Leader>sw :call ToggleShowWhitespace(0)<CR>
 noremap <Leader>ss :call ToggleShowWhitespace(1)<CR>

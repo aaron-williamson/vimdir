@@ -118,4 +118,7 @@ if !$NO_VIM_PLUGINS
   " Neomake maps
   map <Leader>nm :Neomake<CR>
 
+  " Nerd tree mappings
+  map - :NERDTreeToggle<CR>
+
 endif " End plugin config if

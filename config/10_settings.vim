@@ -4,13 +4,6 @@
 " Custom leader
 let mapleader = ','
 
-" Netrw (file browser) config
-" use tree view and show line numbers in netrw
-let g:netrw_liststyle   = 3
-let g:netrw_banner      = 0
-let g:netrw_altfile     = 1
-let g:netrw_bufsettings = 'nomodifiable nomodified nowrap readonly number relativenumber nobuflisted'
-
 " Enable filetype detection and auto-indentation
 filetype plugin indent on
 
