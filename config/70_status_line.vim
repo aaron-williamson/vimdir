@@ -7,7 +7,7 @@ set statusline+=[%n]\  " Buffer number
 set statusline+=%<     " Truncate here
 set statusline+=%f\    " Path to current file
 
-if !$NO_VIM_PLUGINS                          " Plugin specifics
+if exists('g:loading_plugins')               " Plugin specifics
   set statusline+=%((%{fugitive#head()})\ %) " Current git branch via fugitive
 endif
 

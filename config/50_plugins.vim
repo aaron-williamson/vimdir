@@ -3,6 +3,7 @@
 
 " Don't load plugins if we don't want to
 if !$NO_VIM_PLUGINS
+  let g:loading_plugins = 'true'
 
   " Auto install plug.vim if it's missing
   if empty(glob(g:vim_dir . '/autoload/plug.vim'))
@@ -71,7 +72,7 @@ if !$NO_VIM_PLUGINS
     " Live Markdown Preview
     function! BuildComposer(info)
       if !executable('cargo')
-        echoerr "Could not find cargo executable"
+        echoerr 'Could not find cargo executable'
       endif
 
       if a:info.status !=# 'unchanged' || a:info.force
