@@ -16,6 +16,8 @@ if !$NO_VIM_PLUGINS
   " -- Language plugins --
   " Rust support
   Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+  " Racer for rust omnicompletion
+  Plug 'racer-rust/vim-racer', { 'for': 'rust' }
   " TOML support
   Plug 'cespare/vim-toml', { 'for': 'toml' }
   " Extra rails functionality

@@ -106,9 +106,10 @@ if !$NO_VIM_PLUGINS
   map <Leader>PB <Plug>(miniyank-toblock)
 
   " Neomake makers
-  let g:neomake_vim_enabled_makers = ['vint']
-  let g:neomake_sh_enabled_makers = ['shellcheck']
+  let g:neomake_vim_enabled_makers  = ['vint']
+  let g:neomake_sh_enabled_makers   = ['shellcheck']
   let g:neomake_ruby_enabled_makers = ['rubocop']
+  let g:neomake_rust_enabled_makers = ['cargo']
 
   " Neomake maps
   map <Leader>nm :Neomake<CR>

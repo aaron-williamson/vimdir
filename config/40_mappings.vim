@@ -40,7 +40,7 @@ noremap <Leader>sd :%substitute/\v\s+$//g <bar>
 noremap <Leader>nn :set number! <bar> set relativenumber!<CR>
 
 " Close quickfix, preview, and location list
-noremap <Leader>c :cclose <bar> pclose <bar> lclose<CR>
+noremap <Leader>C :cclose <bar> pclose <bar> lclose<CR>
 
 " Fast write
 nnoremap <Leader>w :write<CR>
