@@ -4,7 +4,7 @@
 scriptencoding UTF-8
 
 " Don't configure plugins if we don't want plugins
-if !$NO_VIM_PLUGINS
+if exists('g:loading_plugins')
 
   " Fugitive mappings (matches my git aliases)
   noremap <Leader>gst :Gstatus<CR>
