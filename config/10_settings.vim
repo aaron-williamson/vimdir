@@ -120,7 +120,7 @@ set winminwidth=15
 
 " Enable termguicolors if we have it, otherwise set background to light, for
 " better base16 compatibility if we aren't using a theme
-if has('termguicolors')
+if has('termguicolors') && !$NO_TRUECOLOR
   set termguicolors
   set background=dark
 else

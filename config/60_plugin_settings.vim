@@ -75,7 +75,12 @@ if !$NO_VIM_PLUGINS
   map <Leader>fw :FzfWindows<CR>
 
   " Color scheme
-  silent! colorscheme base16-summerfruit-dark
+  if filereadable(expand('~/.vimrc_background'))
+    let base16colorspace=256
+    silent! source ~/.vimrc_background
+  else
+    silent! colorscheme base16-summerfruit-dark
+  endif
 
   " Vim-tmux-navigator mappings
   let g:tmux_navigator_no_mappings = 1
