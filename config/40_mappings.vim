@@ -32,8 +32,8 @@ noremap <Leader>sn :call ToggleWhitespaceCheck() <bar>
 " Search for trailing whitespace with <Leader>st
 noremap <Leader>st /\v\s+$<CR>
 
-" Remove trailing whitespace with <Leader>sd
-noremap <Leader>sd :%substitute/\v\s+$//g <bar>
+" Fix trailing whitespace with <Leader>sf
+noremap <Leader>sf :%substitute/\v\s+$//g <bar>
       \ unlet! b:whitespace_check<CR>
 
 " Temporarily disable all line numbers with <Leader>nn
