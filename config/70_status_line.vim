@@ -11,11 +11,12 @@ if exists('g:loading_plugins')               " Plugin specifics
   set statusline+=%((%{fugitive#head()})\ %) " Current git branch via fugitive
 endif
 
-set statusline+=%(%{StatusPasteMode()}\ %) " Paste mode flag
-set statusline+=%([%R%M]%)                 " Modified and read only group
-set statusline+=%h                         " Help buffer flag
-set statusline+=%w                         " Preview flag
-set statusline+=%q                         " Quickfix or location list
+set statusline+=%(%{StatusPasteMode()}\ %)   " Paste mode flag
+set statusline+=%(%{StatusWritingMode()}\ %) " Writing mode flag
+set statusline+=%([%R%M]%)                   " Modified and read only group
+set statusline+=%h                           " Help buffer flag
+set statusline+=%w                           " Preview flag
+set statusline+=%q                           " Quickfix or location list
 
 set statusline+=%= " End first alignment group
 

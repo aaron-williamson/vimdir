@@ -106,14 +106,9 @@ function! Center(min_width)
   wincmd l
 endfunction
 
-" This function will enable my preferred writing settings and center the text
-" nicely, though it requires there to be only one split.
+" This function will enable my preferred writing settings
 function! WritingMode()
   if !exists('b:writing_mode')
-    " Make sure we have enough room before doing the split to center text with
-    " some buffer area
-    call Center(80)
-
     " disable Numbers
     let b:writing_mode_old_number = &number
     let b:writing_mode_old_relnumber = &relativenumber
@@ -123,21 +118,18 @@ function! WritingMode()
     " Then enable spelling mode
     let b:writing_mode_old_spelllang = &spelllang
     let b:writing_mode_old_spell = &spell
-    setlocal spelllang=en_us,en_ca
+    setlocal spelllang=en_ca,en_us
     setlocal spell
 
     " Set text width
     let b:writing_mode_old_textwidth = &textwidth
-    setlocal textwidth=78
+    setlocal textwidth=120
 
     " And set color column
     let b:writing_mode_old_colorcolumn = &colorcolumn
-    setlocal colorcolumn=79
+    setlocal colorcolumn=121
     let b:writing_mode = 'on'
   else
-    " Make this the only window
-    only
-
     " Re-enable numbers
     if b:writing_mode_old_number
       setlocal number
@@ -193,6 +185,15 @@ function! StatusPasteMode()
   else
     return ''
   end
+endfunction
+
+" Tag for writing mode
+function! StatusWritingMode()
+  if exists('b:writing_mode')
+    return '[Writing]'
+  else
+    return ''
+  endif
 endfunction
 
 " Text width for status line
