@@ -40,6 +40,8 @@ if !$NO_VIM_PLUGINS
   Plug 'fatih/vim-go', { 'for': 'go' }
   " Improved haskell support
   Plug 'neovimhaskell/haskell-vim'
+  " LaTeX editing in vim
+  Plug 'lervag/vimtex'
 
   " -- Workflow/command plugins --
   " Fugitive for git integration

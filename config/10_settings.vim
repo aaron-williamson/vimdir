@@ -3,6 +3,7 @@
 
 " Custom leader
 let mapleader = ','
+let maplocalleader = ','
 
 " Enable filetype detection and auto-indentation
 filetype plugin indent on

@@ -51,6 +51,7 @@ if exists('g:loading_plugins')
   " Livedown for markdown preview
   let g:markdown_composer_autostart = 0
   map <Leader>mp :ComposerStart<CR>
+  map <Leader>mo :ComposerOpen<CR>
 
   " FZF
   let g:fzf_command_prefix = 'Fzf'
@@ -117,5 +118,11 @@ if exists('g:loading_plugins')
   " NERDTree config
   let NERDTreeQuitOnOpen = 1
   map - :NERDTreeToggle<CR>
+
+  " vimtex config
+  let g:vimtex_view_method = 'skim'
+  if has('nvim') && executable('nvr')
+    let g:vimtex_compiler_progname = 'nvr'
+  endif
 
 endif " End plugin config if

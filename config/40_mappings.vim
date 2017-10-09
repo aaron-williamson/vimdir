@@ -3,7 +3,7 @@
 " Set scriptencoding for the special characters for MacOS
 scriptencoding UTF-8
 
-" Also change the old leader to work as comma as well
+" Change the old leader to work as comma
 noremap \ ,
 
 " Expands to current directory
@@ -40,7 +40,7 @@ noremap <Leader>sf :%substitute/\v\s+$//g <bar>
 noremap <Leader>nn :set number! <bar> set relativenumber!<CR>
 
 " Close quickfix, preview, and location list
-noremap <Leader>C :cclose <bar> pclose <bar> lclose<CR>
+noremap <Leader>c :cclose <bar> pclose <bar> lclose<CR>
 
 " Fast write
 nnoremap <Leader>w :write<CR>
@@ -53,7 +53,7 @@ nnoremap <Leader>PM :set paste!<CR>
 " Toggle highlight with <Leader>h
 noremap <Leader>h :set hlsearch!<CR>
 
-" Quick escape (For when we can't use caps)
+" Quick escape (For when capslock can't be remapped)
 imap jk <Esc>
 
 " Toggle column highlight with <Leader>C
