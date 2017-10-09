@@ -190,7 +190,7 @@ endfunction
 " Tag for writing mode
 function! StatusWritingMode()
   if exists('b:writing_mode')
-    return '[Writing]'
+    return '[Writing | ' . wordcount()['words'] . ']'
   else
     return ''
   endif
