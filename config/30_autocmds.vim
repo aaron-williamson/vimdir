@@ -8,12 +8,14 @@ augroup fileSpecifics
   autocmd FileType python setlocal shiftwidth=4 tabstop=4 expandtab softtabstop=4
   " Use 4 space tabs for java
   autocmd FileType java setlocal shiftwidth=4 tabstop=4 expandtab softtabstop=4
-  " Use 120 text width for markdown files
-  autocmd FileType markdown setlocal textwidth=120
+  " Use 100 text width for markdown files
+  autocmd FileType markdown setlocal textwidth=100
   " Use tabs with 4 width for shell scripts
   autocmd FileType sh setlocal shiftwidth=4 tabstop=4 noexpandtab softtabstop=4
   " Use tabs for gitconfig
   autocmd FileType gitconfig setlocal shiftwidth=4 tabstop=4 noexpandtab softtabstop=4
+  " Textwidth of 100 for LaTeX files
+  autocmd FileType tex setlocal textwidth=100
 augroup END
 
 augroup gitconfigEruby

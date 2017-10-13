@@ -123,11 +123,11 @@ function! WritingMode()
 
     " Set text width
     let b:writing_mode_old_textwidth = &textwidth
-    setlocal textwidth=120
+    setlocal textwidth=100
 
     " And set color column
     let b:writing_mode_old_colorcolumn = &colorcolumn
-    setlocal colorcolumn=121
+    setlocal colorcolumn=101
     let b:writing_mode = 'on'
   else
     " Re-enable numbers
