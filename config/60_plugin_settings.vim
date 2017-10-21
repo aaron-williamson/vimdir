@@ -108,6 +108,7 @@ if exists('g:loading_plugins')
 
   " Automatically open quickfix list when AsyncRun writes to it
   augroup asyncRunOpenQF
+    autocmd!
     autocmd User AsyncRunStart call asyncrun#quickfix_toggle(8, 1)
   augroup END
 
