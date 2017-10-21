@@ -126,7 +126,12 @@ if exists('g:loading_plugins')
 
   " NERDTree config
   let NERDTreeQuitOnOpen = 1
+  let NERDTreeShowLineNumbers = 1
   map - :NERDTreeToggle<CR>
+  augroup myNERDTreeConfig
+    autocmd!
+    autocmd FileType nerdtree setlocal relativenumber
+  augroup END
 
   " vimtex config
   let g:vimtex_view_method = 'skim'
