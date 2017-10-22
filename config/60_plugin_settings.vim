@@ -106,23 +106,21 @@ if exists('g:loading_plugins')
   map <Leader>PL <Plug>(miniyank-toline)
   map <Leader>PB <Plug>(miniyank-toblock)
 
+  " Ale configuration
+  let g:ale_enabled = 0
+  let g:ale_open_list = 1
+  map <Leader>AT :ALEToggle<CR>
+  map <Leader>Ad :ALEDisable<CR>
+  map <Leader>Ae :ALEEnable<CR>
+  map <Leader>AL <Plug>(ale_lint)
+  map <Leader>AI :ALEInfo<CR>
+  map <Leader>AD :ALEDetail<CR>
+
   " Automatically open quickfix list when AsyncRun writes to it
   augroup asyncRunOpenQF
     autocmd!
     autocmd User AsyncRunStart call asyncrun#quickfix_toggle(8, 1)
   augroup END
-
-  " Neomake makers
-  let g:neomake_vim_enabled_makers  = ['vint']
-  let g:neomake_sh_enabled_makers   = ['shellcheck']
-  let g:neomake_ruby_enabled_makers = ['rubocop']
-  let g:neomake_rust_enabled_makers = ['cargo']
-  let g:neomake_tex_enabled_makers  = ['chktex']
-  let g:neomake_open_list = 2
-
-  " Neomake maps
-  map <Leader>nm :Neomake<CR>
-  map <Leader>nE :call neomake#configure#automake('w')<CR>
 
   " NERDTree config
   let NERDTreeQuitOnOpen = 1

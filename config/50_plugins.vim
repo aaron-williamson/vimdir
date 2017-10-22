@@ -100,7 +100,7 @@ if !$NO_VIM_PLUGINS
     Plug 'skywind3000/asyncrun.vim', { 'on': 'AsyncRun' }
 
     " Asynchronous linting
-    Plug 'neomake/neomake'
+    Plug 'w0rp/ale'
   endif
 
   " -- Neovim specific plugins --
