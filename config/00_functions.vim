@@ -86,19 +86,19 @@ function! Center(min_width)
   endif
 
   " Make sure we don't split right
-  let splitright = 0
+  let l:splitright = 0
   if &splitright
-    let splitright = 1
+    let l:splitright = 1
     set nosplitright
   endif
 
   " Now create and size the split
-  let availablewidth = winwidth('%') - a:min_width + 1
-  let splitwidth = availablewidth / 2
-  execute splitwidth . ' vnew'
+  let l:availablewidth = winwidth('%') - a:min_width + 1
+  let l:splitwidth = l:availablewidth / 2
+  execute l:splitwidth . ' vnew'
 
   " Restore splitright setting
-  if splitright
+  if l:splitright
     set splitright
   endif
 
@@ -233,18 +233,18 @@ endfunction
 " Whitespace checks, next few functions heavily influenced by vim-airline
 " https://github.com/vim-airline/vim-airline
 function! CheckMixedIndentFile()
-  let c_like_langs = [ 'c', 'cpp', 'cuda', 'go', 'javascript', 'ld', 'php' ]
-  if index(c_like_langs, &ft) > -1
+  let l:c_like_langs = [ 'c', 'cpp', 'cuda', 'go', 'javascript', 'ld', 'php' ]
+  if index(l:c_like_langs, &filetype) > -1
     " for C-like languages: allow /** */ comment style with one space before the '*'
-    let head_spc = '\v(^ +\*@!)'
+    let l:head_spc = '\v(^ +\*@!)'
   else
-    let head_spc = '\v(^ +)'
+    let l:head_spc = '\v(^ +)'
   endif
 
-  let indent_tabs = search('\v(^\t+)', 'nw')
-  let indent_spc  = search(head_spc, 'nw')
-  if indent_tabs > 0 && indent_spc > 0
-    return printf('%d:%d', indent_tabs, indent_spc)
+  let l:indent_tabs = search('\v(^\t+)', 'nw')
+  let l:indent_spc  = search(l:head_spc, 'nw')
+  if l:indent_tabs > 0 && l:indent_spc > 0
+    return printf('%d:%d', l:indent_tabs, l:indent_spc)
   else
     return ''
   endif
@@ -267,39 +267,39 @@ function! StatusWhitespaceCheck()
     let b:whitespace_check = ''
     " Only run the checks we want to, this allows disabling or enabling checks
     " on a per file-type basis using autocmd's
-    let checks = get(g:, 'whitespace_checks', ['mixed-indent', 'trailing', 'mixed-indent-file'])
+    let l:checks = get(g:, 'whitespace_checks', ['mixed-indent', 'trailing', 'mixed-indent-file'])
 
-    let trailing = 0
-    if index(checks, 'trailing') > -1
-      let trailing = search('\s$', 'nw')
-    endif
-
-    let mixed = 0
-    if index(checks, 'mixed-indent') > -1
-      let mixed = search('\v(^\t+ +)|(^ +\t+)', 'nw')
+    let l:trailing = 0
+    if index(l:checks, 'trailing') > -1
+      let l:trailing = search('\s$', 'nw')
     endif
 
-    let mixed_file = ''
-    if index(checks, 'mixed-indent-file') > -1
-      let mixed_file = CheckMixedIndentFile()
+    let l:mixed = 0
+    if index(l:checks, 'mixed-indent') > -1
+      let l:mixed = search('\v(^\t+ +)|(^ +\t+)', 'nw')
     endif
 
-    let long = 0
-    if index(checks, 'long') > -1 && &tw > 0
-      let long = search('\%>'.&tw.'v.\+', 'nw')
+    let l:mixed_file = ''
+    if index(l:checks, 'mixed-indent-file') > -1
+      let l:mixed_file = CheckMixedIndentFile()
     endif
 
-    if trailing != 0
-      let b:whitespace_check .= printf(' [%s]trailing', trailing)
+    let l:long = 0
+    if index(l:checks, 'long') > -1 && &textwidth > 0
+      let l:long = search('\%>'.&textwidth.'v.\+', 'nw')
     endif
-    if mixed != 0
-      let b:whitespace_check .= printf(' [%s]mixed-indent', mixed)
+
+    if l:trailing != 0
+      let b:whitespace_check .= printf(' [%s]trailing', l:trailing)
     endif
-    if long != 0
-      let b:whitespace_check .= printf(' [%s]long', long)
+    if l:mixed != 0
+      let b:whitespace_check .= printf(' [%s]mixed-indent', l:mixed)
     endif
-    if !empty(mixed_file)
-      let b:whitespace_check .= printf(' [%s]mixed-indent-file', mixed_file)
+    if l:long != 0
+      let b:whitespace_check .= printf(' [%s]long', l:long)
+    endif
+    if !empty(l:mixed_file)
+      let b:whitespace_check .= printf(' [%s]mixed-indent-file', l:mixed_file)
     endif
 
     let b:whitespace_check = substitute(b:whitespace_check, '^[ ]*', '', '')

@@ -123,8 +123,8 @@ if exists('g:loading_plugins')
   augroup END
 
   " NERDTree config
-  let NERDTreeQuitOnOpen = 1
-  let NERDTreeShowLineNumbers = 1
+  let g:NERDTreeQuitOnOpen = 1
+  let g:NERDTreeShowLineNumbers = 1
   map - :NERDTreeToggle<CR>
   augroup myNERDTreeConfig
     autocmd!

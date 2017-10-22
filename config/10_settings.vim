@@ -2,8 +2,8 @@
 " This config file will work even if no plugins are loaded
 
 " Custom leader
-let mapleader = ','
-let maplocalleader = ','
+let g:mapleader = ','
+let g:maplocalleader = ','
 
 " Enable filetype detection and auto-indentation
 filetype plugin indent on
