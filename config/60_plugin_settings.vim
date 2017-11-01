@@ -111,11 +111,11 @@ if exists('g:loading_plugins')
   let g:ale_open_list = 1
   let g:ale_sign_column_always = 1
   map <Leader>AT :ALEToggle<CR>
-  map <Leader>Ad :ALEDisable<CR>
-  map <Leader>Ae :ALEEnable<CR>
+  map <Leader>AD :ALEDisable<CR>
+  map <Leader>AE :ALEEnable<CR>
   map <Leader>AL <Plug>(ale_lint)
   map <Leader>AI :ALEInfo<CR>
-  map <Leader>AD :ALEDetail<CR>
+  map <Leader>Ad :ALEDetail<CR>
 
   " Automatically open quickfix list when AsyncRun writes to it
   augroup asyncRunOpenQF
