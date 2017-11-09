@@ -101,6 +101,9 @@ if !$NO_VIM_PLUGINS
 
     " Asynchronous linting
     Plug 'w0rp/ale'
+
+    " Fancy vim start page
+    Plug 'mhinz/vim-startify'
   endif
 
   " -- Neovim specific plugins --
