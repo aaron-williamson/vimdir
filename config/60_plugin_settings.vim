@@ -130,6 +130,9 @@ if exists('g:loading_plugins')
   augroup myNERDTreeConfig
     autocmd!
     autocmd FileType nerdtree setlocal relativenumber
+
+    " A temporary fix until other plugins fix usage of b:NERDTreeRoot
+    autocmd User NERDTreeInit let b:NERDTreeRoot = b:NERDTree.root
   augroup END
 
   " vimtex config
