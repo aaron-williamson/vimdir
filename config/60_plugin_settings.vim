@@ -55,7 +55,6 @@ if exists('g:loading_plugins')
 
   " FZF
   let g:fzf_command_prefix = 'Fzf'
-  let g:fzf_buffers_jump   = 1
   map <C-p> :FzfFiles<CR>
   map <Leader>fb :FzfBuffers<CR>
   map <Leader>fc :FzfBCommits<CR>
