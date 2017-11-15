@@ -140,7 +140,9 @@ if exists('g:loading_plugins')
     let g:vimtex_compiler_progname = 'nvr'
   endif
 
-  " Ascii art atom
+  " vim-startify config, disable doublequote lint since I wasn't able to do
+  " this with single quotes
+  " vint: -ProhibitUnnecessaryDoubleQuote
   if has('nvim')
     let g:ascii_header = [
           \ "     ...     ...                              .....     .      ...     ..      ..",
@@ -177,7 +179,7 @@ if exists('g:loading_plugins')
           \]
   endif
 
-  " Vim Startify config
   let g:startify_custom_header = map(g:ascii_header, '"   " . v:val')
+  " vint: +ProhibitUnnecessaryDoubleQuote
 
 endif " End plugin config if
