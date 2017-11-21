@@ -47,6 +47,7 @@ if exists('g:loading_plugins')
 
   " Markdown plugin configuration
   let g:vim_markdown_no_default_key_mappings = 1
+  let g:vim_markdown_math = 1
 
   " Livedown for markdown preview
   let g:markdown_composer_autostart = 0
