@@ -1,6 +1,4 @@
 " This contains all of my mappings
-
-" Set scriptencoding for the special characters for MacOS
 scriptencoding UTF-8
 
 " Change the old leader to work as comma

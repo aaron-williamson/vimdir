@@ -1,6 +1,4 @@
 " Configuration for my vim plugins
-
-" Set scriptencoding for the special characters for MacOS
 scriptencoding UTF-8
 
 " Don't configure plugins if we don't want plugins
