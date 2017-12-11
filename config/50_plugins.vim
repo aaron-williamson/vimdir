@@ -75,6 +75,10 @@ if !$NO_VIM_PLUGINS
   Plug 'tpope/vim-endwise'
   " Nerd tree for file browsing
   Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeToggle'] }
+  " Focused writing in vim
+  Plug 'junegunn/goyo.vim'
+  " Extra focus for writing
+  Plug 'junegunn/limelight.vim'
 
   " Plugins only for vim 8+ or neovim
   if has('nvim') || v:version >= 800

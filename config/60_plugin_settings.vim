@@ -178,4 +178,18 @@ if exists('g:loading_plugins')
   let g:startify_custom_header = map(g:ascii_header, '"   " . v:val')
   " vint: +ProhibitUnnecessaryDoubleQuote
 
+  " Configuration for Goyo and Limelight
+  " 100 width instead of default 80
+  let g:goyo_width = 100
+
+  " Slightly more focus
+  let g:limelight_default_coefficient = 0.8
+
+  " Automatically enable Limelight with Goyo
+  augroup focusedWriting
+    autocmd!
+    autocmd User GoyoEnter Limelight
+    autocmd User GoyoLeave Limelight!
+  augroup END
+
 endif " End plugin config if
