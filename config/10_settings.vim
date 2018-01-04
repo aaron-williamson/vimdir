@@ -112,8 +112,8 @@ set splitbelow
 set splitright
 
 " Automatic split sizing
-set winheight=30
-set winwidth=85
+set winheight=20
+set winwidth=60
 silent! set winminheight=5
 set winminwidth=15
 

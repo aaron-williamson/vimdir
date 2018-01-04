@@ -116,9 +116,10 @@ if exists('g:loading_plugins')
   map <Leader>Ad :ALEDetail<CR>
 
   " Automatically open quickfix list when AsyncRun writes to it
+  let g:asyncrun_quickfix_size = 8
   augroup asyncRunOpenQF
     autocmd!
-    autocmd User AsyncRunStart call asyncrun#quickfix_toggle(8, 1)
+    autocmd User AsyncRunStart call asyncrun#quickfix_toggle(g:asyncrun_quickfix_size, 1)
   augroup END
 
   " NERDTree config
