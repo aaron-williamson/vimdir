@@ -194,4 +194,8 @@ if exists('g:loading_plugins')
     autocmd User GoyoLeave Limelight!
   augroup END
 
+  " Configuration for fzf-gitignore
+  let g:fzf_gitignore_no_maps = 1
+  map <Leader>fi :FzfGitignore<CR>
+
 endif " End plugin config if

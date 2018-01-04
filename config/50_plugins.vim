@@ -55,6 +55,8 @@ if !$NO_VIM_PLUGINS
   Plug 'junegunn/fzf'
   " Some nice default FZF wrappers
   Plug 'junegunn/fzf.vim'
+  " Plugin for gitignore.io + fzf goodness
+  Plug 'fszymanski/fzf-gitignore', {'do': ':UpdateRemotePlugins'}
   " Sublime-text style multiple cursors
   Plug 'terryma/vim-multiple-cursors'
   " Surround for quoting/brackets/html
