@@ -39,6 +39,8 @@ if !$NO_VIM_PLUGINS
   " Go syntax highlighting support and friends - seems to have problems with
   " on demand as well
   Plug 'fatih/vim-go' ", { 'for': 'go' }
+  " Alex syntax highlighting support
+  Plug 'andy-morris/alex.vim'
   " Improved haskell support
   Plug 'neovimhaskell/haskell-vim'
   " LaTeX editing in vim
