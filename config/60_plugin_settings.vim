@@ -127,6 +127,7 @@ if exists('g:loading_plugins')
   let g:NERDTreeQuitOnOpen = 1
   let g:NERDTreeShowLineNumbers = 1
   map - :NERDTreeToggle<CR>
+  map <C-_> :NERDTreeFind<CR>
   augroup myNERDTreeConfig
     autocmd!
     autocmd FileType nerdtree setlocal relativenumber

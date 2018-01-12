@@ -78,7 +78,8 @@ if !$NO_VIM_PLUGINS
   " Auto add some matching ends
   Plug 'tpope/vim-endwise'
   " Nerd tree for file browsing
-  Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeToggle'] }
+  Plug 'scrooloose/nerdtree', { 'on':
+        \ ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind'] }
   " Focused writing in vim
   Plug 'junegunn/goyo.vim'
   " Extra focus for writing
