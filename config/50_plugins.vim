@@ -40,7 +40,7 @@ if !$NO_VIM_PLUGINS
   " on demand as well
   Plug 'fatih/vim-go' ", { 'for': 'go' }
   " Alex syntax highlighting support
-  Plug 'andy-morris/alex.vim'
+  Plug 'aaron-williamson/alex.vim'
   " Improved haskell support
   Plug 'neovimhaskell/haskell-vim'
   " LaTeX editing in vim

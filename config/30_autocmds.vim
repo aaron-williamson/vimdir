@@ -16,8 +16,6 @@ augroup fileSpecifics
   autocmd FileType gitconfig setlocal shiftwidth=4 tabstop=4 noexpandtab softtabstop=4
   " Textwidth of 100 for LaTeX files
   autocmd FileType tex setlocal textwidth=100 colorcolumn=101
-  " Set the correct filetype for alex files
-  autocmd BufRead,BufNewFile *.x set filetype=alex
 augroup END
 
 augroup gitconfigEruby
