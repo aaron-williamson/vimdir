@@ -84,6 +84,12 @@ if !$NO_VIM_PLUGINS
   Plug 'junegunn/goyo.vim'
   " Extra focus for writing
   Plug 'junegunn/limelight.vim'
+  " Auto tag management
+  Plug 'ludovicchabant/vim-gutentags'
+  " Better % behaviour and highlighting
+  Plug 'andymass/vim-matchup'
+  " Splitting/joining multi line statements
+  Plug 'AndrewRadev/splitjoin.vim'
 
   " Plugins only for vim 8+ or neovim
   if has('nvim') || v:version >= 800
