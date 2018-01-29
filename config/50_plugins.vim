@@ -66,7 +66,7 @@ if !$NO_VIM_PLUGINS
   " Some handy bracket mappings
   Plug 'tpope/vim-unimpaired'
   " Automatic alignment
-  Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
+  Plug 'godlygeek/tabular', { 'on': ['Tabularize', 'TableFormat'] }
   " Allow repeating supported plugins
   Plug 'tpope/vim-repeat'
   " Allow * and # searching from visual mode
