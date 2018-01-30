@@ -77,9 +77,10 @@ if !$NO_VIM_PLUGINS
   Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
   " Auto add some matching ends
   Plug 'tpope/vim-endwise'
-  " Nerd tree for file browsing
-  Plug 'scrooloose/nerdtree', { 'on':
-        \ ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind'] }
+  " NetRW inprovements
+  Plug 'tpope/vim-vinegar'
+  " A useful commenting plugin
+  Plug 'tpope/vim-commentary'
   " Focused writing in vim
   Plug 'junegunn/goyo.vim'
   " Extra focus for writing

@@ -11,6 +11,10 @@ filetype plugin indent on
 " Disable the mouse
 set mouse=
 
+" Netrw config
+let g:netrw_liststyle   = 3
+let g:netrw_bufsettings = 'nomodifiable nomodified nowrap readonly number relativenumber nobuflisted'
+
 " Set GUI cursor preferences
 set guicursor=n-v-c:block,i-ci:ver5,r-cr:hor5,sm:block,a:blinkon0
 

@@ -123,16 +123,6 @@ if exists('g:loading_plugins')
     autocmd User AsyncRunStart call asyncrun#quickfix_toggle(g:asyncrun_quickfix_size, 1)
   augroup END
 
-  " NERDTree config
-  let g:NERDTreeQuitOnOpen = 1
-  let g:NERDTreeShowLineNumbers = 1
-  map - :NERDTreeToggle<CR>
-  map <C-_> :NERDTreeFind<CR>
-  augroup myNERDTreeConfig
-    autocmd!
-    autocmd FileType nerdtree setlocal relativenumber
-  augroup END
-
   " vimtex config
   let g:vimtex_view_method = 'skim'
   if has('nvim') && executable('nvr')
