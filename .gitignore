@@ -1,4 +1,4 @@
-plugins/
+plugged/
 autoload/plug.vim
 autoload/plug.vim.old
 spell/

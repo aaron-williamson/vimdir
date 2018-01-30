@@ -11,7 +11,7 @@ if !$NO_VIM_PLUGINS
           \ 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   endif
 
-  call plug#begin(g:vim_dir . '/plugins')
+  call plug#begin(g:vim_dir . '/plugged')
 
   " -- Language plugins --
   " Rust support
