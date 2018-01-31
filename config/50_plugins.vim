@@ -87,8 +87,6 @@ if !$NO_VIM_PLUGINS
   Plug 'junegunn/limelight.vim'
   " Auto tag management
   Plug 'ludovicchabant/vim-gutentags'
-  " Better % behaviour and highlighting
-  Plug 'andymass/vim-matchup'
   " Splitting/joining multi line statements
   Plug 'AndrewRadev/splitjoin.vim'
 
