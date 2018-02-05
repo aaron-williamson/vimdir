@@ -28,6 +28,8 @@ if !$NO_VIM_PLUGINS
   Plug 'pangloss/vim-javascript' ", { 'for': 'javascript' }
   " Improved JSX editing, problems with on-demand loading
   Plug 'mxw/vim-jsx' ",{ 'for': 'javascript.jsx' }
+  " Typescript support
+  Plug 'leafgarland/typescript-vim'
   " Coffee script syntax highlighting support + extras
   Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
   " Better markdown support, problems with on-demand loading
