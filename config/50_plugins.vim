@@ -15,32 +15,31 @@ if !$NO_VIM_PLUGINS
 
   " -- Language plugins --
   " Rust support
-  Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+  Plug 'rust-lang/rust.vim'
   " Racer for rust omnicompletion
-  Plug 'racer-rust/vim-racer', { 'for': 'rust' }
+  Plug 'racer-rust/vim-racer'
   " TOML support
-  Plug 'cespare/vim-toml', { 'for': 'toml' }
+  Plug 'cespare/vim-toml'
   " Extra rails functionality
   Plug 'tpope/vim-rails'
   " Extra bundler functionality
   Plug 'tpope/vim-bundler'
-  " Improved javascript editing, problems with on-demand loading
-  Plug 'pangloss/vim-javascript' ", { 'for': 'javascript' }
-  " Improved JSX editing, problems with on-demand loading
-  Plug 'mxw/vim-jsx' ",{ 'for': 'javascript.jsx' }
+  " Improved javascript editing
+  Plug 'pangloss/vim-javascript'
+  " Improved JSX editing
+  Plug 'mxw/vim-jsx'
   " Typescript support
   Plug 'leafgarland/typescript-vim'
   " Coffee script syntax highlighting support + extras
-  Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
-  " Better markdown support, problems with on-demand loading
-  Plug 'plasticboy/vim-markdown' ", { 'for': 'markdown' }
+  Plug 'kchmck/vim-coffee-script'
+  " Better markdown support
+  Plug 'plasticboy/vim-markdown'
   " Better tmux configuration file support
-  Plug 'tmux-plugins/vim-tmux', { 'for': 'tmux' }
-  " Scala support, problems with on-demand loading and sbt
-  Plug 'derekwyatt/vim-scala' ", { 'for': ['scala', 'sbt.scala'] }
-  " Go syntax highlighting support and friends - seems to have problems with
-  " on demand as well
-  Plug 'fatih/vim-go' ", { 'for': 'go' }
+  Plug 'tmux-plugins/vim-tmux'
+  " Scala support
+  Plug 'derekwyatt/vim-scala'
+  " Go syntax highlighting support and friends
+  Plug 'fatih/vim-go'
   " Alex syntax highlighting support
   Plug 'aaron-williamson/alex.vim'
   " Improved haskell support
