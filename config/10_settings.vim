@@ -12,7 +12,6 @@ filetype plugin indent on
 set mouse=n
 
 " Netrw config
-let g:netrw_liststyle   = 3
 let g:netrw_bufsettings = 'nomodifiable nomodified nowrap readonly number relativenumber nobuflisted'
 
 " Set GUI cursor preferences
