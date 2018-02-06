@@ -8,8 +8,8 @@ let g:maplocalleader = ','
 " Enable filetype detection and auto-indentation
 filetype plugin indent on
 
-" Disable the mouse
-set mouse=
+" Disable the mouse except in normal mode
+set mouse=n
 
 " Netrw config
 let g:netrw_liststyle   = 3
