@@ -55,6 +55,7 @@ if exists('g:loading_plugins')
 
   " FZF
   let g:fzf_command_prefix = 'Fzf'
+  let g:fzf_history_dir = '~/.local/share/fzf-history'
   map <C-p> :FzfFiles<CR>
   map <Leader>fb :FzfBuffers<CR>
   map <Leader>fc :FzfBCommits<CR>
@@ -188,5 +189,8 @@ if exists('g:loading_plugins')
   " Configuration for fzf-gitignore
   let g:fzf_gitignore_no_maps = 1
   map <Leader>fi :FzfGitignore<CR>
+
+  " Enable JSX in files that don't end in .jsx
+  let g:jsx_ext_required = 0
 
 endif " End plugin config if
