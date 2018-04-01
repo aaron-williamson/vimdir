@@ -196,6 +196,11 @@ function! StatusWritingMode()
   endif
 endfunction
 
+" Tag for fold method
+function! StatusFoldMethod()
+  return '[' . &foldmethod . ']'
+endfunction
+
 " Text width for status line
 function! StatusTextWidth()
   if &textwidth

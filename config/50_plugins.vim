@@ -46,6 +46,8 @@ if !$NO_VIM_PLUGINS
   Plug 'neovimhaskell/haskell-vim'
   " LaTeX editing in vim
   Plug 'lervag/vimtex'
+  " Happy syntax highlighting support
+  Plug 'andy-morris/happy.vim'
 
   " -- Workflow/command plugins --
   " Fugitive for git integration

@@ -13,6 +13,7 @@ endif
 
 set statusline+=%(%{StatusPasteMode()}\ %)   " Paste mode flag
 set statusline+=%(%{StatusWritingMode()}\ %) " Writing mode flag
+set statusline+=%(%{StatusFoldMethod()}\ %)  " Fold method flag
 set statusline+=%([%R%M]%)                   " Modified and read only group
 set statusline+=%h                           " Help buffer flag
 set statusline+=%w                           " Preview flag
