@@ -110,6 +110,8 @@ if exists('g:loading_plugins')
   let g:ale_enabled = 0
   let g:ale_open_list = 1
   let g:ale_sign_column_always = 1
+  let g:ale_lint_on_text_changed = "normal"
+  let g:ale_lint_on_insert_leave = 1
   map <Leader>AT :ALEToggle<CR>
   map <Leader>AD :ALEDisable<CR>
   map <Leader>AE :ALEEnable<CR>

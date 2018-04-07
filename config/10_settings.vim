@@ -75,6 +75,11 @@ set showcmd
 " Set history to max
 set history=10000
 
+" Allow executable RC files but don't allow them to set autocmds, write, or
+" run shell commands
+set exrc
+set secure
+
 " Enable ttyfast
 set ttyfast
 

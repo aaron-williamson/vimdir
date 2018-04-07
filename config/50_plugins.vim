@@ -92,6 +92,8 @@ if !$NO_VIM_PLUGINS
   Plug 'ludovicchabant/vim-gutentags'
   " Splitting/joining multi line statements
   Plug 'AndrewRadev/splitjoin.vim'
+  " abolish.vim for enhanced substituion
+  Plug 'tpope/vim-abolish'
 
   " Plugins only for vim 8+ or neovim
   if has('nvim') || v:version >= 800
