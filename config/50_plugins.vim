@@ -89,7 +89,7 @@ if !$NO_VIM_PLUGINS
   " Extra focus for writing
   Plug 'junegunn/limelight.vim'
   " Auto tag management
-  Plug 'ludovicchabant/vim-gutentags'
+  Plug 'ludovicchabant/vim-gutentags', { 'tag': 'v1.0.0' }
   " Splitting/joining multi line statements
   Plug 'AndrewRadev/splitjoin.vim'
   " abolish.vim for enhanced substituion
