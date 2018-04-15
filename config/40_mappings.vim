@@ -32,7 +32,7 @@ noremap <Leader>st /\v\s+$<CR>
 
 " Fix trailing whitespace with <Leader>sf
 noremap <Leader>sf :%substitute/\v\s+$//g <bar>
-      \ unlet! b:whitespace_check<CR>
+      \ unlet! b:whitespace_check <bar> set nohlsearch<CR>
 
 " Temporarily disable all line numbers with <Leader>nn
 noremap <Leader>nn :set number! <bar> set relativenumber!<CR>
