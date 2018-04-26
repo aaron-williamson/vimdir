@@ -4,30 +4,6 @@ scriptencoding UTF-8
 " Don't configure plugins if we don't want plugins
 if exists('g:loading_plugins')
 
-  " Fugitive mappings (matches my git aliases)
-  noremap <Leader>gst :Gstatus<CR>
-  noremap <Leader>glg :Gvsplit! log --graph --oneline<CR>
-  noremap <Leader>glp :Gvsplit! log --graph --oneline -p<CR>
-  noremap <Leader>gdi :Gvsplit! diff<CR>
-  noremap <Leader>gdc :Gvsplit! diff --cached<CR>
-  noremap <Leader>gdt :Gvdiff<CR>
-  noremap <Leader>gci :Gcommit<CR>
-  noremap <Leader>gbl :Gblame<CR>
-  noremap <Leader>glg :Glog<CR>
-
-  " Multiple cursors configuration
-  noremap <Leader>mf :MultipleCursorsFind<Space>
-  let g:multi_cursor_exit_from_visual_mode = 0
-  let g:multi_cursor_exit_from_insert_mode = 0
-
-  " Rails mappings
-  noremap <Leader>rm :Emodel<CR>
-  noremap <Leader>rc :Econtroller<CR>
-  noremap <Leader>rv :Eview<Space>
-  noremap <Leader>rh :Ehelper<CR>
-  noremap <Leader>ra :A<CR>
-  noremap <Leader>rr :Einitializer<CR>
-
   " Ack configuration
   let g:ack_autoclose        = 1
   let g:ack_autofold_results = 1
@@ -187,11 +163,12 @@ if exists('g:loading_plugins')
     autocmd User GoyoLeave Limelight!
   augroup END
 
-  " Configuration for fzf-gitignore
-  let g:fzf_gitignore_no_maps = 1
-  map <Leader>fi :FzfGitignore<CR>
-
   " Enable JSX in files that don't end in .jsx
   let g:jsx_ext_required = 0
+
+  " Editor config settings
+  let g:EditorConfig_core_mode = 'external_command'
+  let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
+  let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 endif " End plugin config if

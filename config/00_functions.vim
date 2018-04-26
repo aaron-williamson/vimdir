@@ -68,8 +68,8 @@ endfunction
 function! ToggleSpelling()
   if &spell " If spell is enabled, disable it
     set nospell
-  else " If spell is disabled, enable it to US english and CA English
-    setlocal spell spelllang=en_us,en_ca
+  else " If spell is disabled, enable it
+    setlocal spell
   endif
 endfunction
 
@@ -116,9 +116,7 @@ function! WritingMode()
     setlocal norelativenumber
 
     " Then enable spelling mode
-    let b:writing_mode_old_spelllang = &spelllang
     let b:writing_mode_old_spell = &spell
-    setlocal spelllang=en_ca,en_us
     setlocal spell
 
     " Set text width
@@ -142,7 +140,6 @@ function! WritingMode()
     if b:writing_mode_old_spell
       setlocal nospell
     endif
-    execute 'setlocal spelllang=' . b:writing_mode_old_spelllang
 
     " Restore text width
     execute 'setlocal textwidth=' . b:writing_mode_old_textwidth
@@ -154,7 +151,6 @@ function! WritingMode()
     unlet b:writing_mode_old_number
     unlet b:writing_mode_old_relnumber
     unlet b:writing_mode_old_spell
-    unlet b:writing_mode_old_spelllang
     unlet b:writing_mode_old_textwidth
     unlet b:writing_mode_old_colorcolumn
     unlet b:writing_mode
@@ -162,20 +158,17 @@ function! WritingMode()
 endfunction
 
 function! ToggleFoldMethod()
-  " Toggles nicely between manual and indent fold methods
+  " Toggles nicely between manual, indent, and marker fold methods
   if &foldmethod ==# 'manual'
     set foldlevel=0
     set foldmethod=indent
     set foldlevel=20
+  elseif &foldmethod ==# 'indent'
+    set foldmethod=marker
   else
     set foldmethod=manual
     normal! zE
   endif
-endfunction
-
-" Custom mappings for netrw
-function! NetrwMappings()
-  noremap <buffer> <Esc> :Rex<CR>
 endfunction
 
 " Tag for paste mode

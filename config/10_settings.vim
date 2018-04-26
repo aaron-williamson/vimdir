@@ -57,11 +57,14 @@ set smartcase
 " Set a dictionaries for word completion
 set dictionary+=/usr/share/dict/words
 
+" Set the spell language
+set spelllang=en_us,en_ca
+
 " Infer case for autocompletion
 set infercase
 
 " Try to have at least 5 lines of vertical room surrounding the cursor
-set scrolloff=5
+set scrolloff=3
 
 " Enable syntax highlighting
 syntax enable
@@ -86,15 +89,11 @@ set ttyfast
 " Backup to temp directories instead of cwd
 set backup
 set writebackup
+set undofile
 set backupdir=~/.vim-tmp//,~/.tmp//,~/tmp//,/var/tmp//,/tmp//
 set backupskip=/tmp/*//,/private/tmp/*//
+set undodir=~/.vim-tmp//,~/.tmp//,~/tmp//,/var/tmp//,/tmp//
 set directory=~/.vim-tmp//,~/.tmp//,~/tmp//,/var/tmp//,/tmp//
-
-" Set tab to 2 spaces
-set tabstop=2
-set shiftwidth=2
-set expandtab
-set softtabstop=2
 
 " Set fold mode to manual and have all folds open by default
 set foldmethod=manual
@@ -113,17 +112,11 @@ set ttimeoutlen=0
 set laststatus=2
 
 " Backspace can delete indents and newlines
-set backspace=2
+set backspace=indent,eol,start
 
 " Natural split placement
 set splitbelow
 set splitright
-
-" Automatic split sizing
-set winheight=20
-set winwidth=60
-silent! set winminheight=5
-set winminwidth=15
 
 " ~~~ Conditional Settings ~~~
 
@@ -139,10 +132,7 @@ endif
 " Enable breakindent and linebreak if they're available
 if has('linebreak')
   set linebreak
-  " breakindent not introduced until patch 338
-  if has('patch338')
-    set breakindent
-  endif
+  set breakindent
 endif
 
 " Vim specific settings
@@ -157,12 +147,6 @@ if !has('nvim')
   if &term ==# 'screen' || &term ==# 'screen-256color'
     set term=xterm-256color
   endif
-endif
-
-" Unix specific settings
-if has('unix')
-  " Need to manually reset path for compatibility with zsh
-  set path=".,/usr/include,,"
 endif
 
 " Neovim specific settings

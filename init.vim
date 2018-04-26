@@ -1,6 +1,5 @@
 " Aaron Williamson's init.vim
-" This file just ties together my other configuration files, see them for more
-" information
+" This file just ties together my other configuration files, see them for more information
 
 " Whether or not we're on macos
 let g:on_macos = ((has('unix') && system('uname -s') ==# "Darwin\n"))

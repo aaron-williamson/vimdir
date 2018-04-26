@@ -13,87 +13,72 @@ if !$NO_VIM_PLUGINS
 
   call plug#begin(g:vim_dir . '/plugged')
 
-  " -- Language plugins --
-  " Rust support
-  Plug 'rust-lang/rust.vim'
-  " Racer for rust omnicompletion
-  Plug 'racer-rust/vim-racer'
-  " TOML support
-  Plug 'cespare/vim-toml'
-  " Extra rails functionality
-  Plug 'tpope/vim-rails'
-  " Extra bundler functionality
-  Plug 'tpope/vim-bundler'
-  " Improved javascript editing
-  Plug 'pangloss/vim-javascript'
-  " Improved JSX editing
-  Plug 'mxw/vim-jsx'
-  " Typescript support
-  Plug 'leafgarland/typescript-vim'
-  " Coffee script syntax highlighting support + extras
-  Plug 'kchmck/vim-coffee-script'
-  " Better markdown support
-  Plug 'plasticboy/vim-markdown'
-  " Better tmux configuration file support
-  Plug 'tmux-plugins/vim-tmux'
-  " Scala support
-  Plug 'derekwyatt/vim-scala'
-  " Go syntax highlighting support and friends
-  Plug 'fatih/vim-go'
-  " Alex syntax highlighting support
-  Plug 'aaron-williamson/alex.vim'
-  " Improved haskell support
-  Plug 'neovimhaskell/haskell-vim'
+  " Polyglot for language support
+  Plug 'sheerun/vim-polyglot'
+
   " LaTeX editing in vim
   Plug 'lervag/vimtex'
-  " Happy syntax highlighting support
-  Plug 'andy-morris/happy.vim'
 
-  " -- Workflow/command plugins --
   " Fugitive for git integration
   Plug 'tpope/vim-fugitive'
+
   " Indent-based text object
   Plug 'michaeljsmith/vim-indent-object'
-  " Ack plugin
+
+  " Ack plugin for quick multi file search
   Plug 'mileszs/ack.vim', { 'on': 'Ack' }
+
   " FZF for fuzzy find/open
   Plug 'junegunn/fzf'
+
   " Some nice default FZF wrappers
   Plug 'junegunn/fzf.vim'
-  " Plugin for gitignore.io + fzf goodness
-  Plug 'fszymanski/fzf-gitignore', {'do': ':UpdateRemotePlugins'}
-  " Sublime-text style multiple cursors
-  Plug 'terryma/vim-multiple-cursors'
-  " Surround for quoting/brackets/html
-  Plug 'tpope/vim-surround'
-  " Some handy bracket mappings
-  Plug 'tpope/vim-unimpaired'
-  " Automatic alignment
-  Plug 'godlygeek/tabular', { 'on': ['Tabularize', 'TableFormat'] }
-  " Allow repeating supported plugins
-  Plug 'tpope/vim-repeat'
-  " Allow * and # searching from visual mode
-  Plug 'bronson/vim-visual-star-search'
-  " A secure modeline alternative
-  Plug 'ciaranm/securemodelines'
-  " A Tag Viewer
-  Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
-  " Auto add some matching ends
-  Plug 'tpope/vim-endwise'
-  " NetRW inprovements
-  Plug 'tpope/vim-vinegar'
-  " A useful commenting plugin
-  Plug 'tpope/vim-commentary'
+
   " Focused writing in vim
   Plug 'junegunn/goyo.vim'
+
   " Extra focus for writing
   Plug 'junegunn/limelight.vim'
-  " Auto tag management
-  Plug 'ludovicchabant/vim-gutentags', { 'tag': 'v1.0.0' }
-  " Splitting/joining multi line statements
-  Plug 'AndrewRadev/splitjoin.vim'
+
+  " Auto detect editor config
+  Plug 'editorconfig/editorconfig-vim'
+
+  " Sleuth for auto detecting indent settings
+  Plug 'tpope/vim-sleuth'
+
+  " Surround for quoting/brackets/html
+  Plug 'tpope/vim-surround'
+
+  " Some handy bracket mappings
+  Plug 'tpope/vim-unimpaired'
+
+  " Allow repeating supported plugins
+  Plug 'tpope/vim-repeat'
+
+  " Auto add some matching ends
+  Plug 'tpope/vim-endwise'
+
+  " NetRW inprovements
+  Plug 'tpope/vim-vinegar'
+
+  " A useful commenting plugin
+  Plug 'tpope/vim-commentary'
+
   " abolish.vim for enhanced substituion
   Plug 'tpope/vim-abolish'
+
+  " Automatic alignment
+  Plug 'godlygeek/tabular', { 'on': ['Tabularize', 'TableFormat'] }
+
+  " Allow * and # searching from visual mode
+  Plug 'bronson/vim-visual-star-search'
+
+  " A secure modeline alternative
+  Plug 'ciaranm/securemodelines'
+
+  " Auto tag management: temporarily disabled until
+  " https://github.com/ludovicchabant/vim-gutentags/issues/167 is resolved
+  " Plug 'ludovicchabant/vim-gutentags'
 
   " Plugins only for vim 8+ or neovim
   if has('nvim') || v:version >= 800

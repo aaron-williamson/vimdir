@@ -13,9 +13,6 @@ nnoremap <Leader>t :noremap <Leader>t :
 " Mapping for going to the last window
 noremap <Leader>l <C-^>
 
-" For quick substitute
-noremap <Leader>S :%substitute/
-
 " Toggle showing whitespace with <Leader>sw, <Leader>ss to show spaces, too
 noremap <Leader>sw :call ToggleShowWhitespace(0)<CR>
 noremap <Leader>ss :call ToggleShowWhitespace(1)<CR>
@@ -30,7 +27,7 @@ noremap <Leader>sn :call ToggleWhitespaceCheck() <bar>
 " Search for trailing whitespace with <Leader>st
 noremap <Leader>st /\v\s+$<CR>
 
-" Fix trailing whitespace with <Leader>sf
+" Remove trailing whitespace with <Leader>sf
 noremap <Leader>sf :%substitute/\v\s+$//g <bar>
       \ unlet! b:whitespace_check <bar> set nohlsearch<CR>
 
@@ -57,15 +54,8 @@ imap jk <Esc>
 " Toggle column highlight with <Leader>C
 noremap <Leader>C :set cursorcolumn!<CR>
 
-" Toggle fold method between manual and indent with <Leader>z
+" Toggle fold methods with <Leader>z
 noremap <Leader>z :call ToggleFoldMethod()<CR>
-
-" More sensible resizing amounts/binds
-noremap <C-w>- :resize -10<CR>
-noremap <C-w>= :resize +10<CR>
-noremap <C-w>+ :wincmd =<CR>
-noremap <C-w>. :vertical resize +10<CR>
-noremap <C-w>, :vertical resize -10<CR>
 
 " Add a binding for new tab
 noremap <C-w>t :tabnew<CR>
