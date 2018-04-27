@@ -107,6 +107,35 @@ if exists('g:loading_plugins')
     let g:vimtex_compiler_progname = 'nvr'
   endif
 
+  " Configuration for Goyo and Limelight
+  " 100 width instead of default 80
+  let g:goyo_width = 100
+
+  " Slightly more focus
+  let g:limelight_default_coefficient = 0.8
+
+  " Automatically enable Limelight with Goyo
+  augroup focusedWriting
+    autocmd!
+    autocmd User GoyoEnter Limelight
+    autocmd User GoyoLeave Limelight!
+  augroup END
+
+  " Enable JSX in files that don't end in .jsx
+  let g:jsx_ext_required = 0
+
+  " Editor config settings
+  let g:EditorConfig_core_mode = 'external_command'
+  let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
+  let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+  " Deoplete settings
+  let g:deoplete#enable_at_startup = 1
+  call deoplete#custom#option({
+        \ 'auto_complete': v:false
+        \})
+  inoremap <silent><expr> <C-n> deoplete#mappings#manual_complete()
+
   " vim-startify config, disable doublequote lint since I wasn't able to do
   " this with single quotes
   " vint: -ProhibitUnnecessaryDoubleQuote
@@ -148,27 +177,5 @@ if exists('g:loading_plugins')
 
   let g:startify_custom_header = map(g:ascii_header, '"   " . v:val')
   " vint: +ProhibitUnnecessaryDoubleQuote
-
-  " Configuration for Goyo and Limelight
-  " 100 width instead of default 80
-  let g:goyo_width = 100
-
-  " Slightly more focus
-  let g:limelight_default_coefficient = 0.8
-
-  " Automatically enable Limelight with Goyo
-  augroup focusedWriting
-    autocmd!
-    autocmd User GoyoEnter Limelight
-    autocmd User GoyoLeave Limelight!
-  augroup END
-
-  " Enable JSX in files that don't end in .jsx
-  let g:jsx_ext_required = 0
-
-  " Editor config settings
-  let g:EditorConfig_core_mode = 'external_command'
-  let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
-  let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 endif " End plugin config if

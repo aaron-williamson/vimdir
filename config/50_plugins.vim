@@ -82,6 +82,18 @@ if !$NO_VIM_PLUGINS
 
   " Plugins only for vim 8+ or neovim
   if has('nvim') || v:version >= 800
+    " Deoplete for completion
+    Plug 'Shougo/deoplete.nvim', { 'do': 'UpdateRemotePlugins' }
+
+    " Easy asynchronous execution
+    Plug 'skywind3000/asyncrun.vim', { 'on': 'AsyncRun' }
+
+    " Asynchronous linting
+    Plug 'w0rp/ale'
+
+    " Fancy vim start page
+    Plug 'mhinz/vim-startify'
+
     " Live Markdown Preview
     function! BuildComposer(info)
       if !executable('cargo')
@@ -100,15 +112,6 @@ if !$NO_VIM_PLUGINS
     Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer'),
           \ 'on': ['ComposerStart', 'ComposerOpen', 'ComposerUpdate'],
           \ 'for': 'markdown' }
-
-    " Easy asynchronous execution
-    Plug 'skywind3000/asyncrun.vim', { 'on': 'AsyncRun' }
-
-    " Asynchronous linting
-    Plug 'w0rp/ale'
-
-    " Fancy vim start page
-    Plug 'mhinz/vim-startify'
   endif
 
   " -- Neovim specific plugins --
