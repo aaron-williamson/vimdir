@@ -114,6 +114,13 @@ if exists('g:loading_plugins')
   " Slightly more focus
   let g:limelight_default_coefficient = 0.8
 
+  " Function and command for toggling writing mode + Goyo and Limelight
+  function! FocusMode()
+    execute 'Goyo'
+    call WritingMode()
+  endfunction
+  command! -nargs=0 FocusMode call FocusMode()
+
   " Automatically enable Limelight with Goyo
   augroup focusedWriting
     autocmd!
