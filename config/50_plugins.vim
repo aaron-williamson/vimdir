@@ -83,7 +83,7 @@ if !$NO_VIM_PLUGINS
   " Plugins only for vim 8+ or neovim
   if has('nvim') || v:version >= 800
     " Deoplete for completion
-    Plug 'Shougo/deoplete.nvim', { 'do': 'UpdateRemotePlugins' }
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
     " Easy asynchronous execution
     Plug 'skywind3000/asyncrun.vim', { 'on': 'AsyncRun' }
