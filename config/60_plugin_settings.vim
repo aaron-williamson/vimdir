@@ -143,6 +143,9 @@ if exists('g:loading_plugins')
         \})
   inoremap <silent><expr> <C-n> deoplete#mappings#manual_complete()
 
+  " Vim polyglot settings
+  let g:polyglot_disabled = ['latex'] " Disable polyglot so vimtex works correctly
+
   " vim-startify config, disable doublequote lint since I wasn't able to do
   " this with single quotes
   " vint: -ProhibitUnnecessaryDoubleQuote
