@@ -76,10 +76,6 @@ if !$NO_VIM_PLUGINS
   " A secure modeline alternative
   Plug 'ciaranm/securemodelines'
 
-  " Auto tag management: temporarily disabled until
-  " https://github.com/ludovicchabant/vim-gutentags/issues/167 is resolved
-  " Plug 'ludovicchabant/vim-gutentags'
-
   " Plugins only for vim 8+ or neovim
   if has('nvim') || v:version >= 800
     " Deoplete for completion
