@@ -58,7 +58,7 @@ set smartcase
 set dictionary+=/usr/share/dict/words
 
 " Set the spell language
-set spelllang=en_us,en_ca
+set spelllang=en_ca,en_us
 
 " Infer case for autocompletion
 set infercase
