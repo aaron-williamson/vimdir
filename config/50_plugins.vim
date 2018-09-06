@@ -81,6 +81,9 @@ if !$NO_VIM_PLUGINS
     " Deoplete for completion
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
+    " Rust completion for deoplete
+    Plug 'sebastianmarkow/deoplete-rust'
+
     " Easy asynchronous execution
     Plug 'skywind3000/asyncrun.vim', { 'on': 'AsyncRun' }
 
