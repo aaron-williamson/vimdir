@@ -88,7 +88,7 @@ if exists('g:loading_plugins')
   let g:ale_sign_column_always = 1
   let g:ale_lint_on_insert_leave = 1
   map <Leader>AT :ALEToggle<CR>
-  map <Leader>AD :ALEDisable<CR>
+  map <Leader>AD :ALEDisable <bar> execute 'sign unplace ' . g:ale_sign_offset<CR>
   map <Leader>AE :ALEEnable<CR>
   map <Leader>AL <Plug>(ale_lint)
   map <Leader>AI :ALEInfo<CR>
