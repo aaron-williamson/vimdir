@@ -107,6 +107,12 @@ if exists('g:loading_plugins')
     let g:vimtex_compiler_progname = 'nvr'
   endif
 
+  " vimtex deoplete config
+  if !exists('g:deoplete#omni#input_patterns')
+    let g:deoplete#omni#input_patterns = {}
+  endif
+  let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
+
   " Configuration for Goyo and Limelight
   " 100 width instead of default 80
   let g:goyo_width = 100
