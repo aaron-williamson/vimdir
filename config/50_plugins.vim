@@ -84,6 +84,9 @@ if !$NO_VIM_PLUGINS
     " Rust completion for deoplete
     Plug 'sebastianmarkow/deoplete-rust'
 
+    " Python completion for deoplete
+    Plug 'zchee/deoplete-jedi'
+
     " Easy asynchronous execution
     Plug 'skywind3000/asyncrun.vim', { 'on': 'AsyncRun' }
 
