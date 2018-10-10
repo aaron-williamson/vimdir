@@ -104,6 +104,7 @@ if exists('g:loading_plugins')
   " vimtex config
   let g:vimtex_view_method = 'skim'
   let g:vimtex_quickfix_open_on_warning = 0
+  let g:vimtex_imaps_enabled = 0
   if has('nvim') && executable('nvr')
     let g:vimtex_compiler_progname = 'nvr'
   endif
