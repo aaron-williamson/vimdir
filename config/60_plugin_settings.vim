@@ -144,11 +144,13 @@ if exists('g:loading_plugins')
   let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
   " Deoplete settings
-  let g:deoplete#enable_at_startup = 1
-  call deoplete#custom#option({
-        \ 'auto_complete': v:false
-        \})
-  inoremap <silent><expr> <C-n> deoplete#mappings#manual_complete()
+  if has('nvim')
+    let g:deoplete#enable_at_startup = 1
+    call deoplete#custom#option({
+          \ 'auto_complete': v:false
+          \})
+    inoremap <silent><expr> <C-n> deoplete#mappings#manual_complete()
+  endif
 
   " Deoplete-rust configuration
   let g:deoplete#sources#rust#racer_binary=$RUST_RACER_PATH

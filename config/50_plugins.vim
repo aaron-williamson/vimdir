@@ -78,15 +78,6 @@ if !$NO_VIM_PLUGINS
 
   " Plugins only for vim 8+ or neovim
   if has('nvim') || v:version >= 800
-    " Deoplete for completion
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-    " Rust completion for deoplete
-    Plug 'sebastianmarkow/deoplete-rust'
-
-    " Python completion for deoplete
-    Plug 'zchee/deoplete-jedi'
-
     " Easy asynchronous execution
     Plug 'skywind3000/asyncrun.vim', { 'on': 'AsyncRun' }
 
@@ -118,6 +109,15 @@ if !$NO_VIM_PLUGINS
 
   " -- Neovim specific plugins --
   if has('nvim')
+    " Deoplete for completion
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+    " Rust completion for deoplete
+    Plug 'sebastianmarkow/deoplete-rust'
+
+    " Python completion for deoplete
+    Plug 'zchee/deoplete-jedi'
+
     " A yankring to share yanks across neovim instances
     Plug 'bfredl/nvim-miniyank'
   endif
