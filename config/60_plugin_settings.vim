@@ -87,11 +87,10 @@ if exists('g:loading_plugins')
   let g:ale_lint_delay = 750
   let g:ale_sign_column_always = 1
   let g:ale_lint_on_insert_leave = 1
-  map <Leader>AT :ALEToggle<CR>
+  let g:ale_python_auto_pipenv = 1
   map <Leader>AD :ALEDisable <bar> execute 'sign unplace ' . g:ale_sign_offset<CR>
   map <Leader>AE :ALEEnable<CR>
   map <Leader>AL <Plug>(ale_lint)
-  map <Leader>AI :ALEInfo<CR>
   map <Leader>Ad :ALEDetail<CR>
 
   " Automatically open quickfix list when AsyncRun writes to it

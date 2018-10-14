@@ -153,4 +153,8 @@ endif
 if has('nvim')
   " Store larger things in registers
   set shada=!,'100,<200,s50,h
+
+  " Set python provider
+  let g:python_host_prog = '/usr/local/bin/python2'
+  let g:python3_host_prog = '/usr/local/bin/python3'
 endif
