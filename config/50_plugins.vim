@@ -112,6 +112,12 @@ if !$NO_VIM_PLUGINS
     " Deoplete for completion
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
+    " echodoc for deoplete
+    Plug 'Shougo/echodoc.vim'
+
+    " neopairs for deoplete
+    Plug 'Shougo/neopairs.vim'
+
     " Rust completion for deoplete
     Plug 'sebastianmarkow/deoplete-rust'
 

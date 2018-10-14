@@ -162,10 +162,14 @@ if exists('g:loading_plugins')
   " Deoplete settings
   if has('nvim')
     let g:deoplete#enable_at_startup = 1
-    call deoplete#custom#option({
-          \ 'auto_complete': v:false
-          \})
-    inoremap <silent><expr> <C-n> deoplete#mappings#manual_complete()
+    let g:echodoc#enable_at_startup = 1
+    let g:neopairs#enable = 1
+    call deoplete#custom#option('auto_complete', v:false)
+    call deoplete#custom#option('auto_complete_delay', 0)
+    call deoplete#custom#source('_', 'converters', ['converter_auto_paren',
+          \ 'converter_remove_overlap', 'converter_truncate_abbr', 'converter_truncate_menu'])
+    inoremap <silent><expr> <C-n> pumvisible() ? "\<C-n>" : deoplete#manual_complete()
+    inoremap <silent><expr> <C-y> deoplete#close_popup()
   endif
 
   " Deoplete-rust configuration
