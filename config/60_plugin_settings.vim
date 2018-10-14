@@ -153,8 +153,8 @@ if exists('g:loading_plugins')
   endif
 
   " Deoplete-rust configuration
-  let g:deoplete#sources#rust#racer_binary=$RUST_RACER_PATH
-  let g:deoplete#sources#rust#rust_source_path=$RUST_SRC_PATH
+  let g:deoplete#sources#rust#racer_binary = $RUST_RACER_PATH
+  let g:deoplete#sources#rust#rust_source_path = $RUST_SRC_PATH
 
   " Vim polyglot settings
   let g:polyglot_disabled = ['latex'] " Disable polyglot so vimtex works correctly
