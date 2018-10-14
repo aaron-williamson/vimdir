@@ -171,6 +171,29 @@ function! ToggleFoldMethod()
   endif
 endfunction
 
+" Tag for current editing mode
+function! StatusMode()
+  let l:mode = mode()
+
+  if l:mode =~# 'n\|c'
+    return '%1* NORMAL'
+  elseif l:mode ==# 'i'
+    return '%2* INSERT'
+  elseif l:mode ==# 'v'
+    return '%3* VISUAL'
+  elseif l:mode ==# 'V'
+    return '%3* V-LINE'
+  elseif l:mode ==# ''
+    return '%3* V-BLOCK'
+  elseif l:mode =~# 'R'
+    return '%4* REPLACE'
+  elseif l:mode ==# 't'
+    return '%2* TERMINAL'
+  else
+    return '%1* ' . l:mode
+  endif
+endfunction
+
 " Tag for paste mode
 function! StatusPasteMode()
   if &paste

@@ -52,6 +52,22 @@ if exists('g:loading_plugins')
   map <Leader>fw :FzfWindows<CR>
 
   " Color scheme
+  augroup UserHighlight
+    autocmd!
+
+    " Use an autocommand to set user colors for statusline so that it doesn't get cleared by color
+    " scheme
+    autocmd ColorScheme *
+          \ execute 'highlight User1 guifg=#' . g:base16_gui02 . ' guibg=#' . g:base16_gui0D
+          \ . ' ctermfg=' . g:base16_cterm02 . ' ctermbg=' . base16_cterm0D . ' gui=bold cterm=bold'
+          \ | execute 'highlight User2 guifg=#' . g:base16_gui02 . ' guibg=#' . g:base16_gui0B
+          \ . ' ctermfg=' . g:base16_cterm02 . ' ctermbg=' . base16_cterm0B . ' gui=bold cterm=bold'
+          \ | execute 'highlight User3 guifg=#' . g:base16_gui02 . ' guibg=#' . g:base16_gui0E
+          \ . ' ctermfg=' . g:base16_cterm02 . ' ctermbg=' . base16_cterm0E . ' gui=bold cterm=bold'
+          \ | execute 'highlight User4 guifg=#' . g:base16_gui02 . ' guibg=#' . g:base16_gui08
+          \ . ' ctermfg=' . g:base16_cterm02 . ' ctermbg=' . base16_cterm08 . ' gui=bold cterm=bold'
+  augroup END
+
   silent! colorscheme base16-summerfruit-dark
 
   " Vim-tmux-navigator mappings

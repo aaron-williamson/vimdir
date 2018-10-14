@@ -118,6 +118,15 @@ set backspace=indent,eol,start
 set splitbelow
 set splitright
 
+" Set user highlights for statusbar
+highlight User1 guifg=DarkGrey guibg=Blue ctermfg=DarkGrey ctermbg=Blue gui=bold cterm=bold
+highlight User2 guifg=DarkGrey guibg=Green ctermfg=DarkGrey ctermbg=Green gui=bold cterm=bold
+highlight User3 guifg=DarkGrey guibg=Magenta ctermfg=DarkGrey ctermbg=Magenta gui=bold cterm=bold
+highlight User4 guifg=DarkGrey guibg=Red ctermfg=DarkGrey ctermbg=Red gui=bold cterm=bold
+
+" Don't show mode
+set noshowmode
+
 " ~~~ Conditional Settings ~~~
 
 " Enable termguicolors if we have it, otherwise set background to light, for
