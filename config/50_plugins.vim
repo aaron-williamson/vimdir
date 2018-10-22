@@ -109,21 +109,6 @@ if !$NO_VIM_PLUGINS
 
   " -- Neovim specific plugins --
   if has('nvim')
-    " Deoplete for completion
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-    " echodoc for deoplete
-    Plug 'Shougo/echodoc.vim'
-
-    " neopairs for deoplete
-    Plug 'Shougo/neopairs.vim'
-
-    " Rust completion for deoplete
-    Plug 'sebastianmarkow/deoplete-rust'
-
-    " Python completion for deoplete
-    Plug 'zchee/deoplete-jedi'
-
     " A yankring to share yanks across neovim instances
     Plug 'bfredl/nvim-miniyank'
   endif

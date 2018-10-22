@@ -124,12 +124,6 @@ if exists('g:loading_plugins')
     let g:vimtex_compiler_progname = 'nvr'
   endif
 
-  " vimtex deoplete config
-  if !exists('g:deoplete#omni#input_patterns')
-    let g:deoplete#omni#input_patterns = {}
-  endif
-  let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
-
   " Configuration for Goyo and Limelight
   " 100 width instead of default 80
   let g:goyo_width = 100
@@ -158,23 +152,6 @@ if exists('g:loading_plugins')
   let g:EditorConfig_core_mode = 'external_command'
   let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
   let g:EditorConfig_exclude_patterns = ['fugitive://.*']
-
-  " Deoplete settings
-  if has('nvim')
-    let g:deoplete#enable_at_startup = 1
-    let g:echodoc#enable_at_startup = 1
-    let g:neopairs#enable = 1
-    call deoplete#custom#option('auto_complete', v:false)
-    call deoplete#custom#option('auto_complete_delay', 0)
-    call deoplete#custom#source('_', 'converters', ['converter_auto_paren',
-          \ 'converter_remove_overlap', 'converter_truncate_abbr', 'converter_truncate_menu'])
-    inoremap <silent><expr> <C-n> pumvisible() ? "\<C-n>" : deoplete#manual_complete()
-    inoremap <silent><expr> <C-y> deoplete#close_popup()
-  endif
-
-  " Deoplete-rust configuration
-  let g:deoplete#sources#rust#racer_binary = $RUST_RACER_PATH
-  let g:deoplete#sources#rust#rust_source_path = $RUST_SRC_PATH
 
   " Vim polyglot settings
   let g:polyglot_disabled = ['latex'] " Disable polyglot so vimtex works correctly
