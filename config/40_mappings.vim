@@ -1,9 +1,6 @@
 " This contains all of my mappings
 scriptencoding UTF-8
 
-" Change the old leader to work as comma
-noremap \ ,
-
 " Expands to current directory
 cnoremap <expr> %% expand('%:p:h') . '/'
 
