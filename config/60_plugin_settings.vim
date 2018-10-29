@@ -155,6 +155,10 @@ if exists('g:loading_plugins')
   " Vim polyglot settings
   let g:polyglot_disabled = ['latex'] " Disable polyglot so vimtex works correctly
 
+  " Visual Star settings
+  nnoremap <Leader>* :<C-U>execute 'Ack ' . shellescape(expand("<cword>"))<CR>
+  vnoremap <Leader>* :<C-U>call VisualStarSearchSet('/')<CR>:execute "Ack '" . @/ . "'"<CR>
+
   " vim-startify config, disable doublequote lint since I wasn't able to do
   " this with single quotes
   " vint: -ProhibitUnnecessaryDoubleQuote
