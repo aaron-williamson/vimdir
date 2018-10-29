@@ -2,10 +2,10 @@
 " try and add plugin specific information to the status line
 function! MyStatusLine()
   " Left
-  let l:statusline = '[%n] '                          " Buffer number
+  let l:statusline = '[%n] '                 " Buffer number
   let l:statusline .= StatusMode() . ' %0* ' " Current mode
-  let l:statusline .= '%<'                           " Truncate here
-  let l:statusline .= '%f '                          " Path to current file
+  let l:statusline .= '%<'                   " Truncate here
+  let l:statusline .= '%f '                  " Path to current file
 
   if exists('g:loading_plugins')                    " Plugin specifics
     let l:statusline .= '%((%{fugitive#head()}) %)' " Current git branch via fugitive

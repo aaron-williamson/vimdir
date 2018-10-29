@@ -27,9 +27,6 @@ set shortmess+=I
 set hlsearch
 set incsearch
 
-" Show the current line and column numbers on the statusline
-set ruler
-
 " Use relative line numbers for all but current line
 set number
 set relativenumber
@@ -54,7 +51,7 @@ set nojoinspaces
 set ignorecase
 set smartcase
 
-" Set a dictionaries for word completion
+" Add the system dictionary for word completion
 set dictionary+=/usr/share/dict/words
 
 " Set the spell language
@@ -63,7 +60,7 @@ set spelllang=en_ca,en_us
 " Infer case for autocompletion
 set infercase
 
-" Try to have at least 5 lines of vertical room surrounding the cursor
+" Try to have at least 3 lines of vertical room surrounding the cursor
 set scrolloff=3
 
 " Enable syntax highlighting
@@ -118,13 +115,13 @@ set backspace=indent,eol,start
 set splitbelow
 set splitright
 
-" Set user highlights for statusbar
+" Set user highlights for status line
 highlight User1 guifg=DarkGrey guibg=Blue ctermfg=DarkGrey ctermbg=Blue gui=bold cterm=bold
 highlight User2 guifg=DarkGrey guibg=Green ctermfg=DarkGrey ctermbg=Green gui=bold cterm=bold
 highlight User3 guifg=DarkGrey guibg=Magenta ctermfg=DarkGrey ctermbg=Magenta gui=bold cterm=bold
 highlight User4 guifg=DarkGrey guibg=Red ctermfg=DarkGrey ctermbg=Red gui=bold cterm=bold
 
-" Don't show mode
+" Don't show mode, status line handles htis
 set noshowmode
 
 " ~~~ Conditional Settings ~~~

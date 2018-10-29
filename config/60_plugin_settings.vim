@@ -23,8 +23,6 @@ if exists('g:loading_plugins')
   let g:vim_markdown_no_default_key_mappings = 1
   let g:vim_markdown_new_list_item_indent = 2
   let g:vim_markdown_math = 1
-
-  " Livedown for markdown preview
   let g:markdown_composer_autostart = 0
   map <Leader>mp :ComposerStart<CR>
   map <Leader>mo :ComposerOpen<CR>
@@ -104,7 +102,7 @@ if exists('g:loading_plugins')
   let g:ale_sign_column_always = 1
   let g:ale_lint_on_insert_leave = 1
   let g:ale_python_auto_pipenv = 1
-  map <Leader>AD :ALEDisable <bar> execute 'sign unplace ' . g:ale_sign_offset<CR>
+  map <Leader>AD :ALEDisable <Bar> execute 'sign unplace ' . g:ale_sign_offset<CR>
   map <Leader>AE :ALEEnable<CR>
   map <Leader>AL <Plug>(ale_lint)
   map <Leader>Ad :ALEDetail<CR>

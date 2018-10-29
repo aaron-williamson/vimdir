@@ -91,6 +91,7 @@ if !$NO_VIM_PLUGINS
     function! BuildComposer(info)
       if !executable('cargo')
         echoerr 'Could not find cargo executable'
+        return
       endif
 
       if a:info.status !=# 'unchanged' || a:info.force

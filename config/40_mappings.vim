@@ -21,21 +21,21 @@ noremap <Leader>ss :call ToggleShowWhitespace(1)<CR>
 noremap <Leader>sc :unlet! b:whitespace_check<CR>
 
 " Toggle whitespace checker with <Leader>sn
-noremap <Leader>sn :call ToggleWhitespaceCheck() <bar>
+noremap <Leader>sn :call ToggleWhitespaceCheck() <Bar>
       \ unlet! b:whitespace_check<CR>
 
 " Search for trailing whitespace with <Leader>st
 noremap <Leader>st /\v\s+$<CR>
 
 " Remove trailing whitespace with <Leader>sf
-noremap <Leader>sf :%substitute/\v\s+$//g <bar>
-      \ unlet! b:whitespace_check <bar> set nohlsearch<CR>
+noremap <Leader>sf :%substitute/\v\s+$//g <Bar>
+      \ unlet! b:whitespace_check <Bar> set nohlsearch<CR>
 
 " Temporarily disable all line numbers with <Leader>nn
-noremap <Leader>nn :set number! <bar> set relativenumber!<CR>
+noremap <Leader>nn :set number! <Bar> set relativenumber!<CR>
 
 " Close quickfix, preview, and location list
-noremap <Leader>c :cclose <bar> pclose <bar> lclose<CR>
+noremap <Leader>c :cclose <Bar> pclose <Bar> lclose<CR>
 
 " Fast write
 nnoremap <Leader>w :write<CR>
