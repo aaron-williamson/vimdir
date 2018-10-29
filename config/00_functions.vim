@@ -136,8 +136,8 @@ function! WritingMode()
   endif
 endfunction
 
+" Toggles nicely between manual, indent, and marker fold methods
 function! ToggleFoldMethod()
-  " Toggles nicely between manual, indent, and marker fold methods
   if &foldmethod ==# 'manual'
     set foldlevel=0
     set foldmethod=indent
@@ -147,6 +147,31 @@ function! ToggleFoldMethod()
   else
     set foldmethod=manual
     normal! zE
+  endif
+endfunction
+
+" Whitespace toggle function
+function! ToggleShowWhitespace(show_space)
+  " If we aren't already showing whitespace, just show whitespace in the
+  " desired manner (with or without spaces)
+  if !&list
+    set list
+    set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<
+
+    if a:show_space
+      set listchars+=space:%
+    endif
+  else
+    " If we are already showing whitespace, check to see if the desired spaces
+    " state has changed, and toggle it if it has, otherwise stop showing
+    " whitespace
+    if &listchars =~# 'space:' && !a:show_space
+      set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<
+    elseif &listchars !~# 'space:' && a:show_space
+      set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<,space:%
+    else
+      set nolist
+    endif
   endif
 endfunction
 
@@ -202,31 +227,6 @@ function! StatusTextWidth()
     return '/' . &textwidth
   else
     return ''
-  endif
-endfunction
-
-" Whitespace toggle function
-function! ToggleShowWhitespace(show_space)
-  " If we aren't already showing whitespace, just show whitespace in the
-  " desired manner (with or without spaces)
-  if !&list
-    set list
-    set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<
-
-    if a:show_space
-      set listchars+=space:%
-    endif
-  else
-    " If we are already showing whitespace, check to see if the desired spaces
-    " state has changed, and toggle it if it has, otherwise stop showing
-    " whitespace
-    if &listchars =~# 'space:' && !a:show_space
-      set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<
-    elseif &listchars !~# 'space:' && a:show_space
-      set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<,space:%
-    else
-      set nolist
-    endif
   endif
 endfunction
 
