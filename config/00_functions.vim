@@ -116,7 +116,7 @@ function! WritingMode()
     endif
 
     " Restore spelling mode
-    if b:writing_mode_old_spell
+    if !b:writing_mode_old_spell
       setlocal nospell
     endif
 
