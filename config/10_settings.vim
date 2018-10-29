@@ -2,7 +2,7 @@
 " This config file will work even if no plugins are loaded
 
 " Custom leader
-nnoremap <Space> <Nop>
+noremap <Space> <Nop>
 let g:mapleader = "\<Space>"
 let g:maplocalleader = "\\"
 

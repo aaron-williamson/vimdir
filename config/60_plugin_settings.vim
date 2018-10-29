@@ -24,30 +24,30 @@ if exists('g:loading_plugins')
   let g:vim_markdown_new_list_item_indent = 2
   let g:vim_markdown_math = 1
   let g:markdown_composer_autostart = 0
-  map <Leader>mp :ComposerStart<CR>
-  map <Leader>mo :ComposerOpen<CR>
+  nmap <Leader>mp :ComposerStart<CR>
+  nmap <Leader>mo :ComposerOpen<CR>
 
   " FZF
   let g:fzf_command_prefix = 'Fzf'
   let g:fzf_history_dir = '~/.local/share/fzf-history'
-  map <C-p> :FzfFiles<CR>
-  map <Leader>fb :FzfBuffers<CR>
-  map <Leader>fc :FzfBCommits<CR>
-  map <Leader>fC :FzfCommits<CR>
-  map <Leader>ff :FzfFiles<CR>
-  map <Leader>fg :FzfGFiles<CR>
-  map <Leader>fG :FzfGFiles?<CR>
-  map <Leader>fhc :FzfHistory:<CR>
-  map <Leader>fhf :FzfHistory<CR>
-  map <Leader>fhs :FzfHistory/<CR>
-  map <Leader>fH :FzfHelptags<CR>
-  map <Leader>fl :FzfBLines<CR>
-  map <Leader>fL :FzfLines<CR>
-  map <Leader>fm :FzfCommands<CR>
-  map <Leader>fM :FzfMarks<CR>
-  map <Leader>ft :FzfBTags<CR>
-  map <Leader>fT :FzfTags<CR>
-  map <Leader>fw :FzfWindows<CR>
+  nmap <C-p> :FzfFiles<CR>
+  nmap <Leader>fb :FzfBuffers<CR>
+  nmap <Leader>fc :FzfBCommits<CR>
+  nmap <Leader>fC :FzfCommits<CR>
+  nmap <Leader>ff :FzfFiles<CR>
+  nmap <Leader>fg :FzfGFiles<CR>
+  nmap <Leader>fG :FzfGFiles?<CR>
+  nmap <Leader>fhc :FzfHistory:<CR>
+  nmap <Leader>fhf :FzfHistory<CR>
+  nmap <Leader>fhs :FzfHistory/<CR>
+  nmap <Leader>fH :FzfHelptags<CR>
+  nmap <Leader>fl :FzfBLines<CR>
+  nmap <Leader>fL :FzfLines<CR>
+  nmap <Leader>fm :FzfCommands<CR>
+  nmap <Leader>fM :FzfMarks<CR>
+  nmap <Leader>ft :FzfBTags<CR>
+  nmap <Leader>fT :FzfTags<CR>
+  nmap <Leader>fw :FzfWindows<CR>
 
   " Color scheme
   augroup UserHighlight
@@ -89,12 +89,13 @@ if exists('g:loading_plugins')
   vmap <Leader>= :Tabularize /=<CR>
 
   " Yankring mappings
-  map <Leader>p <Plug>(miniyank-startput)
-  map <Leader>PP <Plug>(miniyank-startPut)
-  map <Leader>PN <Plug>(miniyank-cycle)
-  map <Leader>PC <Plug>(miniyank-tochar)
-  map <Leader>PL <Plug>(miniyank-toline)
-  map <Leader>PB <Plug>(miniyank-toblock)
+  nmap <Leader>p <Plug>(miniyank-startput)
+  vmap <Leader>p <Plug>(miniyank-startput)
+  nmap <Leader>PP <Plug>(miniyank-startPut)
+  nmap <Leader>PN <Plug>(miniyank-cycle)
+  nmap <Leader>PC <Plug>(miniyank-tochar)
+  nmap <Leader>PL <Plug>(miniyank-toline)
+  nmap <Leader>PB <Plug>(miniyank-toblock)
 
   " Ale configuration
   let g:ale_enabled = 0
@@ -102,10 +103,10 @@ if exists('g:loading_plugins')
   let g:ale_sign_column_always = 1
   let g:ale_lint_on_insert_leave = 1
   let g:ale_python_auto_pipenv = 1
-  map <Leader>AD :ALEDisable <Bar> execute 'sign unplace ' . g:ale_sign_offset<CR>
-  map <Leader>AE :ALEEnable<CR>
-  map <Leader>AL <Plug>(ale_lint)
-  map <Leader>Ad :ALEDetail<CR>
+  nmap <Leader>AD :ALEDisable <Bar> execute 'sign unplace ' . g:ale_sign_offset<CR>
+  nmap <Leader>AE :ALEEnable<CR>
+  nmap <Leader>AL <Plug>(ale_lint)
+  nmap <Leader>Ad :ALEDetail<CR>
 
   " Automatically open quickfix list when AsyncRun writes to it
   let g:asyncrun_quickfix_size = 8
