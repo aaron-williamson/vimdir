@@ -1,10 +1,10 @@
 " My custom defined commands live here
-command! -count=0 -nargs=0 PullToNewTab call PullToNewTab(<count>)
+command! -nargs=0 PullToNewTab call PullToNewTab(v:count)
 
-command! -count=0 -nargs=0 TabOrBufferNext call TabOrBufferNext(<count>)
-command! -count=0 -nargs=0 TabOrBufferPrevious call TabOrBufferPrevious(<count>)
+command! -nargs=0 TabOrBufferNext call ChangeTabOrBuffer(v:count, 'next')
+command! -nargs=0 TabOrBufferPrevious call ChangeTabOrBuffer(v:count, 'prev')
 
-command! -count=100 -nargs=0 Center call Center(<count>)
+command! -nargs=? Center call Center(<f-args>)
 
 command! -nargs=0 ToggleSpelling call ToggleSpelling()
 command! -nargs=0 WritingMode call WritingMode()

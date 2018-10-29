@@ -1,36 +1,19 @@
 " This contains all functions for my vim config
 
 " Move to the next tab or buffer
-function! TabOrBufferNext(count)
+function! ChangeTabOrBuffer(count, next_or_prev)
   " If we only have one tab, change buffers
   if tabpagenr('$') == 1
-    if a:count == 0
-      bnext
+    if a:count > 0
+      execute 'b' . a:next_or_prev a:count
     else
-      execute a:count 'bnext'
+      execute 'b' . a:next_or_prev
     endif
   else " Otherwise change tabs
-    if a:count == 0
-      tabnext
+    if a:count > 0
+      execute 'tab' . a:next_or_prev a:count
     else
-      execute a:count 'tabnext'
-    endif
-  endif
-endfunction
-
-" Same as above, but backwards
-function! TabOrBufferPrevious(count)
-  if tabpagenr('$') == 1
-    if a:count == 0
-      bprevious
-    else
-      execute a:count 'bprevious'
-    endif
-  else
-    if a:count == 0
-      tabprevious
-    else
-      execute a:count 'tabprevious'
+      execute 'tab' . a:next_or_prev
     endif
   endif
 endfunction
@@ -38,14 +21,11 @@ endfunction
 " This function pulls the current tab into a new tab, unlike the built-in
 " CTRL-W_T, this will work even when there's only one window
 function! PullToNewTab(count)
-  " Need to subtract one from count to mimic CTRL-W_T behaviour
-  let l:adjusted_count = a:count - 1
-
   " If there's only one split in the current window
   if winnr('$') == 1
     " Move it to the desired position
     if a:count > 0
-      execute l:adjusted_count 'tab' 'split'
+      execute a:count 'tab' 'split'
     else
       tab split
     endif
@@ -56,7 +36,7 @@ function! PullToNewTab(count)
 
     " Then move it to the desired position
     if a:count > 0
-      execute l:adjusted_count 'tab' 'split'
+      execute a:count 'tab' 'split'
       execute 'buffer' l:current_buffer
     else
       tab split
@@ -74,13 +54,20 @@ function! ToggleSpelling()
 endfunction
 
 " This function will center the window, but only if there is only one split
-function! Center(min_width)
+function! Center(...)
+  " Check number of args, if there was zero, default to 100 width
+  if a:0 is 0
+    let l:min_width = 100
+  else
+    let l:min_width = a:1
+  endif
+
   " Can't do it if there's more than one split, or if there isn't enough room
   " on the screen
   if winnr('$') > 1
     echom 'Cannot center in a tab page with more than one window'
     return
-  elseif winwidth('%') < a:min_width + 1
+  elseif winwidth('%') < l:min_width + 1
     echom 'Cannot center window, not enough columns'
     return
   endif
@@ -93,7 +80,7 @@ function! Center(min_width)
   endif
 
   " Now create and size the split
-  let l:availablewidth = winwidth('%') - a:min_width + 1
+  let l:availablewidth = winwidth('%') - l:min_width + 1
   let l:splitwidth = l:availablewidth / 2
   execute l:splitwidth . ' vnew'
 
