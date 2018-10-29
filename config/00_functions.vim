@@ -45,14 +45,6 @@ function! PullToNewTab(count)
   endif
 endfunction
 
-function! ToggleSpelling()
-  if &spell " If spell is enabled, disable it
-    set nospell
-  else " If spell is disabled, enable it
-    setlocal spell
-  endif
-endfunction
-
 " This function will center the window, but only if there is only one split
 function! Center(...)
   " Check number of args, if there was zero, default to 100 width

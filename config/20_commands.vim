@@ -6,5 +6,4 @@ command! -nargs=0 TabOrBufferPrevious call ChangeTabOrBuffer(v:count, 'prev')
 
 command! -nargs=? Center call Center(<f-args>)
 
-command! -nargs=0 ToggleSpelling call ToggleSpelling()
 command! -nargs=0 WritingMode call WritingMode()
