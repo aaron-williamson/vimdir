@@ -66,6 +66,7 @@ if exists('g:loading_plugins')
           \ . ' ctermfg=' . g:base16_cterm02 . ' ctermbg=' . base16_cterm08 . ' gui=bold cterm=bold'
   augroup END
 
+  let g:base16colorspace=256
   silent! colorscheme base16-summerfruit-dark
 
   " Vim-tmux-navigator mappings
