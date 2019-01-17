@@ -90,7 +90,7 @@ if !$NO_VIM_PLUGINS
     " Live Markdown Preview
     function! BuildComposer(info)
       if !executable('cargo')
-        echoerr 'Could not find cargo executable'
+        echom 'Could not find cargo executable - aborting composer build'
         return
       endif
 
