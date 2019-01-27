@@ -25,8 +25,6 @@ endif
 
 " --- EXCLUDE FROM COMBINED ---
 " Process all vim config files in order -- From Aaron Bieber
-" vint: -ProhibitImplicitScopeVariable
-for filename in sort(split(glob(g:vim_dir.'/config/*.vim'), '\n'))
-  execute 'source '.filename
+for s:filename in sort(split(glob(g:vim_dir.'/config/*.vim'), '\n'))
+  execute 'source '.s:filename
 endfor
-" vint: +ProhibitImplicitScopeVariable
