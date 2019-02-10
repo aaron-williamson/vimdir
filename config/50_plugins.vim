@@ -28,6 +28,9 @@ if !$NO_VIM_PLUGINS
   " More handy text objects
   Plug 'wellle/targets.vim'
 
+  " Nice movement plugin
+  Plug 'easymotion/vim-easymotion'
+
   " Ack plugin for quick multi file search
   Plug 'mileszs/ack.vim', { 'on': 'Ack' }
 

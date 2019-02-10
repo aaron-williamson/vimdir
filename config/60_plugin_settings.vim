@@ -49,6 +49,9 @@ if exists('g:loading_plugins')
   nmap <Leader>fT :FzfTags<CR>
   nmap <Leader>fw :FzfWindows<CR>
 
+  " Easymotion config
+  let g:EasyMotion_smartcase = 1
+
   " Color scheme
   augroup UserHighlight
     autocmd!
