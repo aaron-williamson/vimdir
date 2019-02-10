@@ -25,6 +25,9 @@ if !$NO_VIM_PLUGINS
   " Indent-based text object
   Plug 'michaeljsmith/vim-indent-object'
 
+  " More handy text objects
+  Plug 'wellle/targets.vim'
+
   " Ack plugin for quick multi file search
   Plug 'mileszs/ack.vim', { 'on': 'Ack' }
 
