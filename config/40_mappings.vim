@@ -4,8 +4,8 @@ scriptencoding UTF-8
 " Expands to current directory
 cnoremap <expr> %% expand('%:p:h') . '/'
 
-" Quick <Leader>t remapping
-nnoremap <Leader>t :nnoremap <Leader>t :
+" Quick <LocalLeader>t remapping
+nnoremap <LocalLeader>t :nnoremap <LocalLeader>t :
 
 " Mapping for going to the last window
 nnoremap <Leader>l <C-^>
