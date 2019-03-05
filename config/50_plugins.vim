@@ -1,7 +1,7 @@
 " My plugins, I use vim-plug for plugin management
 " vim-plug: https://github.com/junegunn/vim-plug
 
-" Don't load plugins if we don't want to
+" Don't load plugins if instructed not to
 if !$NO_VIM_PLUGINS
   let g:loading_plugins = 'true'
 
