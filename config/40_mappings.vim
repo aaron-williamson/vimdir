@@ -70,23 +70,16 @@ nnoremap <Leader>9 :tabnext 9<CR>
 nnoremap <C-w>T :PullToNewTab<CR>
 
 " Split navigation
-if g:on_macos || $SSH_FROM_MAC
-  nnoremap <silent> ˙ <C-w>h
-  nnoremap <silent> ∆ <C-w>j
-  nnoremap <silent> ˚ <C-w>k
-  nnoremap <silent> ¬ <C-w>l
-else
-  nnoremap <silent> <A-h> <C-w>h
-  nnoremap <silent> <A-j> <C-w>j
-  nnoremap <silent> <A-k> <C-w>k
-  nnoremap <silent> <A-l> <C-w>l
-endif
+nnoremap <silent> <C-h> <C-w>h
+nnoremap <silent> <C-j> <C-w>j
+nnoremap <silent> <C-k> <C-w>k
+nnoremap <silent> <C-l> <C-w>l
 
 " Ctrl + h/l for changing tabs, ctrl + k/j for moving tabs
-nnoremap <C-h> :TabOrBufferPrevious<CR>
-nnoremap <C-l> :TabOrBufferNext<CR>
-nnoremap <silent> <C-j> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <silent> <C-k> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
+nnoremap gT :TabOrBufferPrevious<CR>
+nnoremap gt :TabOrBufferNext<CR>
+nnoremap <silent> <C-w><C-j> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+nnoremap <silent> <C-w><C-k> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 
 " Neovim specific mappings
 if has('nvim')
@@ -97,15 +90,8 @@ if has('nvim')
   tnoremap <C-g> <C-\><C-n>
 
   " Navigate out of spit terminal emulator easily
-  if g:on_macos || $SSH_FROM_MAC
-    tmap ˙ <C-\><C-n>˙
-    tmap ∆ <C-\><C-n>∆
-    tmap ˚ <C-\><C-n>˚
-    tmap ¬ <C-\><C-n>¬
-  else
-    tmap <A-h> <C-\><C-n><A-h>
-    tmap <A-j> <C-\><C-n><A-j>
-    tmap <A-k> <C-\><C-n><A-k>
-    tmap <A-l> <C-\><C-n><A-l>
-  endif
+  tmap <C-h> <C-\><C-n><C-h>
+  tmap <C-j> <C-\><C-n><C-j>
+  tmap <C-k> <C-\><C-n><C-k>
+  tmap <C-l> <C-\><C-n><C-l>
 endif

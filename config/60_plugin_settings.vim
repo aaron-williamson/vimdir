@@ -75,17 +75,10 @@ if exists('g:loading_plugins')
   " Vim-tmux-navigator mappings
   let g:tmux_navigator_no_mappings = 1
   if $TMUX !=# ''
-    if (g:on_macos || $SSH_FROM_MAC)
-      noremap <silent> ˙ :TmuxNavigateLeft<CR>
-      noremap <silent> ∆ :TmuxNavigateDown<CR>
-      noremap <silent> ˚ :TmuxNavigateUp<CR>
-      noremap <silent> ¬ :TmuxNavigateRight<CR>
-    else
-      noremap <silent> <A-h> :TmuxNavigateLeft<CR>
-      noremap <silent> <A-j> :TmuxNavigateDown<CR>
-      noremap <silent> <A-k> :TmuxNavigateUp<CR>
-      noremap <silent> <A-l> :TmuxNavigateRight<CR>
-    endif
+    noremap <silent> <C-h> :TmuxNavigateLeft<CR>
+    noremap <silent> <C-j> :TmuxNavigateDown<CR>
+    noremap <silent> <C-k> :TmuxNavigateUp<CR>
+    noremap <silent> <C-l> :TmuxNavigateRight<CR>
   endif
 
   " Quicker tabularize command writing
