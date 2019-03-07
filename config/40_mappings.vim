@@ -88,10 +88,4 @@ if has('nvim')
 
   " Leave terminal emulator insert mode easily
   tnoremap <C-g> <C-\><C-n>
-
-  " Navigate out of spit terminal emulator easily
-  tmap <C-h> <C-\><C-n><C-h>
-  tmap <C-j> <C-\><C-n><C-j>
-  tmap <C-k> <C-\><C-n><C-k>
-  tmap <C-l> <C-\><C-n><C-l>
 endif
