@@ -134,13 +134,6 @@ if exists('g:loading_plugins')
   endfunction
   command! -nargs=0 FocusMode call FocusMode()
 
-  " Automatically enable Limelight with Goyo
-  augroup focusedWriting
-    autocmd!
-    autocmd User GoyoEnter Limelight
-    autocmd User GoyoLeave Limelight!
-  augroup END
-
   " Enable JSX in files that don't end in .jsx
   let g:jsx_ext_required = 0
 
