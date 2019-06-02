@@ -118,6 +118,25 @@ if !$NO_VIM_PLUGINS
   if has('nvim')
     " A yankring to share yanks across neovim instances
     Plug 'bfredl/nvim-miniyank'
+
+    " NCM2 for autocompletion
+    " May set this up to be vim8 compatible, but not yet. See
+    " https://github.com/roxma/nvim-yarp#requirements
+    Plug 'ncm2/ncm2'
+    Plug 'roxma/nvim-yarp'
+
+    " NCM2 plugins
+    Plug 'ncm2/ncm2-bufword'
+    Plug 'ncm2/ncm2-path'
+    Plug 'Shougo/neco-syntax'
+    Plug 'ncm2/ncm2-syntax'
+    Plug 'ncm2/ncm2-tagprefix'
+
+    " Language server
+    Plug 'autozimu/LanguageClient-neovim', {
+          \ 'branch': 'next',
+          \ 'do': 'bash install.sh',
+          \ }
   endif
 
   " -- Tmux integration plugins --

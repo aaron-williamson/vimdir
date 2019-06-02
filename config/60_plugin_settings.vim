@@ -149,6 +149,21 @@ if exists('g:loading_plugins')
   nnoremap <Leader>* :<C-U>execute 'Ack ' . shellescape(expand("<cword>"))<CR>
   vnoremap <Leader>* :<C-U>call VisualStarSearchSet('/')<CR>:execute "Ack '" . @/ . "'"<CR>
 
+  " NCM2 settings if we're on neovim
+  if has('nvim')
+    " Enable NCM2 for all buffers
+    autocmd BufEnter * call ncm2#enable_for_buffer()
+
+    " NCM2 requires specific completeopt (see :h Ncm2PopupOpen)
+    autocmd User Ncm2PopupOpen set completeopt=noinsert,menuone,noselect,preview
+    autocmd User Ncm2PopupClose set completeopt=menu,preview
+
+    " Language server settings
+    let g:LanguageClient_serverCommands = {
+    \ 'sh': ['bash-language-server', 'start']
+    \ }
+  endif
+
   " vim-startify config, disable doublequote lint since I wasn't able to do
   " this with single quotes
   " vint: -ProhibitUnnecessaryDoubleQuote
