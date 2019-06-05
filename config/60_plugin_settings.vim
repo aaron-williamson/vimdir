@@ -166,7 +166,10 @@ if exists('g:loading_plugins')
     set shortmess+=c
 
     " Both close the NCM popup and create a newline with enter
-    inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+    " Need to disable endwise mappings for this to work
+    let g:endwise_no_mappings = 1
+    imap <C-X><CR> <CR><Plug>AlwaysEnd
+    imap <expr> <CR> (pumvisible() ? "\<C-Y>\<CR>\<Plug>DiscretionaryEnd" : "\<CR>\<Plug>DiscretionaryEnd")
 
     augroup NCM2Settings
       autocmd!
