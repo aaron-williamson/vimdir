@@ -165,6 +165,9 @@ if exists('g:loading_plugins')
     " Don't show unnecessary match messages
     set shortmess+=c
 
+    " Both close the NCM popup and create a newline with enter
+    inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+
     augroup NCM2Settings
       autocmd!
 
