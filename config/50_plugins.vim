@@ -114,6 +114,12 @@ if !$NO_VIM_PLUGINS
           \ 'for': 'markdown' }
   endif
 
+  " Language server support
+  Plug 'autozimu/LanguageClient-neovim', {
+        \ 'branch': 'next',
+        \ 'do': 'bash install.sh',
+        \ }
+
   " -- Neovim specific plugins --
   if has('nvim')
     " A yankring to share yanks across neovim instances
@@ -131,12 +137,6 @@ if !$NO_VIM_PLUGINS
     Plug 'Shougo/neco-syntax'
     Plug 'ncm2/ncm2-syntax'
     Plug 'ncm2/ncm2-tagprefix'
-
-    " Language server
-    Plug 'autozimu/LanguageClient-neovim', {
-          \ 'branch': 'next',
-          \ 'do': 'bash install.sh',
-          \ }
   endif
 
   " -- Tmux integration plugins --

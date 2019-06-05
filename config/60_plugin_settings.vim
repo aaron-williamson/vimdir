@@ -149,19 +149,32 @@ if exists('g:loading_plugins')
   nnoremap <Leader>* :<C-U>execute 'Ack ' . shellescape(expand("<cword>"))<CR>
   vnoremap <Leader>* :<C-U>call VisualStarSearchSet('/')<CR>:execute "Ack '" . @/ . "'"<CR>
 
+  " Language server settings
+  let g:LanguageClient_serverCommands = {
+  \ 'sh': ['bash-language-server', 'start'],
+  \ 'javascript': ['javascript-typescript-stdio'],
+  \ 'javascript.jsx': ['javascript-typescript-stdio'],
+  \ }
+  nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+  nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+  nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+  nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
   " NCM2 settings if we're on neovim
   if has('nvim')
-    " Enable NCM2 for all buffers
-    autocmd BufEnter * call ncm2#enable_for_buffer()
+    " Don't show unnecessary match messages
+    set shortmess+=c
 
-    " NCM2 requires specific completeopt (see :h Ncm2PopupOpen)
-    autocmd User Ncm2PopupOpen set completeopt=noinsert,menuone,noselect,preview
-    autocmd User Ncm2PopupClose set completeopt=menu,preview
+    augroup NCM2Settings
+      autocmd!
 
-    " Language server settings
-    let g:LanguageClient_serverCommands = {
-    \ 'sh': ['bash-language-server', 'start']
-    \ }
+      " Enable NCM2 for all buffers
+      autocmd BufEnter * call ncm2#enable_for_buffer()
+
+      " NCM2 requires specific completeopt (see :h Ncm2PopupOpen)
+      autocmd User Ncm2PopupOpen set completeopt=noinsert,menuone,noselect,preview
+      autocmd User Ncm2PopupClose set completeopt=menu,preview
+    augroup END
   endif
 
   " vim-startify config, disable doublequote lint since I wasn't able to do
