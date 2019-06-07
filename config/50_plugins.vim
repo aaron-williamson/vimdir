@@ -73,6 +73,12 @@ if !$NO_VIM_PLUGINS
   " abolish.vim for enhanced substituion
   Plug 'tpope/vim-abolish'
 
+  " Rails plugin for some nice Ruby on Rails tooling
+  Plug 'tpope/vim-rails'
+
+  " Emmet plugin for a better HTML experience
+  Plug 'mattn/emmet-vim'
+
   " Automatic alignment
   Plug 'godlygeek/tabular', { 'on': ['Tabularize', 'TableFormat'] }
 

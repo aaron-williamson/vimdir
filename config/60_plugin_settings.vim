@@ -149,6 +149,14 @@ if exists('g:loading_plugins')
   nnoremap <Leader>* :<C-U>execute 'Ack ' . shellescape(expand("<cword>"))<CR>
   vnoremap <Leader>* :<C-U>call VisualStarSearchSet('/')<CR>:execute "Ack '" . @/ . "'"<CR>
 
+  " Emmet settings
+  let g:user_emmet_install_global = 0
+  augroup EmmetSettings
+    autocmd!
+
+    autocmd FileType html,css,eruby EmmetInstall
+  augroup END
+
   " Language server settings
   let g:LanguageClient_serverCommands = {
   \ 'sh': ['bash-language-server', 'start'],
