@@ -231,8 +231,9 @@ if exists('g:loading_plugins')
           \ "         \"\"**\"\""
           \]
   endif
+  " vint: +ProhibitUnnecessaryDoubleQuote
 
   let g:startify_custom_header = map(g:ascii_header, '"   " . v:val')
-  " vint: +ProhibitUnnecessaryDoubleQuote
+  let g:startify_change_to_vcs_root = 1
 
 endif " End plugin config if
