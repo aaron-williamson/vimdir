@@ -143,6 +143,8 @@ if !$NO_VIM_PLUGINS
     Plug 'Shougo/neco-syntax'
     Plug 'ncm2/ncm2-syntax'
     Plug 'ncm2/ncm2-tagprefix'
+    Plug 'ncm2/ncm2-cssomni'
+    Plug 'fgrsnau/ncm-otherbuf', { 'branch': 'ncm2' }
   endif
 
   " -- Tmux integration plugins --
