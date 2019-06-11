@@ -160,4 +160,7 @@ endif
 if has('nvim')
   " Store larger things in registers
   set shada=!,'100,<200,s50,h
+
+  " Show commands effects while typing
+  set inccommand=split
 endif
