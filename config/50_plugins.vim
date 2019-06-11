@@ -145,6 +145,11 @@ if !$NO_VIM_PLUGINS
     Plug 'ncm2/ncm2-tagprefix'
     Plug 'ncm2/ncm2-cssomni'
     Plug 'fgrsnau/ncm-otherbuf', { 'branch': 'ncm2' }
+
+    " Snippet support
+    Plug 'ncm2/ncm2-ultisnips'
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
   endif
 
   " -- Tmux integration plugins --

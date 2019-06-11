@@ -180,6 +180,7 @@ if exists('g:loading_plugins')
     let g:endwise_no_mappings = 1
     imap <C-X><CR> <CR><Plug>AlwaysEnd
     imap <expr> <CR> (pumvisible() ? "\<C-Y>\<CR>\<Plug>DiscretionaryEnd" : "\<CR>\<Plug>DiscretionaryEnd")
+    inoremap <silent> <expr> <Tab> ncm2_ultisnips#expand_or("\<Tab>", 'n')
 
     augroup NCM2Settings
       autocmd!
