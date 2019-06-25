@@ -157,7 +157,7 @@ if exists('g:loading_plugins')
     autocmd FileType html,css,eruby EmmetInstall
   augroup END
 
-  " Language server settings
+  " Language server client settings
   let g:LanguageClient_serverCommands = {
   \ 'sh': ['bash-language-server', 'start'],
   \ 'javascript': ['javascript-typescript-stdio'],
@@ -165,6 +165,7 @@ if exists('g:loading_plugins')
   \ 'css': ['css-languageserver', '--stdio'],
   \ 'scss': ['css-languageserver', '--stdio'],
   \ }
+  let g:LanguageClient_diagnosticsList = "Location"
   nnoremap <F5> :call LanguageClient_contextMenu()<CR>
   nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
   nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
