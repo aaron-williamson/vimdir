@@ -23,9 +23,6 @@ if exists('g:loading_plugins')
   let g:vim_markdown_no_default_key_mappings = 1
   let g:vim_markdown_new_list_item_indent = 2
   let g:vim_markdown_math = 1
-  let g:markdown_composer_autostart = 0
-  nmap <Leader>mp :ComposerStart<CR>
-  nmap <Leader>mo :ComposerOpen<CR>
 
   " FZF
   let g:fzf_command_prefix = 'Fzf'
@@ -94,45 +91,12 @@ if exists('g:loading_plugins')
   nmap <Leader>PL <Plug>(miniyank-toline)
   nmap <Leader>PB <Plug>(miniyank-toblock)
 
-  " Ale configuration
-  let g:ale_enabled = 0
-  let g:ale_lint_delay = 750
-  let g:ale_sign_column_always = 1
-  let g:ale_lint_on_insert_leave = 1
-  let g:ale_python_auto_pipenv = 1
-  nmap <Leader>AD :ALEDisable <Bar> execute 'sign unplace ' . g:ale_sign_offset<CR>
-  nmap <Leader>AE :ALEEnable<CR>
-  nmap <Leader>AL <Plug>(ale_lint)
-  nmap <Leader>Ad :ALEDetail<CR>
-
   " Automatically open quickfix list when AsyncRun writes to it
   let g:asyncrun_quickfix_size = 8
   augroup asyncRunOpenQF
     autocmd!
     autocmd User AsyncRunStart call asyncrun#quickfix_toggle(g:asyncrun_quickfix_size, 1)
   augroup END
-
-  " vimtex config
-  let g:vimtex_view_method = 'skim'
-  let g:vimtex_quickfix_open_on_warning = 0
-  let g:vimtex_imaps_enabled = 0
-  if has('nvim') && executable('nvr')
-    let g:vimtex_compiler_progname = 'nvr'
-  endif
-
-  " Configuration for Goyo and Limelight
-  " 100 width instead of default 80
-  let g:goyo_width = 100
-
-  " Slightly more focus
-  let g:limelight_default_coefficient = 0.8
-
-  " Function and command for toggling writing mode + Goyo and Limelight
-  function! FocusMode()
-    execute 'Goyo'
-    call WritingMode()
-  endfunction
-  command! -nargs=0 FocusMode call FocusMode()
 
   " Enable JSX in files that don't end in .jsx
   let g:jsx_ext_required = 0
@@ -141,9 +105,6 @@ if exists('g:loading_plugins')
   let g:EditorConfig_core_mode = 'external_command'
   let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
   let g:EditorConfig_exclude_patterns = ['fugitive://.*']
-
-  " Vim polyglot settings
-  let g:polyglot_disabled = ['latex'] " Disable polyglot so vimtex works correctly
 
   " Visual Star settings
   nnoremap <Leader>* :<C-U>execute 'Ack ' . shellescape(expand("<cword>"))<CR>
@@ -156,86 +117,7 @@ if exists('g:loading_plugins')
 
     autocmd FileType html,css,eruby EmmetInstall
   augroup END
-
-  " Language server client settings
-  let g:LanguageClient_serverCommands = {
-  \ 'sh': ['bash-language-server', 'start'],
-  \ 'javascript': ['javascript-typescript-stdio'],
-  \ 'javascript.jsx': ['javascript-typescript-stdio'],
-  \ 'css': ['css-languageserver', '--stdio'],
-  \ 'scss': ['css-languageserver', '--stdio'],
-  \ }
-  let g:LanguageClient_diagnosticsList = "Location"
-  nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-  nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-  nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-  nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-
-  " NCM2 settings if we're on neovim
-  if has('nvim')
-    " Don't show unnecessary match messages
-    set shortmess+=c
-
-    " Both close the NCM popup and create a newline with enter
-    " Need to disable endwise mappings for this to work
-    let g:endwise_no_mappings = 1
-    imap <C-X><CR> <CR><Plug>AlwaysEnd
-    imap <expr> <CR> (pumvisible() ? "\<C-Y>\<CR>\<Plug>DiscretionaryEnd" : "\<CR>\<Plug>DiscretionaryEnd")
-    inoremap <silent> <expr> <Tab> ncm2_ultisnips#expand_or("\<Tab>", 'n')
-
-    augroup NCM2Settings
-      autocmd!
-
-      " Enable NCM2 for all buffers
-      autocmd BufEnter * call ncm2#enable_for_buffer()
-
-      " NCM2 requires specific completeopt (see :h Ncm2PopupOpen)
-      autocmd User Ncm2PopupOpen set completeopt=noinsert,menuone,noselect,preview
-      autocmd User Ncm2PopupClose set completeopt=menu,preview
-    augroup END
-  endif
-
-  " vim-startify config, disable doublequote lint since I wasn't able to do
-  " this with single quotes
-  " vint: -ProhibitUnnecessaryDoubleQuote
-  if has('nvim')
-    let g:ascii_header = [
-          \ "     ...     ...                              .....     .      ...     ..      ..",
-          \ "  .=*8888n..\"%888:                          .d88888Neu. 'L   x*8888x.:*8888: -\"888:",
-          \ " X    ?8888f '8888        ...     ..        F\"\"\"\"*8888888F  X   48888X `8888H  8888",
-          \ " 88x. '8888X  8888>    :~\"\"888h.:^\"888:    *      `\"*88*\"  X8x.  8888X  8888X  !888>",
-          \ "'8888k 8888X  '\"*8h.  8X   `8888X  8888>    -....    ue=:. X8888 X8888  88888   \"*8%-",
-          \ " \"8888 X888X .xH8    X888n. 8888X  ?888>           :88N  ` '*888!X8888> X8888  xH8>",
-          \ "   `8\" X888!:888X    '88888 8888X   ?**h.          9888L     `?8 `8888  X888X X888>",
-          \ "  =~`  X888 X888X      `*88 8888~ x88x.     uzu.   `8888L    -^  '888\"  X888  8888>",
-          \ "   :h. X8*` !888X     ..<\"  88*`  88888X  ,\"\"888i   ?8888     dx '88~x. !88~  8888>",
-          \ "  X888xX\"   '8888..:     ..XC.    `*8888k 4  9888L   %888>  .8888Xf.888x:!    X888X.:",
-          \ ":~`888f     '*888*\"    :888888H.    `%88> '  '8888   '88%  :\"\"888\":~\"888\"     `888*\"",
-          \ "    \"\"        `\"`     <  `\"888888:    X\"       \"*8Nu.z*\"       \"~'    \"~        \"\"",
-          \ "                            %888888x.-`",
-          \ "                              \"\"**\"\""
-          \]
-  else
-    let g:ascii_header = [
-          \ "                         .....     .      ...     ..      ..",
-          \ "                       .d88888Neu. 'L   x*8888x.:*8888: -\"888:",
-          \ "     ...     ..        F\"\"\"\"*8888888F  X   48888X `8888H  8888",
-          \ "  :~\"\"888h.:^\"888:    *      `\"*88*\"  X8x.  8888X  8888X  !888>",
-          \ " 8X   `8888X  8888>    -....    ue=:. X8888 X8888  88888   \"*8%-",
-          \ "X888n. 8888X  ?888>           :88N  ` '*888!X8888> X8888  xH8>",
-          \ "'88888 8888X   ?**h.          9888L     `?8 `8888  X888X X888>",
-          \ "  `*88 8888~ x88x.     uzu.   `8888L    -^  '888\"  X888  8888>",
-          \ " ..<\"  88*`  88888X  ,\"\"888i   ?8888     dx '88~x. !88~  8888>",
-          \ "    ..XC.    `*8888k 4  9888L   %888>  .8888Xf.888x:!    X888X.:",
-          \ "  :888888H.    `%88> '  '8888   '88%  :\"\"888\":~\"888\"     `888*\"",
-          \ " <  `\"888888:    X\"       \"*8Nu.z*\"       \"~'    \"~        \"\"",
-          \ "       %888888x.-`",
-          \ "         \"\"**\"\""
-          \]
-  endif
-  " vint: +ProhibitUnnecessaryDoubleQuote
-
-  let g:startify_custom_header = map(g:ascii_header, '"   " . v:val')
+  let g:startify_custom_header = []
   let g:startify_change_to_vcs_root = 1
 
 endif " End plugin config if

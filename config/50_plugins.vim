@@ -16,9 +16,6 @@ if !$NO_VIM_PLUGINS
   " Polyglot for language support
   Plug 'sheerun/vim-polyglot'
 
-  " LaTeX editing in vim
-  Plug 'lervag/vimtex'
-
   " Fugitive for git integration
   Plug 'tpope/vim-fugitive'
 
@@ -39,12 +36,6 @@ if !$NO_VIM_PLUGINS
 
   " Some nice default FZF wrappers
   Plug 'junegunn/fzf.vim'
-
-  " Focused writing in vim
-  Plug 'junegunn/goyo.vim'
-
-  " Extra focus for writing
-  Plug 'junegunn/limelight.vim'
 
   " Auto detect editor config
   Plug 'editorconfig/editorconfig-vim'
@@ -93,63 +84,14 @@ if !$NO_VIM_PLUGINS
     " Easy asynchronous execution
     Plug 'skywind3000/asyncrun.vim', { 'on': 'AsyncRun' }
 
-    " Asynchronous linting
-    Plug 'w0rp/ale'
-
     " Fancy vim start page
     Plug 'mhinz/vim-startify'
-
-    " Live Markdown Preview
-    function! BuildComposer(info)
-      if !executable('cargo')
-        echom 'Could not find cargo executable - aborting composer build'
-        return
-      endif
-
-      if a:info.status !=# 'unchanged' || a:info.force
-        if has('nvim')
-          !cargo build --release
-        else
-          !cargo build --release --no-default-features --features json-rpc
-        endif
-      endif
-    endfunction
-
-    Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer'),
-          \ 'on': ['ComposerStart', 'ComposerOpen', 'ComposerUpdate'],
-          \ 'for': 'markdown' }
   endif
-
-  " Language server support
-  Plug 'autozimu/LanguageClient-neovim', {
-        \ 'branch': 'next',
-        \ 'do': 'bash install.sh',
-        \ }
 
   " -- Neovim specific plugins --
   if has('nvim')
     " A yankring to share yanks across neovim instances
     Plug 'bfredl/nvim-miniyank'
-
-    " NCM2 for autocompletion
-    " May set this up to be vim8 compatible, but not yet. See
-    " https://github.com/roxma/nvim-yarp#requirements
-    Plug 'ncm2/ncm2'
-    Plug 'roxma/nvim-yarp'
-
-    " NCM2 plugins
-    Plug 'ncm2/ncm2-bufword'
-    Plug 'ncm2/ncm2-path'
-    Plug 'Shougo/neco-syntax'
-    Plug 'ncm2/ncm2-syntax'
-    Plug 'ncm2/ncm2-tagprefix'
-    Plug 'ncm2/ncm2-cssomni'
-    Plug 'fgrsnau/ncm-otherbuf', { 'branch': 'ncm2' }
-
-    " Snippet support
-    Plug 'ncm2/ncm2-ultisnips'
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
   endif
 
   " -- Tmux integration plugins --
