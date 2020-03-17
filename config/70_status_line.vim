@@ -9,6 +9,11 @@ function! MyStatusLine()
 
   if exists('g:loading_plugins')                    " Plugin specifics
     let l:statusline .= '%((%{fugitive#head()}) %)' " Current git branch via fugitive
+
+    if exists('g:autocomplete_enabled')
+      " Coc autocompletion information in status line
+      let l:statusline .= "%(%{coc#status()}%{get(b:,'coc_current_function','')} %)"
+    endif
   endif
 
   let l:statusline .= '%(%{StatusPasteMode()} %)'   " Paste mode flag

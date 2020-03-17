@@ -94,6 +94,12 @@ if !$NO_VIM_PLUGINS
     Plug 'bfredl/nvim-miniyank'
   endif
 
+  " Autocompletion
+  if !$NO_VIM_AUTOCOMPLETE
+    let g:autocomplete_enabled = 'true'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  endif
+
   " -- Tmux integration plugins --
   if $TMUX !=# ''
     " Allow seamless movement between vim and tmux
